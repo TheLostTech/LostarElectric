@@ -1,0 +1,56 @@
+/* Preview card base — shared by all /preview/*.html cards
+   Cards target ~700px wide, variable height. No titles — the system renders them outside. */
+@import url('../colors_and_type.css');
+
+@font-face {
+  font-family: 'Rockstar';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Rockstar-ExtraBold.otf') format('opentype');
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  font-family: var(--font-sans);
+  color: var(--fg-primary);
+  background: var(--bg-canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  padding: 24px;
+  color: var(--fg-primary);
+}
+.card {
+  width: 100%;
+  max-width: 700px;
+}
+.row { display: flex; gap: 12px; align-items: stretch; }
+.col { display: flex; flex-direction: column; gap: 8px; }
+.muted { color: var(--fg-muted); }
+.mono { font-family: var(--font-mono); font-size: 12px; }
+
+.swatch {
+  height: 72px;
+  border-radius: var(--radius-2);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 8px 10px;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border-subtle);
+}
+.swatch.light { color: var(--fg-primary); }
+.swatch-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 11px;
+  line-height: 1.1;
+}
+.swatch-label .name { font-weight: 600; letter-spacing: 0.02em; }
+.swatch-label .hex  { opacity: 0.85; }

@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  .srow { display:grid; grid-template-columns: 1fr 1fr; gap:10px }
+  .sitem { display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--border-subtle); border-radius:4px; background:#fff }
+  .dot { width:12px; height:12px; border-radius:999px; flex:none }
+  .sitem .t { display:flex; flex-direction:column; gap:2px }
+  .sitem .name { font-weight:600; font-size:13px }
+  .sitem .hex { font-family:var(--font-mono); font-size:11px; color:var(--fg-muted) }
+  .pill { display:inline-flex; align-items:center; gap:6px; padding:3px 10px; border-radius:999px; font-size:11px; font-weight:600 }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="srow">
+    <div class="sitem"><span class="dot" style="background:#1E9E57"></span>
+      <div class="t"><span class="name">live · in tensione</span><span class="hex">#1E9E57</span></div>
+      <span class="pill" style="background:#E3F4EA;color:#1E9E57;margin-left:auto">● LIVE</span>
+    </div>
+    <div class="sitem"><span class="dot" style="background:#E8A100"></span>
+      <div class="t"><span class="name">warn</span><span class="hex">#E8A100</span></div>
+      <span class="pill" style="background:#FFF3D6;color:#8B5A00;margin-left:auto">▲ WARN</span>
+    </div>
+    <div class="sitem"><span class="dot" style="background:#C42826"></span>
+      <div class="t"><span class="name">fault · guasto</span><span class="hex">#C42826</span></div>
+      <span class="pill" style="background:#FBE4E3;color:#C42826;margin-left:auto">■ FAULT</span>
+    </div>
+    <div class="sitem"><span class="dot" style="background:#6C7583"></span>
+      <div class="t"><span class="name">off · fuori servizio</span><span class="hex">#6C7583</span></div>
+      <span class="pill" style="background:#EEF0F3;color:#53606F;margin-left:auto">○ OFF</span>
+    </div>
+  </div>
+</div>
+</body></html>

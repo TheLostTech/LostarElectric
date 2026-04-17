@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <pattern id="blueprint" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="#0B2545"></rect>
+      <g stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none">
+        <path d="M0 20 H120 M0 40 H120 M0 60 H120 M0 80 H120 M0 100 H120"></path>
+        <path d="M20 0 V120 M40 0 V120 M60 0 V120 M80 0 V120 M100 0 V120"></path>
+      </g>
+      <g stroke="rgba(255,255,255,0.14)" stroke-width="1.2" fill="none">
+        <path d="M0 60 H120 M60 0 V120"></path>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="120" height="120" fill="url(#blueprint)"></rect>
+</svg>

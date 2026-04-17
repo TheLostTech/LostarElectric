@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lostar — Print</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  @page { size: A4; margin: 1cm; }
+  html, body { background: #fff; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* Stop sticky header + blur in print */
+  header { position: static !important; background: #fff !important; backdrop-filter: none !important; }
+  /* Strip interactive-only nav spacing oddities */
+  button { cursor: default; }
+
+  @media print {
+    /* Each top-level screen on its own page */
+    [data-screen-label] > main > section { break-inside: avoid; }
+    section { break-inside: avoid-page; }
+    /* Avoid cutting cards */
+    .card-surface, .stat, .badge { break-inside: avoid; }
+    /* Hide scroll-state transitions */
+    * { transition: none !important; animation: none !important; }
+    /* Keep hero photos */
+    .section--brand, section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    a { text-decoration: none; color: inherit; }
+    /* Hide language/nav buttons — not useful in print */
+    header nav, header .hide-mobile { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<div id="root"></div>
+<script type="text/babel" src="Icons.jsx"></script>
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel" src="Pages.jsx"></script>
+<script type="text/babel">
+// Print layout: render all four pages stacked, each on its own page
+function PrintApp() {
+  const lang = 'it';
+  const noop = () => {};
+  const pages = [
+    { key: 'home', label: '01 Home', C: HomePage },
+    { key: 'servizi', label: '02 Servizi', C: ServicesPage },
+    { key: 'chi', label: '03 Chi siamo', C: AboutPage },
+    { key: 'contatti', label: '04 Contatti', C: ContactPage },
+  ];
+  return (
+    <div>
+      <Header page="home" setPage={noop} lang={lang} setLang={noop} />
+      {pages.map(({key,label,C}, i) => (
+        <main key={key} data-screen-label={label} style={{ breakBefore: i === 0 ? 'auto' : 'page', pageBreakBefore: i === 0 ? 'auto' : 'always' }}>
+          <C lang={lang} setPage={noop} />
+        </main>
+      ))}
+      <Footer lang={lang} />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<PrintApp/>);
+
+// Auto-print once fonts + JSX are ready
+(async () => {
+  try { if (document.fonts && document.fonts.ready) await document.fonts.ready; } catch (e) {}
+  // Wait for Babel to transpile + render
+  await new Promise(r => setTimeout(r, 1200));
+  window.print();
+})();
+</script>
+</body>
+</html>

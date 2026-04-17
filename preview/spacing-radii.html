@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  .row2 { display:flex; gap:18px; align-items:flex-end }
+  .r { display:flex; flex-direction:column; align-items:center; gap:6px }
+  .shape { width:80px; height:56px; background:#0B2545 }
+  .lbl { font-family:var(--font-mono); font-size:11px; color:var(--fg-muted) }
+</style></head>
+<body>
+<div class="card">
+  <div class="row2">
+    <div class="r"><div class="shape" style="border-radius:0"></div><div class="lbl">0 · 0px</div></div>
+    <div class="r"><div class="shape" style="border-radius:2px"></div><div class="lbl">1 · 2px</div></div>
+    <div class="r"><div class="shape" style="border-radius:4px"></div><div class="lbl">2 · 4px default</div></div>
+    <div class="r"><div class="shape" style="border-radius:8px"></div><div class="lbl">3 · 8px max</div></div>
+    <div class="r"><div class="shape" style="border-radius:999px;width:80px;height:28px"></div><div class="lbl">pill · status only</div></div>
+  </div>
+  <p class="mono muted" style="margin-top:14px">No large radii. This is engineered, not squishy.</p>
+</div>
+</body></html>

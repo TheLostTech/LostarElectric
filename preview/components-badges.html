@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  .pill { display:inline-flex; align-items:center; gap:6px; padding:3px 10px; border-radius:999px; font-family:'Inter',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase }
+  .dot { width:6px; height:6px; border-radius:999px }
+  .row5 { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px }
+  .badge-rect { display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:2px; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; background:#EEF0F3; color:#3A4554; border:1px solid #DFE3E8 }
+  .badge-rect.brand { background:#E7EEF7; color:#0B2545; border-color:#CFDDEE }
+  .badge-rect.accent { background:#FFF4CC; color:#7A5A00; border-color:#FFDD6E }
+</style></head>
+<body>
+<div class="card">
+  <div class="row5">
+    <span class="pill" style="background:#E3F4EA;color:#166B3A"><span class="dot" style="background:#1E9E57"></span>IN TENSIONE</span>
+    <span class="pill" style="background:#FFF3D6;color:#7A5A00"><span class="dot" style="background:#E8A100"></span>WARNING</span>
+    <span class="pill" style="background:#FBE4E3;color:#8E1C1B"><span class="dot" style="background:#C42826"></span>GUASTO</span>
+    <span class="pill" style="background:#EEF0F3;color:#53606F"><span class="dot" style="background:#6C7583"></span>OFF</span>
+  </div>
+  <div class="row5">
+    <span class="badge-rect brand">IP65</span>
+    <span class="badge-rect brand">IEC 61439</span>
+    <span class="badge-rect">FORMA 4B</span>
+    <span class="badge-rect">RAL 7035</span>
+    <span class="badge-rect accent">NEW</span>
+  </div>
+</div>
+</body></html>

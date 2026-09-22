@@ -15,3 +15,7 @@
 ## Limite per il rilascio
 
 contact-config.json ha email null. Nell'anteprima il limite è visibile e l'azione email è nascosta; il testo si può copiare. Impostare un indirizzo confermato, verificare la bozza mailto senza inviarla e rilasciare la versione approvata. Nessuna modifica della produzione Vercel effettuata.
+
+## Esito Vercel
+
+Upload completato ma deployment bloccato da Vercel per autorizzazione dell’autore Git (TEAM_ACCESS_REQUIRED), anche dopo il push del commit riconosciuto da GitHub come TheLostTech. Non considerare i link dei tentativi una preview funzionante. La produzione originaria conserva ETag fe997b67bb6637f758a6810a348df4ff. Usare l’anteprima locale finché l’accesso Vercel non viene risolto.

@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-22T22:42:33.381264+00:00",
+  "title": "Design System: Lostar Electric / House Core",
+  "extensions": {
+    "colorMeta": {
+      "hc-ink": {
+        "role": "primary",
+        "displayName": "Lostar Navy",
+        "tonalRamp": [
+          "oklch(15% 0.06783 255.34)",
+          "oklch(27% 0.06783 255.34)",
+          "oklch(38% 0.06783 255.34)",
+          "oklch(50% 0.06783 255.34)",
+          "oklch(61% 0.06783 255.34)",
+          "oklch(73% 0.06783 255.34)",
+          "oklch(84% 0.06783 255.34)",
+          "oklch(95% 0.06783 255.34)"
+        ]
+      },
+      "blue-900": {
+        "role": "primary",
+        "displayName": "Deep Navy",
+        "tonalRamp": [
+          "oklch(15% 0.05190 254.52)",
+          "oklch(27% 0.05190 254.52)",
+          "oklch(38% 0.05190 254.52)",
+          "oklch(50% 0.05190 254.52)",
+          "oklch(61% 0.05190 254.52)",
+          "oklch(73% 0.05190 254.52)",
+          "oklch(84% 0.05190 254.52)",
+          "oklch(95% 0.05190 254.52)"
+        ]
+      },
+      "hc-yellow": {
+        "role": "primary",
+        "displayName": "Lostar Yellow",
+        "tonalRamp": [
+          "oklch(15% 0.16640 83.23)",
+          "oklch(27% 0.16640 83.23)",
+          "oklch(38% 0.16640 83.23)",
+          "oklch(50% 0.16640 83.23)",
+          "oklch(61% 0.16640 83.23)",
+          "oklch(73% 0.16640 83.23)",
+          "oklch(84% 0.16640 83.23)",
+          "oklch(95% 0.16640 83.23)"
+        ]
+      },
+      "hc-teal": {
+        "role": "secondary",
+        "displayName": "Technical Teal",
+        "tonalRamp": [
+          "oklch(15% 0.06218 198.21)",
+          "oklch(27% 0.06218 198.21)",
+          "oklch(38% 0.06218 198.21)",
+          "oklch(50% 0.06218 198.21)",
+          "oklch(61% 0.06218 198.21)",
+          "oklch(73% 0.06218 198.21)",
+          "oklch(84% 0.06218 198.21)",
+          "oklch(95% 0.06218 198.21)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.00000 0.00)",
+          "oklch(27% 0.00000 0.00)",
+          "oklch(38% 0.00000 0.00)",
+          "oklch(50% 0.00000 0.00)",
+          "oklch(61% 0.00000 0.00)",
+          "oklch(73% 0.00000 0.00)",
+          "oklch(84% 0.00000 0.00)",
+          "oklch(95% 0.00000 0.00)"
+        ]
+      },
+      "anthracite": {
+        "role": "neutral",
+        "displayName": "Anthracite",
+        "tonalRamp": [
+          "oklch(15% 0.01340 253.06)",
+          "oklch(27% 0.01340 253.06)",
+          "oklch(38% 0.01340 253.06)",
+          "oklch(50% 0.01340 253.06)",
+          "oklch(61% 0.01340 253.06)",
+          "oklch(73% 0.01340 253.06)",
+          "oklch(84% 0.01340 253.06)",
+          "oklch(95% 0.01340 253.06)"
+        ]
+      },
+      "hc-muted": {
+        "role": "neutral",
+        "displayName": "Technical Slate",
+        "tonalRamp": [
+          "oklch(15% 0.03043 248.45)",
+          "oklch(27% 0.03043 248.45)",
+          "oklch(38% 0.03043 248.45)",
+          "oklch(50% 0.03043 248.45)",
+          "oklch(61% 0.03043 248.45)",
+          "oklch(73% 0.03043 248.45)",
+          "oklch(84% 0.03043 248.45)",
+          "oklch(95% 0.03043 248.45)"
+        ]
+      },
+      "hc-paper": {
+        "role": "neutral",
+        "displayName": "Light Paper",
+        "tonalRamp": [
+          "oklch(15% 0.00213 197.12)",
+          "oklch(27% 0.00213 197.12)",
+          "oklch(38% 0.00213 197.12)",
+          "oklch(50% 0.00213 197.12)",
+          "oklch(61% 0.00213 197.12)",
+          "oklch(73% 0.00213 197.12)",
+          "oklch(84% 0.00213 197.12)",
+          "oklch(95% 0.00213 197.12)"
+        ]
+      },
+      "hc-line": {
+        "role": "neutral",
+        "displayName": "Paper Rule",
+        "tonalRamp": [
+          "oklch(15% 0.01156 217.55)",
+          "oklch(27% 0.01156 217.55)",
+          "oklch(38% 0.01156 217.55)",
+          "oklch(50% 0.01156 217.55)",
+          "oklch(61% 0.01156 217.55)",
+          "oklch(73% 0.01156 217.55)",
+          "oklch(84% 0.01156 217.55)",
+          "oklch(95% 0.01156 217.55)"
+        ]
+      },
+      "gray-300": {
+        "role": "neutral",
+        "displayName": "Control Border",
+        "tonalRamp": [
+          "oklch(15% 0.01815 253.35)",
+          "oklch(27% 0.01815 253.35)",
+          "oklch(38% 0.01815 253.35)",
+          "oklch(50% 0.01815 253.35)",
+          "oklch(61% 0.01815 253.35)",
+          "oklch(73% 0.01815 253.35)",
+          "oklch(84% 0.01815 253.35)",
+          "oklch(95% 0.01815 253.35)"
+        ]
+      },
+      "blue-050": {
+        "role": "neutral",
+        "displayName": "Pale Blue",
+        "tonalRamp": [
+          "oklch(15% 0.01029 247.93)",
+          "oklch(27% 0.01029 247.93)",
+          "oklch(38% 0.01029 247.93)",
+          "oklch(50% 0.01029 247.93)",
+          "oklch(61% 0.01029 247.93)",
+          "oklch(73% 0.01029 247.93)",
+          "oklch(84% 0.01029 247.93)",
+          "oklch(95% 0.01029 247.93)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field Border",
+        "tonalRamp": [
+          "oklch(15% 0.02025 235.82)",
+          "oklch(27% 0.02025 235.82)",
+          "oklch(38% 0.02025 235.82)",
+          "oklch(50% 0.02025 235.82)",
+          "oklch(61% 0.02025 235.82)",
+          "oklch(73% 0.02025 235.82)",
+          "oklch(84% 0.02025 235.82)",
+          "oklch(95% 0.02025 235.82)"
+        ]
+      },
+      "dark-copy": {
+        "role": "neutral",
+        "displayName": "Dark-surface Copy",
+        "tonalRamp": [
+          "oklch(15% 0.01794 240.02)",
+          "oklch(27% 0.01794 240.02)",
+          "oklch(38% 0.01794 240.02)",
+          "oklch(50% 0.01794 240.02)",
+          "oklch(61% 0.01794 240.02)",
+          "oklch(73% 0.01794 240.02)",
+          "oklch(84% 0.01794 240.02)",
+          "oklch(95% 0.01794 240.02)"
+        ]
+      },
+      "dark-divider": {
+        "role": "neutral",
+        "displayName": "Dark Divider",
+        "tonalRamp": [
+          "oklch(15% 0.04996 252.15)",
+          "oklch(27% 0.04996 252.15)",
+          "oklch(38% 0.04996 252.15)",
+          "oklch(50% 0.04996 252.15)",
+          "oklch(61% 0.04996 252.15)",
+          "oklch(73% 0.04996 252.15)",
+          "oklch(84% 0.04996 252.15)",
+          "oklch(95% 0.04996 252.15)"
+        ]
+      },
+      "yellow-hover": {
+        "role": "primary",
+        "displayName": "Download Hover",
+        "tonalRamp": [
+          "oklch(15% 0.15437 85.54)",
+          "oklch(27% 0.15437 85.54)",
+          "oklch(38% 0.15437 85.54)",
+          "oklch(50% 0.15437 85.54)",
+          "oklch(61% 0.15437 85.54)",
+          "oklch(73% 0.15437 85.54)",
+          "oklch(84% 0.15437 85.54)",
+          "oklch(95% 0.15437 85.54)"
+        ]
+      },
+      "gray-700": {
+        "role": "neutral",
+        "displayName": "Shared Slate",
+        "tonalRamp": [
+          "oklch(15% 0.02907 252.12)",
+          "oklch(27% 0.02907 252.12)",
+          "oklch(38% 0.02907 252.12)",
+          "oklch(50% 0.02907 252.12)",
+          "oklch(61% 0.02907 252.12)",
+          "oklch(73% 0.02907 252.12)",
+          "oklch(84% 0.02907 252.12)",
+          "oklch(95% 0.02907 252.12)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "House Core hero heading; responsive variants are documented in DESIGN.md."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "House Core section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "House Core subheadings; 27px capability/request variant is documented."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "House Core paragraph rhythm; non-paragraph UI inherits the shared 1.5 line-height."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero and download introduction."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Semibold control and subnavigation labels."
+      },
+      "navigation": {
+        "displayName": "Navigation",
+        "purpose": "Shared primary navigation links."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "House Core action text; header/home retains its 14px baseline."
+      },
+      "field": {
+        "displayName": "Field",
+        "purpose": "Native form values."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Release notes and secondary UI copy."
+      }
+    },
+    "shadows": [
+      {
+        "name": "document-paper",
+        "value": "0 18px 36px #0b25451a",
+        "purpose": "Exported document image only on the House Core surface."
+      },
+      {
+        "name": "shared-legacy-image",
+        "value": "0 16px 40px rgba(11, 37, 69, 0.12)",
+        "purpose": "Existing shared image elevation; not the default for House Core panels."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "transform 140ms ease, background 140ms ease, border-color 140ms ease",
+        "purpose": "Shared button hover/press transition."
+      },
+      {
+        "name": "navigation-underline",
+        "value": "transform 160ms ease",
+        "purpose": "Shared navigation underline transform."
+      },
+      {
+        "name": "button-press",
+        "value": "translateY(1px)",
+        "purpose": "Pressed shared header/button feedback."
+      },
+      {
+        "name": "anchor-scroll",
+        "value": "scroll-behavior: smooth",
+        "purpose": "Anchor navigation; reduced-motion uses auto."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition: none !important; animation: none !important; scroll-behavior: auto",
+        "purpose": "Existing prefers-reduced-motion: reduce behavior."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-hero-min",
+        "value": "1600px"
+      },
+      {
+        "name": "shared-menu-max",
+        "value": "1060px"
+      },
+      {
+        "name": "house-core-compact-max",
+        "value": "1050px"
+      },
+      {
+        "name": "incumbent-industrial-layout-max",
+        "value": "900px"
+      },
+      {
+        "name": "house-core-stack-max",
+        "value": "760px"
+      },
+      {
+        "name": "shared-mobile-header-max",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "House Core download",
+      "kind": "button",
+      "refersTo": "button-download",
+      "description": "Observed House Core action, including hover, pressed and keyboard-focus states.",
+      "html": "<button type=\"button\" class=\"ds-button-download\">Scarica House Core gratis <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M12 3v12m-5-5 5 5 5-5M5 18v3h14v-3\"/></svg></button>",
+      "css": ".ds-button-download{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 22px;border:1px solid transparent;border-radius:4px;font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif);font-size:15px;font-weight:800;line-height:1.5;text-align:center;text-decoration:none;white-space:normal;cursor:pointer;transition:transform 140ms ease,background 140ms ease,border-color 140ms ease;background:var(--hc-yellow,#f4b500);color:var(--hc-ink,#0b2545);}.ds-button-download:hover{background:#dfaa10;}.ds-button-download:active{transform:translateY(1px)}.ds-button-download:focus-visible{outline:3px solid var(--hc-teal,#276466);outline-offset:5px;}.ds-button-download svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}@media(prefers-reduced-motion:reduce){.ds-button-download{transition:none}}"
+    },
+    {
+      "name": "Navy action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Observed House Core action, including hover, pressed and keyboard-focus states.",
+      "html": "<button type=\"button\" class=\"ds-button-primary\">Scarica i PDF d’esempio <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M12 3v12m-5-5 5 5 5-5M5 18v3h14v-3\"/></svg></button>",
+      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 22px;border:1px solid transparent;border-radius:4px;font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif);font-size:15px;font-weight:800;line-height:1.5;text-align:center;text-decoration:none;white-space:normal;cursor:pointer;transition:transform 140ms ease,background 140ms ease,border-color 140ms ease;background:var(--blue-800,#0b2545);color:var(--white,#ffffff);}.ds-button-primary:hover{background:var(--blue-900,#071a31);}.ds-button-primary:active{transform:translateY(1px)}.ds-button-primary:focus-visible{outline:3px solid var(--hc-teal,#276466);outline-offset:5px;}.ds-button-primary svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Observed House Core action, including hover, pressed and keyboard-focus states.",
+      "html": "<button type=\"button\" class=\"ds-button-secondary\">Copia richiesta</button>",
+      "css": ".ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 22px;border:1px solid transparent;border-radius:4px;font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif);font-size:15px;font-weight:800;line-height:1.5;text-align:center;text-decoration:none;white-space:normal;cursor:pointer;transition:transform 140ms ease,background 140ms ease,border-color 140ms ease;background:var(--white,#ffffff);color:var(--blue-800,#0b2545);border-color:var(--gray-300,#c8d1dc);}.ds-button-secondary:hover{border-color:var(--blue-800,#0b2545);background:var(--blue-050,#eef4fa);}.ds-button-secondary:active{transform:translateY(1px)}.ds-button-secondary:focus-visible{outline:3px solid var(--hc-teal,#276466);outline-offset:5px;}.ds-button-secondary svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}@media(prefers-reduced-motion:reduce){.ds-button-secondary{transition:none}}"
+    },
+    {
+      "name": "Request field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Native labelled input on the request surface.",
+      "html": "<label class=\"ds-field\">Il tuo nome<input name=\"nome\" autocomplete=\"name\" maxlength=\"100\" required></label>",
+      "css": ".ds-field{display:grid;gap:8px;font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif);font-size:14px;font-weight:600;line-height:1.5;color:var(--hc-ink,#0b2545)}.ds-field input{width:100%;min-height:48px;border:1px solid #a7b5be;border-radius:2px;padding:12px;background:#fff;color:var(--hc-ink,#0b2545);font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif);font-size:16px;line-height:1.5;caret-color:var(--hc-ink,#0b2545)}.ds-field input:focus-visible{outline:3px solid var(--hc-teal,#276466);outline-offset:5px;}"
+    },
+    {
+      "name": "Shared navigation links",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Current-page yellow underline and inherited shared link typography; the full mobile menu is documented in DESIGN.md.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navigazione principale\"><a href=\"#quadri\">Quadri elettrici</a><a href=\"#house-core\" aria-current=\"page\">House Core</a><a href=\"#contatti\">Contatti</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:center;gap:22px;padding:12px 0;font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif);line-height:1.5}.ds-nav a{position:relative;color:var(--gray-700,#53606f);font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none}.ds-nav a::after{content:\"\";position:absolute;left:0;right:0;bottom:-10px;height:2px;background:var(--yellow,#f4b500);transform:scaleX(0);transform-origin:left;transition:transform 160ms ease}.ds-nav a:hover,.ds-nav a[aria-current=\"page\"]{color:var(--blue-800,#0b2545)}.ds-nav a[aria-current=\"page\"]::after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:3px solid var(--hc-teal,#276466);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-nav a::after{transition:none}}"
+    },
+    {
+      "name": "Plan layer selector",
+      "kind": "custom",
+      "refersTo": "layer-selector",
+      "description": "The real native checkbox strip; the production page additionally binds these controls to the drawing and live visibility text.",
+      "html": "<fieldset class=\"ds-layers\"><legend>Esplora i layer della casa d’esempio</legend><label><input type=\"checkbox\" checked>Arredi</label><label><input type=\"checkbox\" checked>Luci</label><label><input type=\"checkbox\" checked>Percorsi</label></fieldset>",
+      "css": ".ds-layers{border:0;border-top:1px solid var(--hc-line,#d5dfe2);padding:16px 22px;margin:0;display:flex;gap:12px 22px;flex-wrap:wrap;background:var(--hc-paper,#f4f6f6);color:var(--anthracite,#20252b);font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif);line-height:1.5}.ds-layers legend{float:left;width:100%;padding:0 0 10px;font-size:13px;font-weight:600}.ds-layers label{display:flex;align-items:center;gap:8px;font-size:14px;min-height:28px;cursor:pointer}.ds-layers input{accent-color:var(--hc-ink,#0b2545);width:17px;height:17px;margin:0}.ds-layers input:focus-visible{outline:3px solid var(--hc-teal,#276466);outline-offset:5px;}"
+    },
+    {
+      "name": "Operating-system download row",
+      "kind": "card",
+      "refersTo": "download-row",
+      "description": "White download row with a yellow focus ring on the navy section.",
+      "html": "<div class=\"ds-download-band\"><a class=\"ds-download-row\" href=\"#download\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"13\" rx=\"1\"/><path d=\"M9 21h6m-3-5v5M3 12h18\"/></svg><div><strong>Scarica per Mac</strong><small>Anteprima gratuita · Archivio ZIP</small></div><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M12 3v12m-5-5 5 5 5-5M5 18v3h14v-3\"/></svg></a></div>",
+      "css": ".ds-download-band{padding:16px;background:var(--hc-ink,#0b2545)}.ds-download-row{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:18px;background:#fff;color:var(--hc-ink,#0b2545);padding:24px;text-decoration:none;font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif);line-height:1.5}.ds-download-row:hover{background:#f0f3f5}.ds-download-row:focus-visible{outline:3px solid var(--hc-yellow,#f4b500);outline-offset:5px}.ds-download-row svg{width:26px;height:26px;stroke:currentColor;stroke-width:1.5;fill:none}.ds-download-row strong{display:block;font-size:18px}.ds-download-row small{color:var(--hc-muted,#526170);display:block;margin-top:3px;font-size:13px;line-height:1.6}@media(max-width:760px){.ds-download-row{padding:22px;gap:12px}}"
+    },
+    {
+      "name": "Request surface",
+      "kind": "card",
+      "refersTo": "request-surface",
+      "description": "Square paper container, display heading and compact supporting note.",
+      "html": "<section class=\"ds-request\"><h3>Prepara la richiesta</h3><p>Prepara il testo della richiesta. Lo ZIP con i layer va allegato al messaggio dal tuo programma di posta.</p></section>",
+      "css": ".ds-request{background:var(--hc-paper,#f4f6f6);padding:32px;display:grid;gap:22px;font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif);color:var(--hc-ink,#0b2545)}.ds-request h3{margin:0;font-family:var(--font-display, Rockstar, Inter, \"Helvetica Neue\", Arial, sans-serif);font-size:27px;line-height:1.15;font-weight:800;letter-spacing:0}.ds-request p{margin:0;font-size:13px;line-height:1.65;color:var(--hc-muted,#526170)}@media(max-width:760px){.ds-request{padding:24px}}"
+    },
+    {
+      "name": "FAQ disclosure",
+      "kind": "custom",
+      "refersTo": "faq-summary",
+      "description": "Native disclosure with a ruled boundary and an explicit focus ring.",
+      "html": "<details class=\"ds-faq\"><summary>Posso chiedere solo l’hardware?</summary><p>Sì. Puoi richiedere la sola fornitura e far seguire l’installazione ai professionisti del tuo cantiere.</p></details>",
+      "css": ".ds-faq{border-bottom:1px solid var(--hc-line,#d5dfe2);padding:0 0 22px;margin-bottom:22px;font-family:var(--font-sans, Inter, \"Helvetica Neue\", Arial, sans-serif)}.ds-faq summary{cursor:pointer;font-size:18px;font-weight:600;line-height:1.5;padding-right:20px;color:var(--hc-ink,#0b2545)}.ds-faq summary:focus-visible{outline:3px solid var(--hc-teal,#276466);outline-offset:5px;}.ds-faq p{color:var(--hc-muted,#526170);margin:16px 0 0;font-size:15px;line-height:1.65;max-width:65ch}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Tavolo luminoso dei livelli",
+    "overview": "Lostar’s existing logo, navy and yellow palette, and Rockstar display face remain the identity anchors. The implemented House Core surface places crisp technical drawings and real exported documents on white and pale paper, with generous space and short, direct Italian copy. Its strong display titles, fine rules and functional controls keep the presentation concrete.\n\nThis extraction covers the replacement House Core page, the House Core entry on the root home page, and the shared navigation, buttons and footer they use. “Tavolo luminoso dei livelli” names the House Core composition; it is not a replacement identity for Lostar’s industrial services. Those pages retain their earlier visual system. Page strategy and the surface direction remain in `docs/house-core-direction.md`; product commitments remain in `PRODUCT.md`.",
+    "keyCharacteristics": [
+      "Existing Lostar logo, navy/yellow identity and Rockstar titles.",
+      "White and pale paper surfaces, square technical panels and thin dividers.",
+      "A legible plan and exported PDF provide the main visual evidence.",
+      "Visible controls, text states and keyboard focus explain interaction."
+    ],
+    "rules": [
+      {
+        "name": "The Identity Continuity Rule",
+        "body": "Keep the existing logo assets, navy/yellow identity and Rockstar display family across the new surface and its home-page entry.",
+        "section": "colors"
+      },
+      {
+        "name": "The Surface Scope Rule",
+        "body": "Use the light-table composition for House Core; do not apply its page structure to the industrial service pages by default.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Focus Contrast Rule",
+        "body": "Use teal focus outlines on light surfaces and yellow outlines inside the navy journey, download section and shared footer.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do preserve the existing Lostar logo and the Rockstar / sans-serif hierarchy.",
+      "Do show project geometry and exported documents with a visible description of their demonstrative status.",
+      "Do use the current container widths and stacked mobile reading order before adding new layout rules.",
+      "Do preserve native controls, visible focus, text status and reduced-motion behavior.",
+      "Do keep House Core composition rules scoped to House Core and its home entry."
+    ],
+    "donts": [
+      "Don’t treat the House Core light-table composition as a new identity for the industrial services.",
+      "Don’t replace the plan or real exported document with generic decorative feature cards.",
+      "Don’t remove layer labels, the live visibility status or the static plan fallback.",
+      "Don’t use color alone to communicate a selected layer or an interaction state.",
+      "Don’t describe illustrative imagery as a photograph of a completed Lostar installation."
+    ]
+  }
+}

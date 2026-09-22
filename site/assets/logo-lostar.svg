@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" role="img" aria-label="Lostar">
   <title>Lostar</title>
-  
+
   <g transform="translate(4 12)">
     <rect x="0" y="0" width="6" height="32" fill="#0B2545"></rect>
     <rect x="10" y="0" width="6" height="32" fill="#0B2545"></rect>
     <rect x="20" y="0" width="6" height="32" fill="#F4B500"></rect>
   </g>
-  
+
   <text x="38" y="36" font-family="&#39;Inter&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-weight="800" font-size="28" fill="#0B2545" letter-spacing="1">LOSTAR</text>
 </svg>

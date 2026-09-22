@@ -12,3 +12,5 @@ Esaminate le sei pagine visibili di lostar-electric.vercel.app (Home, Quadri, Au
 ## Collegamento Git / Vercel
 
 Il primo tentativo di preview è stato bloccato da Vercel con TEAM_ACCESS_REQUIRED: l’ultimo commit del repository aveva autore `Ale Lost <alelost@MacBook-Pro-di-Ale.local>`, senza identità GitHub verificata. Nessuna identità Git era configurata localmente. Il nuovo lavoro va attribuito all’account GitHub autenticato TheLostTech, con email noreply del suo ID verificato via API GitHub (200366680), senza riscrivere il commit storico né cambiare impostazioni globali.
+
+Il commit nuovo è correttamente riconosciuto da GitHub come autore TheLostTech (3c62f5a), ma Vercel continua a restituire BLOCKED / TEAM_ACCESS_REQUIRED. La preview cloud non è utilizzabile: occorre risolvere l’accesso dell’account GitHub nel team Vercel. Nessun bypass dei controlli sul team è stato tentato. Anteprima locale disponibile su http://127.0.0.1:4178/house-core.html.

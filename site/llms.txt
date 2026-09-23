@@ -14,6 +14,7 @@ Sito ufficiale in italiano: https://lostartechnology.com/. Le forniture hardware
 - [House Core e House Studio](https://lostartechnology.com/house-core): sistema locale, progetto 2D/3D, esportazione dei layer PDF e download delle anteprime.
 
 ## Articoli
+- [Casa domotica: progetto, funzionamento e costi](https://lostartechnology.com/articoli/casa-domotica): guida a House Core, progettazione virtuale gratuita, assistente locale, impianti, compatibilità e PDF per il preventivo. Distingue funzioni attuali e previste.
 - [Tutte le guide](https://lostartechnology.com/articoli): indice dei contenuti tecnici e dei progetti dimostrativi.
 - [Strisce LED Torino](https://lostartechnology.com/articoli/strisce-led-soffitto-torino): soffitti, scene luminose, percorsi e materiali.
 - [Quadri elettrici](https://lostartechnology.com/articoli/quadri-elettrici): carichi, protezioni, contattori e collegamento al progetto House Core.

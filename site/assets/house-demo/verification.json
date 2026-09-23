@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-09-23",
+  "source": "generate-house-demo.mts",
+  "pdfCount": 4,
+  "pdfPages": 23,
+  "zipMatchesIndividualPdfBytes": true,
+  "allPdfHeadersChecked": true,
+  "pdfTotalsVerifiedByTextExtraction": {
+    "objects": 31,
+    "areaM2": 48,
+    "ledMetres": 9,
+    "routeMetres": 10.68,
+    "verticalMetres": 1.3
+  },
+  "svgObjectIdsUnique": 31,
+  "svgObjectsMatchSnapshot": true,
+  "svgGroupsMatchCatalogLayers": true,
+  "sharedSymbolGeometry": "Serialized directly from planSymbolLayers, no copied custom symbols",
+  "visualQA": "All 23 PDF pages reviewed via contact sheet; final SVG and general PDF page inspected at large resolution",
+  "privateHouseDataUsed": false
+}

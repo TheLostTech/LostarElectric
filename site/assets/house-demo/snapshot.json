@@ -1,0 +1,1345 @@
+{
+  "house": {
+    "house": "Casa esempio · progetto dimostrativo",
+    "timezone": "Europe/Rome",
+    "heightM": 2.7,
+    "powerW": 0,
+    "rooms": [
+      {
+        "slug": "soggiorno",
+        "name": "Soggiorno e cucina",
+        "kind": "living",
+        "aliases": [],
+        "powerW": 0,
+        "deviceCount": 0,
+        "layout": {
+          "x": 0,
+          "y": 0,
+          "w": 5,
+          "h": 6,
+          "edges": [
+            "muro",
+            "muro",
+            "muro",
+            "muro"
+          ]
+        }
+      },
+      {
+        "slug": "camera",
+        "name": "Camera",
+        "kind": "bedroom",
+        "aliases": [],
+        "powerW": 0,
+        "deviceCount": 0,
+        "layout": {
+          "x": 5,
+          "y": 0,
+          "w": 3,
+          "h": 3.6,
+          "edges": [
+            "muro",
+            "muro",
+            "muro",
+            "muro"
+          ]
+        }
+      },
+      {
+        "slug": "bagno",
+        "name": "Bagno",
+        "kind": "bathroom",
+        "aliases": [],
+        "powerW": 0,
+        "deviceCount": 0,
+        "layout": {
+          "x": 5,
+          "y": 3.6,
+          "w": 3,
+          "h": 2.4,
+          "edges": [
+            "muro",
+            "muro",
+            "muro",
+            "muro"
+          ]
+        }
+      }
+    ]
+  },
+  "objects": [
+    {
+      "id": "demo-object-01",
+      "typeId": "portoncino",
+      "x": 3.85,
+      "y": 5.91,
+      "w": 0.9,
+      "h": 0.18,
+      "rotation": 0,
+      "layer": "aperture",
+      "label": "Ingresso"
+    },
+    {
+      "id": "demo-object-02",
+      "typeId": "porta",
+      "x": 4.6,
+      "y": 2.91,
+      "w": 0.8,
+      "h": 0.18,
+      "rotation": 90,
+      "layer": "aperture",
+      "label": "Porta camera"
+    },
+    {
+      "id": "demo-object-03",
+      "typeId": "porta",
+      "x": 4.6,
+      "y": 4.61,
+      "w": 0.8,
+      "h": 0.18,
+      "rotation": 90,
+      "layer": "aperture",
+      "label": "Porta bagno"
+    },
+    {
+      "id": "demo-object-04",
+      "typeId": "finestra",
+      "x": 0.65,
+      "y": -0.09,
+      "w": 1.6,
+      "h": 0.18,
+      "rotation": 0,
+      "layer": "aperture",
+      "label": "Finestra soggiorno"
+    },
+    {
+      "id": "demo-object-05",
+      "typeId": "finestra",
+      "x": 6.05,
+      "y": -0.09,
+      "w": 1.2,
+      "h": 0.18,
+      "rotation": 0,
+      "layer": "aperture",
+      "label": "Finestra camera"
+    },
+    {
+      "id": "demo-object-06",
+      "typeId": "finestra",
+      "x": 7.64,
+      "y": 4.02,
+      "w": 0.72,
+      "h": 0.18,
+      "rotation": 90,
+      "layer": "aperture",
+      "label": "Finestra bagno"
+    },
+    {
+      "id": "demo-object-07",
+      "typeId": "lavello",
+      "x": 0.3,
+      "y": 0.25,
+      "w": 0.9,
+      "h": 0.6,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-08",
+      "typeId": "modulo_60",
+      "x": 1.2,
+      "y": 0.25,
+      "w": 0.6,
+      "h": 0.6,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-09",
+      "typeId": "piano_cottura",
+      "x": 1.8,
+      "y": 0.25,
+      "w": 0.9,
+      "h": 0.6,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-10",
+      "typeId": "modulo_60",
+      "x": 2.7,
+      "y": 0.25,
+      "w": 0.6,
+      "h": 0.6,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-11",
+      "typeId": "frigorifero",
+      "x": 3.3,
+      "y": 0.25,
+      "w": 0.65,
+      "h": 0.65,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-12",
+      "typeId": "tavolo",
+      "x": 2.8,
+      "y": 1.5,
+      "w": 1.4,
+      "h": 0.8,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-13",
+      "typeId": "sedia",
+      "x": 3.03,
+      "y": 0.98,
+      "w": 0.4,
+      "h": 0.4,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-14",
+      "typeId": "sedia",
+      "x": 3.58,
+      "y": 0.98,
+      "w": 0.4,
+      "h": 0.4,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-15",
+      "typeId": "sedia",
+      "x": 3.03,
+      "y": 2.42,
+      "w": 0.4,
+      "h": 0.4,
+      "rotation": 180,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-16",
+      "typeId": "sedia",
+      "x": 3.58,
+      "y": 2.42,
+      "w": 0.4,
+      "h": 0.4,
+      "rotation": 180,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-17",
+      "typeId": "divano",
+      "x": 0.4,
+      "y": 3.35,
+      "w": 2.4,
+      "h": 0.95,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-18",
+      "typeId": "tavolino",
+      "x": 1.05,
+      "y": 4.65,
+      "w": 1.1,
+      "h": 0.6,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-19",
+      "typeId": "tv",
+      "x": 0.95,
+      "y": 5.72,
+      "w": 1.4,
+      "h": 0.1,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-20",
+      "typeId": "letto_matrimoniale",
+      "x": 5.65,
+      "y": 0.22,
+      "w": 1.7,
+      "h": 2,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-21",
+      "typeId": "comodino",
+      "x": 5.2,
+      "y": 0.38,
+      "w": 0.35,
+      "h": 0.35,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-22",
+      "typeId": "comodino",
+      "x": 7.45,
+      "y": 0.38,
+      "w": 0.35,
+      "h": 0.35,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-23",
+      "typeId": "armadio",
+      "x": 6.05,
+      "y": 2.86,
+      "w": 1.65,
+      "h": 0.55,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-24",
+      "typeId": "lavabo",
+      "x": 5.38,
+      "y": 3.84,
+      "w": 0.8,
+      "h": 0.45,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-25",
+      "typeId": "wc",
+      "x": 7.2,
+      "y": 3.85,
+      "w": 0.4,
+      "h": 0.6,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-26",
+      "typeId": "doccia",
+      "x": 6.72,
+      "y": 4.78,
+      "w": 1.05,
+      "h": 1.05,
+      "rotation": 0,
+      "layer": "arredi"
+    },
+    {
+      "id": "demo-object-27",
+      "typeId": "quadro",
+      "x": 4.2,
+      "y": 5.56,
+      "w": 0.55,
+      "h": 0.16,
+      "rotation": 0,
+      "layer": "elettrico",
+      "label": "Quadro Q1"
+    },
+    {
+      "id": "demo-object-28",
+      "typeId": "striscia_led_120",
+      "x": 0.4,
+      "y": 3.03,
+      "w": 4,
+      "h": 0.06,
+      "rotation": 0,
+      "layer": "luci",
+      "label": "LED soggiorno - 4 m"
+    },
+    {
+      "id": "demo-object-29",
+      "typeId": "striscia_led_90",
+      "x": 0.38,
+      "y": 1.08,
+      "w": 3,
+      "h": 0.06,
+      "rotation": 0,
+      "layer": "luci",
+      "label": "LED cucina - 3 m"
+    },
+    {
+      "id": "demo-object-30",
+      "typeId": "striscia_led_60",
+      "x": 5.5,
+      "y": 2.53,
+      "w": 2,
+      "h": 0.06,
+      "rotation": 0,
+      "layer": "luci",
+      "label": "LED camera - 2 m"
+    },
+    {
+      "id": "demo-object-31",
+      "typeId": "plafoniera",
+      "x": 5.99,
+      "y": 4.66,
+      "w": 0.3,
+      "h": 0.3,
+      "rotation": 0,
+      "layer": "luci",
+      "label": "Luce bagno"
+    }
+  ],
+  "catalog": [
+    {
+      "id": "modulo_60",
+      "label": "Modulo 60",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 0.6,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.9
+    },
+    {
+      "id": "modulo_45",
+      "label": "Modulo 45",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 0.45,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.9
+    },
+    {
+      "id": "modulo_90",
+      "label": "Modulo 90",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 0.9,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.9
+    },
+    {
+      "id": "isola",
+      "label": "Isola",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 3,
+      "defaultH": 1.2,
+      "defaultHeightM": 0.9
+    },
+    {
+      "id": "lavello",
+      "label": "Lavello",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 0.9,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.9
+    },
+    {
+      "id": "piano_cottura",
+      "label": "Piano cottura",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 0.9,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.05,
+      "defaultOffsetM": 0.85,
+      "suggestsDeviceType": "appliance"
+    },
+    {
+      "id": "forno",
+      "label": "Forno",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 0.6,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.6,
+      "suggestsDeviceType": "appliance"
+    },
+    {
+      "id": "frigorifero",
+      "label": "Frigorifero",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 0.9,
+      "defaultH": 0.7,
+      "defaultHeightM": 1.8,
+      "suggestsDeviceType": "appliance"
+    },
+    {
+      "id": "lavastoviglie",
+      "label": "Lavastoviglie",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 0.6,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.82,
+      "suggestsDeviceType": "appliance"
+    },
+    {
+      "id": "cambusa",
+      "label": "Cambusa",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 1.5,
+      "defaultH": 0.6,
+      "defaultHeightM": 2.1
+    },
+    {
+      "id": "colonna",
+      "label": "Colonna",
+      "category": "cucina",
+      "layer": "arredi",
+      "defaultW": 0.6,
+      "defaultH": 0.6,
+      "defaultHeightM": 2.1
+    },
+    {
+      "id": "wc",
+      "label": "WC",
+      "category": "bagno",
+      "layer": "arredi",
+      "defaultW": 0.36,
+      "defaultH": 0.54,
+      "defaultHeightM": 0.4
+    },
+    {
+      "id": "bidet",
+      "label": "Bidet",
+      "category": "bagno",
+      "layer": "arredi",
+      "defaultW": 0.36,
+      "defaultH": 0.54,
+      "defaultHeightM": 0.4
+    },
+    {
+      "id": "lavabo",
+      "label": "Lavabo",
+      "category": "bagno",
+      "layer": "arredi",
+      "defaultW": 0.6,
+      "defaultH": 0.45,
+      "defaultHeightM": 0.85
+    },
+    {
+      "id": "doccia",
+      "label": "Doccia",
+      "category": "bagno",
+      "layer": "arredi",
+      "defaultW": 1.2,
+      "defaultH": 0.8,
+      "defaultHeightM": 2
+    },
+    {
+      "id": "vasca",
+      "label": "Vasca",
+      "category": "bagno",
+      "layer": "arredi",
+      "defaultW": 1.7,
+      "defaultH": 0.7,
+      "defaultHeightM": 0.55
+    },
+    {
+      "id": "lavatrice",
+      "label": "Lavatrice",
+      "category": "bagno",
+      "layer": "arredi",
+      "defaultW": 0.6,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.85,
+      "suggestsDeviceType": "appliance"
+    },
+    {
+      "id": "asciugatrice",
+      "label": "Asciugatrice",
+      "category": "bagno",
+      "layer": "arredi",
+      "defaultW": 0.6,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.85,
+      "suggestsDeviceType": "appliance"
+    },
+    {
+      "id": "boiler",
+      "label": "Boiler",
+      "category": "bagno",
+      "layer": "clima",
+      "defaultW": 0.45,
+      "defaultH": 0.45,
+      "defaultHeightM": 0.6,
+      "defaultOffsetM": 1.4,
+      "suggestsDeviceType": "water_heater"
+    },
+    {
+      "id": "letto_matrimoniale",
+      "label": "Letto matrimoniale",
+      "category": "camera",
+      "layer": "arredi",
+      "defaultW": 1.8,
+      "defaultH": 2,
+      "defaultHeightM": 0.55
+    },
+    {
+      "id": "letto_singolo",
+      "label": "Letto singolo",
+      "category": "camera",
+      "layer": "arredi",
+      "defaultW": 0.9,
+      "defaultH": 2,
+      "defaultHeightM": 0.5
+    },
+    {
+      "id": "comodino",
+      "label": "Comodino",
+      "category": "camera",
+      "layer": "arredi",
+      "defaultW": 0.45,
+      "defaultH": 0.4,
+      "defaultHeightM": 0.5
+    },
+    {
+      "id": "armadio",
+      "label": "Armadio",
+      "category": "camera",
+      "layer": "arredi",
+      "defaultW": 2.4,
+      "defaultH": 0.6,
+      "defaultHeightM": 2.1
+    },
+    {
+      "id": "cassettiera",
+      "label": "Cassettiera",
+      "category": "camera",
+      "layer": "arredi",
+      "defaultW": 1,
+      "defaultH": 0.5,
+      "defaultHeightM": 0.8
+    },
+    {
+      "id": "divano",
+      "label": "Divano",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 2.4,
+      "defaultH": 0.95,
+      "defaultHeightM": 0.85
+    },
+    {
+      "id": "poltrona",
+      "label": "Poltrona",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 0.9,
+      "defaultH": 0.9,
+      "defaultHeightM": 0.9
+    },
+    {
+      "id": "tavolo",
+      "label": "Tavolo",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 1.8,
+      "defaultH": 0.9,
+      "defaultHeightM": 0.75
+    },
+    {
+      "id": "tavolo_grande",
+      "label": "Tavolo grande",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 2.4,
+      "defaultH": 1,
+      "defaultHeightM": 0.75
+    },
+    {
+      "id": "tavolo_rotondo",
+      "label": "Tavolo rotondo",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 1.2,
+      "defaultH": 1.2,
+      "defaultHeightM": 0.75
+    },
+    {
+      "id": "tavolino",
+      "label": "Tavolino",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 1.1,
+      "defaultH": 0.6,
+      "defaultHeightM": 0.4
+    },
+    {
+      "id": "sedia",
+      "label": "Sedia",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 0.45,
+      "defaultH": 0.45,
+      "defaultHeightM": 0.9
+    },
+    {
+      "id": "libreria",
+      "label": "Libreria",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 3,
+      "defaultH": 0.35,
+      "defaultHeightM": 2
+    },
+    {
+      "id": "tv",
+      "label": "TV",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 1.2,
+      "defaultH": 0.1,
+      "defaultHeightM": 0.7,
+      "defaultOffsetM": 0.9
+    },
+    {
+      "id": "subwoofer",
+      "label": "Subwoofer",
+      "category": "soggiorno",
+      "layer": "arredi",
+      "defaultW": 0.4,
+      "defaultH": 0.4,
+      "defaultHeightM": 0.4,
+      "suggestsDeviceType": "speaker"
+    },
+    {
+      "id": "plafoniera",
+      "label": "Plafoniera",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 0.45,
+      "defaultH": 0.45,
+      "defaultHeightM": 0.1,
+      "anchor": "soffitto",
+      "illumina": true,
+      "suggestsDeviceType": "light"
+    },
+    {
+      "id": "applique",
+      "label": "Applique",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 0.3,
+      "defaultH": 0.12,
+      "defaultHeightM": 0.2,
+      "defaultOffsetM": 1.9,
+      "illumina": true,
+      "suggestsDeviceType": "light"
+    },
+    {
+      "id": "lampadina",
+      "label": "Lampadina",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 0.12,
+      "defaultH": 0.12,
+      "defaultHeightM": 0.12,
+      "anchor": "soffitto",
+      "illumina": true,
+      "suggestsDeviceType": "light"
+    },
+    {
+      "id": "striscia_led_30",
+      "label": "Striscia 30 LED",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 1,
+      "defaultH": 0.06,
+      "defaultHeightM": 0.02,
+      "defaultOffsetM": 0.05,
+      "anchor": "soffitto",
+      "illumina": true,
+      "ledPerMetro": 30,
+      "suggestsDeviceType": "led_strip"
+    },
+    {
+      "id": "striscia_led_60",
+      "label": "Striscia 60 LED",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 2,
+      "defaultH": 0.06,
+      "defaultHeightM": 0.02,
+      "defaultOffsetM": 0.05,
+      "anchor": "soffitto",
+      "illumina": true,
+      "ledPerMetro": 30,
+      "suggestsDeviceType": "led_strip"
+    },
+    {
+      "id": "striscia_led_90",
+      "label": "Striscia 90 LED",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 3,
+      "defaultH": 0.06,
+      "defaultHeightM": 0.02,
+      "defaultOffsetM": 0.05,
+      "anchor": "soffitto",
+      "illumina": true,
+      "ledPerMetro": 30,
+      "suggestsDeviceType": "led_strip"
+    },
+    {
+      "id": "striscia_led_120",
+      "label": "Striscia 120 LED",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 4,
+      "defaultH": 0.06,
+      "defaultHeightM": 0.02,
+      "defaultOffsetM": 0.05,
+      "anchor": "soffitto",
+      "illumina": true,
+      "ledPerMetro": 30,
+      "suggestsDeviceType": "led_strip"
+    },
+    {
+      "id": "battiscopa_illuminato",
+      "label": "Battiscopa illuminato",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 2,
+      "defaultH": 0.02,
+      "defaultHeightM": 0.08,
+      "anchor": "pavimento",
+      "illumina": true,
+      "ledPerMetro": 14,
+      "suggestsDeviceType": "led_strip",
+      "corsa": true,
+      "quotaDiSerieM": 0.08
+    },
+    {
+      "id": "profilo_spigolo",
+      "label": "Profilo su spigolo",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 2,
+      "defaultH": 0.02,
+      "defaultHeightM": 0.02,
+      "anchor": "soffitto",
+      "illumina": true,
+      "ledPerMetro": 14,
+      "suggestsDeviceType": "led_strip",
+      "corsa": true,
+      "quotaDiSerieM": 2.6
+    },
+    {
+      "id": "lampada_design",
+      "label": "Lampada di design",
+      "category": "illuminazione",
+      "layer": "luci",
+      "defaultW": 0.45,
+      "defaultH": 0.45,
+      "defaultHeightM": 1.6,
+      "illumina": true,
+      "linea": "forza",
+      "suggestsDeviceType": "light"
+    },
+    {
+      "id": "pianta_vaso",
+      "label": "Pianta in vaso",
+      "category": "verde",
+      "layer": "verde",
+      "defaultW": 0.4,
+      "defaultH": 0.4,
+      "defaultHeightM": 0.5
+    },
+    {
+      "id": "pianta_media",
+      "label": "Pianta media",
+      "category": "verde",
+      "layer": "verde",
+      "defaultW": 0.7,
+      "defaultH": 0.7,
+      "defaultHeightM": 1
+    },
+    {
+      "id": "pianta_alta",
+      "label": "Pianta alta",
+      "category": "verde",
+      "layer": "verde",
+      "defaultW": 1.1,
+      "defaultH": 1.1,
+      "defaultHeightM": 1.8
+    },
+    {
+      "id": "pianta_pensile",
+      "label": "Pianta pensile",
+      "category": "verde",
+      "layer": "verde",
+      "defaultW": 0.5,
+      "defaultH": 0.5,
+      "defaultHeightM": 0.6,
+      "defaultOffsetM": 0.4,
+      "anchor": "soffitto"
+    },
+    {
+      "id": "fioriera",
+      "label": "Fioriera",
+      "category": "verde",
+      "layer": "verde",
+      "defaultW": 1.2,
+      "defaultH": 0.35,
+      "defaultHeightM": 0.6
+    },
+    {
+      "id": "tapparella",
+      "label": "Tapparella",
+      "category": "impianto",
+      "layer": "elettrico",
+      "defaultW": 1.2,
+      "defaultH": 0.12,
+      "defaultHeightM": 0.25,
+      "defaultOffsetM": 2.15,
+      "anchor": "pavimento",
+      "nelMuro": true,
+      "suggestsDeviceType": "shutter"
+    },
+    {
+      "id": "presa",
+      "label": "Presa",
+      "category": "impianto",
+      "layer": "elettrico",
+      "defaultW": 0.15,
+      "defaultH": 0.1,
+      "defaultHeightM": 0.08,
+      "defaultOffsetM": 0.3
+    },
+    {
+      "id": "diffusore_aria",
+      "label": "Diffusore aria",
+      "category": "impianto",
+      "layer": "clima",
+      "defaultW": 1,
+      "defaultH": 0.12,
+      "defaultHeightM": 0.05,
+      "anchor": "soffitto",
+      "suggestsDeviceType": "hvac_damper"
+    },
+    {
+      "id": "estrattore",
+      "label": "Estrattore",
+      "category": "impianto",
+      "layer": "clima",
+      "defaultW": 0.25,
+      "defaultH": 0.25,
+      "defaultHeightM": 0.15,
+      "anchor": "soffitto",
+      "suggestsDeviceType": "ventilation_unit"
+    },
+    {
+      "id": "termostato",
+      "label": "Termostato",
+      "category": "impianto",
+      "layer": "clima",
+      "defaultW": 0.12,
+      "defaultH": 0.08,
+      "defaultHeightM": 0.08,
+      "defaultOffsetM": 1.4,
+      "suggestsDeviceType": "thermostat"
+    },
+    {
+      "id": "diffusore_audio",
+      "label": "Diffusore audio",
+      "category": "impianto",
+      "layer": "tecnico",
+      "defaultW": 0.25,
+      "defaultH": 0.2,
+      "defaultHeightM": 0.2,
+      "defaultOffsetM": 0.25,
+      "anchor": "soffitto",
+      "suggestsDeviceType": "speaker"
+    },
+    {
+      "id": "porta",
+      "label": "Porta",
+      "category": "aperture",
+      "layer": "aperture",
+      "defaultW": 0.8,
+      "defaultH": 0.1,
+      "defaultHeightM": 2.1,
+      "nelMuro": true
+    },
+    {
+      "id": "porta_doppia",
+      "label": "Porta a due ante",
+      "category": "aperture",
+      "layer": "aperture",
+      "defaultW": 1.4,
+      "defaultH": 0.1,
+      "defaultHeightM": 2.1,
+      "nelMuro": true
+    },
+    {
+      "id": "porta_scorrevole",
+      "label": "Porta scorrevole",
+      "category": "aperture",
+      "layer": "aperture",
+      "defaultW": 0.9,
+      "defaultH": 0.1,
+      "defaultHeightM": 2.1,
+      "nelMuro": true
+    },
+    {
+      "id": "portoncino",
+      "label": "Portoncino d ingresso",
+      "category": "aperture",
+      "layer": "aperture",
+      "defaultW": 0.9,
+      "defaultH": 0.12,
+      "defaultHeightM": 2.1,
+      "nelMuro": true
+    },
+    {
+      "id": "finestra",
+      "label": "Finestra",
+      "category": "aperture",
+      "layer": "aperture",
+      "defaultW": 1.2,
+      "defaultH": 0.12,
+      "defaultHeightM": 1.4,
+      "defaultOffsetM": 0.9,
+      "nelMuro": true
+    },
+    {
+      "id": "portafinestra",
+      "label": "Portafinestra",
+      "category": "aperture",
+      "layer": "aperture",
+      "defaultW": 1.4,
+      "defaultH": 0.12,
+      "defaultHeightM": 2.4,
+      "nelMuro": true
+    },
+    {
+      "id": "quadro",
+      "label": "Quadro elettrico",
+      "category": "tecnico",
+      "layer": "elettrico",
+      "defaultW": 0.6,
+      "defaultH": 0.15,
+      "defaultHeightM": 0.6,
+      "defaultOffsetM": 1.4
+    },
+    {
+      "id": "rack",
+      "label": "Rack",
+      "category": "tecnico",
+      "layer": "tecnico",
+      "defaultW": 0.6,
+      "defaultH": 0.6,
+      "defaultHeightM": 1.2
+    },
+    {
+      "id": "unita_hvac",
+      "label": "Unita canalizzata",
+      "category": "tecnico",
+      "layer": "clima",
+      "defaultW": 1.2,
+      "defaultH": 0.7,
+      "defaultHeightM": 0.3,
+      "anchor": "soffitto",
+      "suggestsDeviceType": "hvac_unit"
+    },
+    {
+      "id": "interruttore",
+      "label": "Interruttore",
+      "category": "impianto",
+      "layer": "elettrico",
+      "defaultW": 0.1,
+      "defaultH": 0.05,
+      "defaultHeightM": 0.08,
+      "defaultOffsetM": 1.1
+    },
+    {
+      "id": "scatola_derivazione",
+      "label": "Scatola di derivazione",
+      "category": "impianto",
+      "layer": "elettrico",
+      "defaultW": 0.15,
+      "defaultH": 0.07,
+      "defaultHeightM": 0.1,
+      "defaultOffsetM": 2.3
+    },
+    {
+      "id": "collettore",
+      "label": "Collettore",
+      "category": "impianto",
+      "layer": "acqua",
+      "defaultW": 0.5,
+      "defaultH": 0.12,
+      "defaultHeightM": 0.4,
+      "defaultOffsetM": 0.3,
+      "vie": {
+        "min": 2,
+        "max": 12,
+        "diSerie": 4
+      }
+    },
+    {
+      "id": "colonna_scarico",
+      "label": "Colonna di scarico",
+      "category": "impianto",
+      "layer": "scarichi",
+      "defaultW": 0.125,
+      "defaultH": 0.125,
+      "defaultHeightM": 2.5
+    },
+    {
+      "id": "plenum_mandata",
+      "label": "Plenum di mandata",
+      "category": "impianto",
+      "layer": "clima",
+      "defaultW": 0.8,
+      "defaultH": 0.35,
+      "defaultHeightM": 0.25,
+      "anchor": "soffitto",
+      "vie": {
+        "min": 2,
+        "max": 8,
+        "diSerie": 5
+      },
+      "serrandeSulleVie": true
+    },
+    {
+      "id": "plenum_ripresa",
+      "label": "Plenum di ripresa",
+      "category": "impianto",
+      "layer": "clima",
+      "defaultW": 0.6,
+      "defaultH": 0.35,
+      "defaultHeightM": 0.25,
+      "anchor": "soffitto",
+      "vie": {
+        "min": 1,
+        "max": 8,
+        "diSerie": 2
+      },
+      "serrandeSulleVie": true
+    },
+    {
+      "id": "griglia_ripresa",
+      "label": "Griglia di ripresa",
+      "category": "impianto",
+      "layer": "clima",
+      "defaultW": 0.6,
+      "defaultH": 0.2,
+      "defaultHeightM": 0.03,
+      "anchor": "soffitto"
+    },
+    {
+      "id": "serranda",
+      "label": "Serranda",
+      "category": "impianto",
+      "layer": "clima",
+      "defaultW": 0.25,
+      "defaultH": 0.2,
+      "defaultHeightM": 0.2,
+      "defaultOffsetM": 0.05,
+      "anchor": "soffitto",
+      "suggestsDeviceType": "hvac_damper"
+    }
+  ],
+  "layers": [
+    {
+      "id": "ambienti",
+      "label": "Ambienti"
+    },
+    {
+      "id": "aperture",
+      "label": "Porte e finestre"
+    },
+    {
+      "id": "arredi",
+      "label": "Arredi"
+    },
+    {
+      "id": "luci",
+      "label": "Luci"
+    },
+    {
+      "id": "elettrico",
+      "label": "Elettrico"
+    },
+    {
+      "id": "linee-luce",
+      "label": "Linee luce"
+    },
+    {
+      "id": "linee-forza",
+      "label": "Linee forza"
+    },
+    {
+      "id": "acqua",
+      "label": "Acqua"
+    },
+    {
+      "id": "scarichi",
+      "label": "Scarichi"
+    },
+    {
+      "id": "clima",
+      "label": "Clima e aria"
+    },
+    {
+      "id": "verde",
+      "label": "Piante"
+    },
+    {
+      "id": "tecnico",
+      "label": "Tecnico"
+    }
+  ],
+  "tracciati": [
+    {
+      "id": "demo-route-1",
+      "typeId": "linea_luce",
+      "label": "Q1 - luci soggiorno",
+      "layer": "linee-luce",
+      "sezione": {
+        "forma": "tonda",
+        "diametroMm": 20
+      },
+      "punti": [
+        {
+          "x": 4.47,
+          "y": 5.64,
+          "quotaM": 1.4
+        },
+        {
+          "x": 4.47,
+          "y": 5.64,
+          "quotaM": 2.6
+        },
+        {
+          "x": 4.47,
+          "y": 3.06,
+          "quotaM": 2.6
+        },
+        {
+          "x": 4.4,
+          "y": 3.06,
+          "quotaM": 2.6
+        }
+      ],
+      "pose": [
+        "parete",
+        "controsoffitto",
+        "controsoffitto"
+      ]
+    },
+    {
+      "id": "demo-route-2",
+      "typeId": "linea_luce",
+      "label": "Derivazione cucina",
+      "layer": "linee-luce",
+      "sezione": {
+        "forma": "tonda",
+        "diametroMm": 20
+      },
+      "punti": [
+        {
+          "x": 4.47,
+          "y": 3.06,
+          "quotaM": 2.6
+        },
+        {
+          "x": 4.47,
+          "y": 1.11,
+          "quotaM": 2.6
+        },
+        {
+          "x": 3.38,
+          "y": 1.11,
+          "quotaM": 2.6
+        }
+      ],
+      "pose": [
+        "controsoffitto",
+        "controsoffitto"
+      ]
+    },
+    {
+      "id": "demo-route-3",
+      "typeId": "linea_luce",
+      "label": "Derivazione camera",
+      "layer": "linee-luce",
+      "sezione": {
+        "forma": "tonda",
+        "diametroMm": 20
+      },
+      "punti": [
+        {
+          "x": 4.47,
+          "y": 3.06,
+          "quotaM": 2.6
+        },
+        {
+          "x": 5.25,
+          "y": 3.06,
+          "quotaM": 2.6
+        },
+        {
+          "x": 5.25,
+          "y": 2.56,
+          "quotaM": 2.6
+        },
+        {
+          "x": 5.5,
+          "y": 2.56,
+          "quotaM": 2.6
+        }
+      ],
+      "pose": [
+        "controsoffitto",
+        "controsoffitto",
+        "controsoffitto"
+      ]
+    },
+    {
+      "id": "demo-route-4",
+      "typeId": "linea_luce",
+      "label": "Derivazione bagno",
+      "layer": "linee-luce",
+      "sezione": {
+        "forma": "tonda",
+        "diametroMm": 20
+      },
+      "punti": [
+        {
+          "x": 4.47,
+          "y": 5.3,
+          "quotaM": 2.6
+        },
+        {
+          "x": 6.14,
+          "y": 5.3,
+          "quotaM": 2.6
+        },
+        {
+          "x": 6.14,
+          "y": 4.81,
+          "quotaM": 2.6
+        },
+        {
+          "x": 6.14,
+          "y": 4.81,
+          "quotaM": 2.5
+        }
+      ],
+      "pose": [
+        "controsoffitto",
+        "controsoffitto",
+        "parete"
+      ]
+    }
+  ],
+  "exportedAt": "2026-09-23T10:00:00.000Z"
+}

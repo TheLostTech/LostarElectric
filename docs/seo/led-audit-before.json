@@ -1,0 +1,137 @@
+{
+  "answer_signals": {
+    "question_marks": 5,
+    "word_count": 1854
+  },
+  "canonical": "https://lostartechnology.com/articoli/strisce-led-soffitto-torino",
+  "findings": [],
+  "h1_count": 1,
+  "headings": [
+    {
+      "level": 1,
+      "question": false,
+      "text": "Strisce LED Torino: illuminazione a soffitto e domotica"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Strisce LED Torino: guida"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Strisce LED Torino: progettare la luce di casa"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Strisce LED Torino a soffitto: velette e cartongesso"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Velette LED e illuminazione indiretta"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Profili LED in alluminio e diffusori opalini"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Controsoffitto, illuminazione LED e impianti"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Strisce LED Torino e domotica: le scene luminose"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Strisce LED in cucina: luce sul piano di lavoro"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "LED dimmerabili per soggiorno e libreria"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Domotica LED: luce notturna, WLED e controller"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Strisce LED Torino: metri, cavi e alimentatori"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Alimentatori LED: distanze, cavi e caduta di tensione"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Driver e controller LED accessibili"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Strisce LED Torino con House Core: progetto e layer PDF"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Strisce LED Torino: hardware e preventivo"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Strisce LED Torino: domande su soffitto e domotica"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Le strisce LED possono essere la luce principale?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Strisce LED a soffitto: serve il cartongesso?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Come progettare le strisce LED prima dell’acquisto?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "House Core per la domotica: cosa comprende la versione gratuita?"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Strisce LED Torino: inizia con House Core"
+    }
+  ],
+  "jsonld_blocks": 1,
+  "jsonld_parse_errors": 0,
+  "jsonld_types": [
+    "BlogPosting",
+    "BreadcrumbList"
+  ],
+  "limitations": [
+    "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+    "Static parsing may miss content rendered only after JavaScript."
+  ],
+  "link_count": 36,
+  "question_heading_count": 4,
+  "robots_meta": "",
+  "source": "site/articoli/strisce-led-soffitto-torino.html",
+  "title": "Strisce LED Torino: soffitto e domotica | Lostar",
+  "local_absolute_path_omitted": true
+}

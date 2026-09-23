@@ -1,0 +1,488 @@
+{
+  "items": [
+    {
+      "kind": "object",
+      "layerId": "aperture",
+      "label": "Portoncino d ingresso",
+      "specification": "0,9 m x 0,18 m in pianta (dichiarate); altezza 2,1 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O01"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "aperture",
+      "label": "Porta",
+      "specification": "0,8 m x 0,18 m in pianta (dichiarate); altezza 2,1 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O02"
+      ],
+      "rooms": [
+        "Camera"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "aperture",
+      "label": "Porta",
+      "specification": "0,8 m x 0,18 m in pianta (dichiarate); altezza 2,1 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O03"
+      ],
+      "rooms": [
+        "Bagno"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "aperture",
+      "label": "Finestra",
+      "specification": "1,6 m x 0,18 m in pianta (dichiarate); altezza 1,4 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O04"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "aperture",
+      "label": "Finestra",
+      "specification": "1,2 m x 0,18 m in pianta (dichiarate); altezza 1,4 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O05"
+      ],
+      "rooms": [
+        "Camera"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "aperture",
+      "label": "Finestra",
+      "specification": "0,72 m x 0,18 m in pianta (dichiarate); altezza 1,4 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O06"
+      ],
+      "rooms": [
+        "Bagno"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Lavello",
+      "specification": "0,9 m x 0,6 m in pianta (dichiarate); altezza 0,9 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O07"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Modulo 60",
+      "specification": "0,6 m x 0,6 m in pianta (dichiarate); altezza 0,9 m (catalogo)",
+      "quantity": 2,
+      "unit": "pz",
+      "references": [
+        "O08",
+        "O10"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Piano cottura",
+      "specification": "0,9 m x 0,6 m in pianta (dichiarate); altezza 0,05 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O09"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Frigorifero",
+      "specification": "0,65 m x 0,65 m in pianta (dichiarate); altezza 1,8 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O11"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Tavolo",
+      "specification": "1,4 m x 0,8 m in pianta (dichiarate); altezza 0,75 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O12"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Sedia",
+      "specification": "0,4 m x 0,4 m in pianta (dichiarate); altezza 0,9 m (catalogo)",
+      "quantity": 4,
+      "unit": "pz",
+      "references": [
+        "O13",
+        "O14",
+        "O15",
+        "O16"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Divano",
+      "specification": "2,4 m x 0,95 m in pianta (dichiarate); altezza 0,85 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O17"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Tavolino",
+      "specification": "1,1 m x 0,6 m in pianta (dichiarate); altezza 0,4 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O18"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "TV",
+      "specification": "1,4 m x 0,1 m in pianta (dichiarate); altezza 0,7 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O19"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Letto matrimoniale",
+      "specification": "1,7 m x 2 m in pianta (dichiarate); altezza 0,55 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O20"
+      ],
+      "rooms": [
+        "Camera"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Comodino",
+      "specification": "0,35 m x 0,35 m in pianta (dichiarate); altezza 0,5 m (catalogo)",
+      "quantity": 2,
+      "unit": "pz",
+      "references": [
+        "O21",
+        "O22"
+      ],
+      "rooms": [
+        "Camera"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Armadio",
+      "specification": "1,65 m x 0,55 m in pianta (dichiarate); altezza 2,1 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O23"
+      ],
+      "rooms": [
+        "Camera"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Lavabo",
+      "specification": "0,8 m x 0,45 m in pianta (dichiarate); altezza 0,85 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O24"
+      ],
+      "rooms": [
+        "Bagno"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "WC",
+      "specification": "0,4 m x 0,6 m in pianta (dichiarate); altezza 0,4 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O25"
+      ],
+      "rooms": [
+        "Bagno"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "arredi",
+      "label": "Doccia",
+      "specification": "1,05 m x 1,05 m in pianta (dichiarate); altezza 2 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O26"
+      ],
+      "rooms": [
+        "Bagno"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "object",
+      "layerId": "elettrico",
+      "label": "Quadro elettrico",
+      "specification": "0,55 m x 0,16 m in pianta (dichiarate); altezza 0,6 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O27"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "led",
+      "layerId": "luci",
+      "label": "Striscia 120 LED",
+      "specification": "4 m x 0,06 m in pianta (dichiarate); altezza 0,02 m (catalogo); 30 LED/m (catalogo)",
+      "quantity": 4,
+      "unit": "m",
+      "references": [
+        "O28"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Lunghezza disegnata sul lato maggiore; pezzi = strisce disegnate. Densita nominale di catalogo, senza sfridi.",
+      "pieces": 1
+    },
+    {
+      "kind": "led",
+      "layerId": "luci",
+      "label": "Striscia 90 LED",
+      "specification": "3 m x 0,06 m in pianta (dichiarate); altezza 0,02 m (catalogo); 30 LED/m (catalogo)",
+      "quantity": 3,
+      "unit": "m",
+      "references": [
+        "O29"
+      ],
+      "rooms": [
+        "Soggiorno e cucina"
+      ],
+      "note": "Lunghezza disegnata sul lato maggiore; pezzi = strisce disegnate. Densita nominale di catalogo, senza sfridi.",
+      "pieces": 1
+    },
+    {
+      "kind": "led",
+      "layerId": "luci",
+      "label": "Striscia 60 LED",
+      "specification": "2 m x 0,06 m in pianta (dichiarate); altezza 0,02 m (catalogo); 30 LED/m (catalogo)",
+      "quantity": 2,
+      "unit": "m",
+      "references": [
+        "O30"
+      ],
+      "rooms": [
+        "Camera"
+      ],
+      "note": "Lunghezza disegnata sul lato maggiore; pezzi = strisce disegnate. Densita nominale di catalogo, senza sfridi.",
+      "pieces": 1
+    },
+    {
+      "kind": "object",
+      "layerId": "luci",
+      "label": "Plafoniera",
+      "specification": "0,3 m x 0,3 m in pianta (dichiarate); altezza 0,1 m (catalogo)",
+      "quantity": 1,
+      "unit": "pz",
+      "references": [
+        "O31"
+      ],
+      "rooms": [
+        "Bagno"
+      ],
+      "note": "Conteggio dei simboli disegnati; dimensioni e vie non costituiscono una selezione commerciale verificata."
+    },
+    {
+      "kind": "route",
+      "layerId": "linee-luce",
+      "label": "Linea luce",
+      "specification": "Sezione del percorso: diametro 20 mm (dichiarata); posa parete (dichiarata)",
+      "quantity": 1.3000000000000003,
+      "unit": "m",
+      "references": [
+        "T01",
+        "T04"
+      ],
+      "rooms": [
+        "Soggiorno e cucina",
+        "Bagno"
+      ],
+      "verticalMetres": 1.3000000000000003,
+      "note": "Lunghezza 3D dai punti risolti e dalle quote registrate. Ambienti attraversati in pianta, senza ripartizione dei metri. Di cui verticali 1,3 m; resto non verticale 0 m, che puo includere tratti inclinati."
+    },
+    {
+      "kind": "route",
+      "layerId": "linee-luce",
+      "label": "Linea luce",
+      "specification": "Sezione del percorso: diametro 20 mm (dichiarata); posa controsoffitto (dichiarata)",
+      "quantity": 9.379999999999999,
+      "unit": "m",
+      "references": [
+        "T01",
+        "T02",
+        "T03",
+        "T04"
+      ],
+      "rooms": [
+        "Soggiorno e cucina",
+        "Camera",
+        "Confine o sovrapposizione: vedi tavola",
+        "Bagno"
+      ],
+      "verticalMetres": 0,
+      "note": "Lunghezza 3D dai punti risolti e dalle quote registrate. Ambienti attraversati in pianta, senza ripartizione dei metri. Di cui verticali 0 m; resto non verticale 9,38 m, che puo includere tratti inclinati."
+    }
+  ],
+  "rooms": [
+    {
+      "code": "R01",
+      "name": "Soggiorno e cucina",
+      "heightSource": "abitazione (dichiarata)",
+      "heightM": 2.7,
+      "areaM2": 30,
+      "perimeterM": 22
+    },
+    {
+      "code": "R02",
+      "name": "Camera",
+      "heightSource": "abitazione (dichiarata)",
+      "heightM": 2.7,
+      "areaM2": 10.8,
+      "perimeterM": 13.2
+    },
+    {
+      "code": "R03",
+      "name": "Bagno",
+      "heightSource": "abitazione (dichiarata)",
+      "heightM": 2.7,
+      "areaM2": 7.2,
+      "perimeterM": 10.8
+    }
+  ],
+  "issues": [
+    "Quantita ricavate dal disegno: i simboli non costituiscono un capitolato commerciale completo.",
+    "Conduttori: numero e sezione del rame non configurati. I metri di percorso non determinano i metri di filo da acquistare.",
+    "Da completare: sfridi e scorte, raccordi e giunti non disegnati, accessori e dimensionamento degli alimentatori.",
+    "Prezzi e costi non configurati; nessun importo o dimensionamento elettrico e ricavato da queste quantita.",
+    "O01: oggetto nel muro; l'ambiente indicato deriva dal centro geometrico, verificare il lato servito sulla tavola.",
+    "O02: oggetto nel muro; l'ambiente indicato deriva dal centro geometrico, verificare il lato servito sulla tavola.",
+    "O03: oggetto nel muro; l'ambiente indicato deriva dal centro geometrico, verificare il lato servito sulla tavola.",
+    "O04: oggetto nel muro; l'ambiente indicato deriva dal centro geometrico, verificare il lato servito sulla tavola.",
+    "O05: oggetto nel muro; l'ambiente indicato deriva dal centro geometrico, verificare il lato servito sulla tavola.",
+    "O06: oggetto nel muro; l'ambiente indicato deriva dal centro geometrico, verificare il lato servito sulla tavola.",
+    "T04: passaggio su confini o ambienti sovrapposti; verificare l'attribuzione sulla tavola."
+  ],
+  "totals": {
+    "objects": 31,
+    "ledMetres": 9,
+    "routeMetres": 10.679999999999998,
+    "verticalMetres": 1.3000000000000003,
+    "areaM2": 48
+  }
+}

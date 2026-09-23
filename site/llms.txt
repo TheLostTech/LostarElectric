@@ -1,0 +1,23 @@
+# Lostar Electric
+
+> Quadri elettrici, cablaggio e automazione. House Core per la casa domotica; House Studio per preparare un progetto virtuale gratuito.
+
+Sito ufficiale in italiano: https://lostartechnology.com/. Le forniture hardware e le eventuali attività di installazione sono definite su preventivo. House Studio è disponibile in pacchetti di anteprima per Windows e macOS. I PDF documentano il progetto disegnato e richiedono verifica tecnica prima dei lavori.
+
+## Servizi
+- [Quadri elettrici](https://lostartechnology.com/quadri): assemblaggio e cablaggio di quadri su progetto.
+- [Bordo macchina](https://lostartechnology.com/automazione): quadri di comando e collegamenti per macchine e impianti.
+- [Collaudo e modifiche](https://lostartechnology.com/collaudo): interventi e documentazione su quadri esistenti.
+- [Contatti e preventivi](https://lostartechnology.com/contatti): preparazione della richiesta con funzioni, luogo e documenti disponibili.
+
+## Casa domotica
+- [House Core e House Studio](https://lostartechnology.com/house-core): sistema locale, progetto 2D/3D, esportazione dei layer PDF e download delle anteprime.
+
+## Articoli
+- [Casa domotica: progetto, funzionamento e costi](https://lostartechnology.com/articoli/casa-domotica): guida a House Core, progettazione virtuale gratuita, assistente locale, impianti, compatibilità e PDF per il preventivo. Distingue funzioni attuali e previste.
+- [Tutte le guide](https://lostartechnology.com/articoli): indice dei contenuti tecnici e dei progetti dimostrativi.
+- [Strisce LED Torino](https://lostartechnology.com/articoli/strisce-led-soffitto-torino): soffitti, scene luminose, percorsi e materiali.
+- [Quadri elettrici](https://lostartechnology.com/articoli/quadri-elettrici): carichi, protezioni, contattori e collegamento al progetto House Core.
+
+## Limiti dei contenuti
+La casa prototipo è presentata in forma anonima. I conteggi preliminari non costituiscono una configurazione universale. House Core descrive le dipendenze elettriche dichiarate e non sostituisce progetto esecutivo, protezioni, verifiche strumentali o dichiarazioni di conformità. I file esportati non vengono inviati automaticamente al sito. Le funzioni AI dipendono dal servizio configurato.

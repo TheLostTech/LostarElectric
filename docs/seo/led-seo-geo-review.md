@@ -8,7 +8,7 @@ Il risultato verificabile di questa revisione è una pagina accessibile, compren
 
 ## Decisioni implementate
 
-- Ultima richiesta dell’utente: niente «Torino» nei sottotitoli o nell’indice. Rimane in H1, title, descrizione e contesto geografico nel testo. Aggiornati anche gli H2 delle anteprime in homepage, House Core e archivio articoli.
+- Ultima richiesta dell’utente: niente «Torino» nei sottotitoli, nel sommario sotto l’H1 o nell’indice. Rimane in H1, title, descrizione e contesto geografico nel testo. Aggiornati anche gli H2 delle anteprime in homepage, House Core e archivio articoli.
 - Una sola pagina canonica: `/articoli/strisce-led-soffitto-torino`. Nessuna pagina duplicata per varianti della keyword.
 - Introduzione con risposta diretta, definizione di House Core e rapporto con Lostar Electric; spiegazione delle scene e confronto analogico/indirizzabile; fonti WLED accanto alle affermazioni pertinenti.
 - Elenco dei dati per il preventivo, risposta sui fattori di costo senza prezzi inventati, tabella del computo distinta dalla verifica tecnica esecutiva.

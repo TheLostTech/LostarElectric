@@ -38,4 +38,8 @@ Matrice di dieci domande in `casa-domotica-prompt-matrix.json` per una futura mi
 
 Riferimenti primari Google consultati: [Article](https://developers.google.com/search/docs/appearance/structured-data/article), [AI features](https://developers.google.com/search/docs/appearance/ai-features), [contenuti utili](https://developers.google.com/search/docs/fundamentals/creating-helpful-content). Il markup descrive contenuto, autore, data e immagine visibili; le risposte autonome favoriscono comprensione e consultazione senza promettere selezione da parte di un motore.
 
-Controllo della release pubblica da registrare dopo il deploy.
+## Release pubblica
+
+23 settembre 2026. Commit `965c698` pubblicato in produzione, deployment `dpl_HnZQsvEBuTmCBjGuC46ue85C21Cy`, alias `lostartechnology.com`. Verificati con `curl --resolve lostartechnology.com:443:216.198.79.1`: `/articoli/casa-domotica`, `/articoli`, `/house-core` e `/sitemap.xml` rispondono HTTP 200; titolo e canonical dell'articolo corretti; sitemap con l'URL nuovo. Google DNS restituisce `216.198.79.1`; il resolver della rete locale restituiva ancora il parcheggio Squarespace dal TTL precedente.
+
+La revisione visiva indipendente non è stata completata: il report `docs/article-casa-domotica-finish-review.md` non esiste.

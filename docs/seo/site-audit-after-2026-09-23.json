@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-23T14:38:07.503468+00:00",
+  "checked_at": "2026-09-23T14:45:33.441313+00:00",
   "boundary": "Static source, links and metadata; not indexing, ranking, rich-result eligibility or AI citation measurement.",
   "pages": [
     {
@@ -20,7 +20,7 @@
         "Thing",
         "WebSite"
       ],
-      "internal_targets_checked": 46,
+      "internal_targets_checked": 47,
       "errors": [],
       "warnings": []
     },
@@ -42,7 +42,7 @@
         "Thing",
         "WebSite"
       ],
-      "internal_targets_checked": 48,
+      "internal_targets_checked": 49,
       "errors": [],
       "warnings": []
     },
@@ -64,7 +64,7 @@
         "Organization",
         "WebSite"
       ],
-      "internal_targets_checked": 36,
+      "internal_targets_checked": 37,
       "errors": [],
       "warnings": []
     },
@@ -86,7 +86,7 @@
         "WebPage",
         "WebSite"
       ],
-      "internal_targets_checked": 30,
+      "internal_targets_checked": 31,
       "errors": [],
       "warnings": []
     },
@@ -108,7 +108,7 @@
         "WebPage",
         "WebSite"
       ],
-      "internal_targets_checked": 30,
+      "internal_targets_checked": 31,
       "errors": [],
       "warnings": []
     },
@@ -129,7 +129,7 @@
         "Organization",
         "WebSite"
       ],
-      "internal_targets_checked": 28,
+      "internal_targets_checked": 29,
       "errors": [],
       "warnings": []
     },
@@ -148,7 +148,7 @@
         "WebPage",
         "WebSite"
       ],
-      "internal_targets_checked": 45,
+      "internal_targets_checked": 46,
       "errors": [],
       "warnings": []
     },
@@ -167,7 +167,7 @@
         "WebPage",
         "WebSite"
       ],
-      "internal_targets_checked": 43,
+      "internal_targets_checked": 44,
       "errors": [],
       "warnings": []
     },
@@ -189,7 +189,7 @@
         "WebPage",
         "WebSite"
       ],
-      "internal_targets_checked": 31,
+      "internal_targets_checked": 32,
       "errors": [],
       "warnings": []
     }
@@ -199,6 +199,6 @@
     "pages": 9,
     "errors": 0,
     "warnings": 0,
-    "internal_targets_checked": 337
+    "internal_targets_checked": 346
   }
 }

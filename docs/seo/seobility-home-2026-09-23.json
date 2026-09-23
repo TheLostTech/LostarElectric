@@ -1,0 +1,28 @@
+{
+  "provider": "Seobility",
+  "surface": "homepage only",
+  "url": "https://lostartechnology.com/",
+  "report_url": "https://www.seobility.net/en/seocheck/check/?url=https%3A%2F%2Flostartechnology.com%2F&mode=standard",
+  "mode": "standard without JavaScript",
+  "checked_at": "2026-09-23T14:44:00Z",
+  "deployment": "dpl_AbzBy6wLsb92VKFbDy1whk3LLDNn",
+  "on_page_score": 87,
+  "metadata": 100,
+  "page_quality": 90,
+  "page_structure": 100,
+  "links": 62,
+  "server": 100,
+  "external_factors": 3,
+  "status": 200,
+  "word_count": 571,
+  "remaining_observations": [
+    "No Apple touch icon specified",
+    "Few social sharing options",
+    "Some repeated anchors (header/footer/navigation)",
+    "Long internal anchors (full service rows)",
+    "Contact service preselection query parameter",
+    "No external links from homepage",
+    "One backlink from one referring domain in vendor index"
+  ],
+  "limits": "Not a whole-site score or evidence of ranking; not comparable to SEOptimer grade B."
+}

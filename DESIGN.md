@@ -1,82 +1,111 @@
 ---
-name: Lostar Electric / House Core
-description: Implemented House Core surface and shared Lostar identity, September 2026.
+name: Lostar Electric
+description: Implemented design system for the complete Lostar Electric and House Core website.
 colors:
-  hc-ink: '#0b2545'
+  blue-800: '#0b2545'
   blue-900: '#071a31'
-  hc-yellow: '#f4b500'
-  hc-teal: '#276466'
-  white: '#ffffff'
-  anthracite: '#20252b'
-  hc-muted: '#526170'
-  hc-paper: '#f4f6f6'
-  hc-line: '#d5dfe2'
-  gray-300: '#c8d1dc'
+  yellow: '#f4b500'
+  focus: '#276466'
+  white: '#fff'
+  anthracite: '#202b35'
+  gray-700: '#526170'
+  gray-300: '#a7b5be'
+  gray-200: '#d5dfe2'
+  gray-050: '#f4f6f6'
   blue-050: '#eef4fa'
-  field-border: '#a7b5be'
   dark-copy: '#d0dce5'
   dark-divider: '#3a5069'
   yellow-hover: '#dfaa10'
-  gray-700: '#53606f'
+  download-hover: '#f0f3f5'
 typography:
   display:
-    fontFamily: Rockstar, Inter, "Helvetica Neue", Arial, sans-serif
-    fontSize: clamp(56px, 5.65vw, 82px)
+    fontFamily: Rockstar, "Helvetica Neue", Arial, sans-serif
+    fontSize: clamp(52px, 5.8vw, 84px)
+    fontWeight: 800
+    lineHeight: 1.08
+    letterSpacing: '0'
+  display-home:
+    fontFamily: Rockstar, "Helvetica Neue", Arial, sans-serif
+    fontSize: clamp(56px, 6.6vw, 94px)
+    fontWeight: 800
+    lineHeight: 1.04
+    letterSpacing: '0'
+  display-contact:
+    fontFamily: Rockstar, "Helvetica Neue", Arial, sans-serif
+    fontSize: clamp(50px, 5.5vw, 76px)
+    fontWeight: 800
+    lineHeight: 1.08
+    letterSpacing: '0'
+  display-house-core:
+    fontFamily: Rockstar, "Helvetica Neue", Arial, sans-serif
+    fontSize: clamp(52px, 5.2vw, 74px)
     fontWeight: 800
     lineHeight: 1.02
     letterSpacing: '0'
   headline:
-    fontFamily: Rockstar, Inter, "Helvetica Neue", Arial, sans-serif
+    fontFamily: Rockstar, "Helvetica Neue", Arial, sans-serif
+    fontSize: clamp(36px, 4vw, 54px)
+    fontWeight: 800
+    lineHeight: 1.08
+    letterSpacing: '0'
+  headline-house-core:
+    fontFamily: Rockstar, "Helvetica Neue", Arial, sans-serif
     fontSize: clamp(38px, 4vw, 58px)
     fontWeight: 800
     lineHeight: 1.05
     letterSpacing: '0'
   title:
-    fontFamily: Rockstar, Inter, "Helvetica Neue", Arial, sans-serif
+    fontFamily: Rockstar, "Helvetica Neue", Arial, sans-serif
     fontSize: 28px
     fontWeight: 800
-    lineHeight: 1.15
+    lineHeight: 1.08
+    letterSpacing: '0'
+  service-title:
+    fontFamily: Rockstar, "Helvetica Neue", Arial, sans-serif
+    fontSize: 34px
+    fontWeight: 800
+    lineHeight: 1.08
     letterSpacing: '0'
   body:
-    fontFamily: Inter, "Helvetica Neue", Arial, sans-serif
+    fontFamily: '"Helvetica Neue", Arial, sans-serif'
     fontSize: 16px
     fontWeight: 400
-    lineHeight: 1.65
+    lineHeight: 1.6
     letterSpacing: normal
   lead:
-    fontFamily: Inter, "Helvetica Neue", Arial, sans-serif
-    fontSize: 18px
+    fontFamily: '"Helvetica Neue", Arial, sans-serif'
+    fontSize: 19px
     fontWeight: 400
     lineHeight: 1.65
     letterSpacing: normal
   label:
-    fontFamily: Inter, "Helvetica Neue", Arial, sans-serif
+    fontFamily: '"Helvetica Neue", Arial, sans-serif'
     fontSize: 14px
     fontWeight: 600
     lineHeight: 1.5
     letterSpacing: normal
-  navigation:
-    fontFamily: Inter, "Helvetica Neue", Arial, sans-serif
-    fontSize: 14px
-    fontWeight: 700
-    lineHeight: 1.5
-    letterSpacing: normal
   button:
-    fontFamily: Inter, "Helvetica Neue", Arial, sans-serif
+    fontFamily: '"Helvetica Neue", Arial, sans-serif'
     fontSize: 15px
-    fontWeight: 800
-    lineHeight: 1.5
+    fontWeight: 600
+    lineHeight: 1.4
     letterSpacing: normal
   field:
-    fontFamily: Inter, "Helvetica Neue", Arial, sans-serif
+    fontFamily: '"Helvetica Neue", Arial, sans-serif'
     fontSize: 16px
-    fontWeight: 400
+    fontWeight: 600
     lineHeight: 1.5
     letterSpacing: normal
-  small:
-    fontFamily: Inter, "Helvetica Neue", Arial, sans-serif
-    fontSize: 13px
+  caption:
+    fontFamily: '"Helvetica Neue", Arial, sans-serif'
+    fontSize: 12px
     fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: normal
+  navigation:
+    fontFamily: '"Helvetica Neue", Arial, sans-serif'
+    fontSize: 14px
+    fontWeight: 600
     lineHeight: 1.6
     letterSpacing: normal
 rounded:
@@ -84,35 +113,36 @@ rounded:
   field: 2px
   control: 4px
 spacing:
-  inline: 8px
-  compact: 12px
-  row: 16px
-  control: 22px
-  panel: 24px
-  request: 32px
-  split: 64px
-  wide: 80px
-  section: clamp(72px, 8vw, 120px)
+  label-gap: 8px
+  control-gap: 12px
+  compact: 16px
+  field-row: 18px
+  form-gap: 22px
+  panel-compact: 24px
+  panel: 32px
+  section-gap: 80px
+  section-space: clamp(72px, 8vw, 112px)
+  hc-space: clamp(72px, 8vw, 120px)
 components:
-  button-download:
-    backgroundColor: '{colors.hc-yellow}'
-    textColor: '{colors.hc-ink}'
-    typography: '{typography.button}'
-    rounded: '{rounded.control}'
-    padding: 12px 22px
-  button-download-hover:
-    backgroundColor: '{colors.yellow-hover}'
   button-primary:
-    backgroundColor: '{colors.hc-ink}'
+    backgroundColor: '{colors.blue-800}'
     textColor: '{colors.white}'
     typography: '{typography.button}'
     rounded: '{rounded.control}'
     padding: 12px 22px
   button-primary-hover:
     backgroundColor: '{colors.blue-900}'
+  button-yellow:
+    backgroundColor: '{colors.yellow}'
+    textColor: '{colors.blue-800}'
+    typography: '{typography.button}'
+    rounded: '{rounded.control}'
+    padding: 12px 22px
+  button-yellow-hover:
+    backgroundColor: '{colors.yellow-hover}'
   button-secondary:
     backgroundColor: '{colors.white}'
-    textColor: '{colors.hc-ink}'
+    textColor: '{colors.blue-800}'
     typography: '{typography.button}'
     rounded: '{rounded.control}'
     padding: 12px 22px
@@ -120,159 +150,188 @@ components:
     backgroundColor: '{colors.blue-050}'
   input:
     backgroundColor: '{colors.white}'
-    textColor: '{colors.hc-ink}'
+    textColor: '{colors.blue-800}'
     typography: '{typography.field}'
     rounded: '{rounded.field}'
     padding: 12px
   navigation:
     textColor: '{colors.gray-700}'
     typography: '{typography.navigation}'
+  service-row:
+    textColor: '{colors.gray-700}'
+    rounded: '{rounded.surface}'
+    padding: 34px 0
+  request-surface:
+    backgroundColor: '{colors.gray-050}'
+    rounded: '{rounded.surface}'
+    padding: 32px
+  recipient-notice:
+    backgroundColor: '{colors.white}'
+    textColor: '{colors.gray-700}'
+    rounded: '{rounded.surface}'
+    padding: 16px
+  faq-summary:
+    textColor: '{colors.blue-800}'
+    padding: 0 16px 0 0
   layer-selector:
-    backgroundColor: '{colors.hc-paper}'
+    backgroundColor: '{colors.gray-050}'
     rounded: '{rounded.surface}'
     padding: 16px 22px
   download-row:
     backgroundColor: '{colors.white}'
-    textColor: '{colors.hc-ink}'
+    textColor: '{colors.blue-800}'
     rounded: '{rounded.surface}'
     padding: 24px
-  request-surface:
-    backgroundColor: '{colors.hc-paper}'
-    rounded: '{rounded.surface}'
-    padding: 32px
-  faq-summary:
-    textColor: '{colors.hc-ink}'
-    padding: 0 20px 0 0
 ---
 
-# Design System: Lostar Electric / House Core
+# Design System: Lostar Electric
 
 ## Overview
 
-**Creative North Star: "Tavolo luminoso dei livelli"**
+**Creative North Star: "Catalogo tecnico Lostar"**
 
-Lostar’s existing logo, navy and yellow palette, and Rockstar display face remain the identity anchors. The implemented House Core surface places crisp technical drawings and real exported documents on white and pale paper, with generous space and short, direct Italian copy. Its strong display titles, fine rules and functional controls keep the presentation concrete.
+The complete Lostar Electric website extends the existing logo, navy/yellow palette and Rockstar display face. Large direct titles, pale drawing grounds, crisp schematic illustrations and ruled service rows give the site the character of a technical catalogue. Helvetica Neue / Arial body copy, generous section spacing and visible controls support a concrete, readable presentation.
 
-This extraction covers the replacement House Core page, the House Core entry on the root home page, and the shared navigation, buttons and footer they use. “Tavolo luminoso dei livelli” names the House Core composition; it is not a replacement identity for Lostar’s industrial services. Those pages retain their earlier visual system. Page strategy and the surface direction remain in `docs/house-core-direction.md`; product commitments remain in `PRODUCT.md`.
+This extraction covers all six static pages: home, quadri, automazione, collaudo, contatti and House Core. Their navigation, footer, controls, focus treatment and palette are shared. Industrial pages use consistent service and request structures; House Core retains specialized plan, document and download layouts within the same identity. Surface strategy remains in `docs/lostar-site-direction.md` and `.impeccable/surfaces/site-index-html.md`; product commitments remain in `PRODUCT.md`.
 
 **Key Characteristics:**
 
-- Existing Lostar logo, navy/yellow identity and Rockstar titles.
-- White and pale paper surfaces, square technical panels and thin dividers.
-- A legible plan and exported PDF provide the main visual evidence.
-- Visible controls, text states and keyboard focus explain interaction.
+- Existing Lostar logo, navy/yellow palette and Rockstar headings across all six pages.
+- Solid white navigation, square drawing grounds and flat ruled service structures.
+- Illustrative SVG diagrams for industrial services; interactive plan and exported PDF evidence for House Core.
+- Unified request controls, visible recipient status and contextual document lists.
+- Responsive reading order, native disclosures and high-contrast keyboard focus.
 
-Extracted from `site/styles.css`, `site/house-core.css`, `site/house-core.html`, `site/index.html`, and the desktop/mobile review captures in `.impeccable/review/`. The frontmatter owns the extracted token values. The sidecar owns motion, elevation, breakpoints and isolated component examples.
+Extracted from the six current `site/*.html` pages, `site/styles.css`, `site/house-core.css` and the full-site review captures under `.impeccable/review/site/`. This document supersedes the earlier House-only extraction. Frontmatter owns primitive token values; `.impeccable/design.json` adds motion, breakpoints, elevation and isolated component examples. The named north star describes the implemented catalogue composition, not a new brand identity.
 
 ## Colors
 
-The palette retains Lostar’s dark blue and yellow and adds pale drafting surfaces with a restrained teal functional accent.
+The shared palette combines Lostar navy and yellow with white, pale paper and restrained technical slate.
 
 ### Primary
 
-- **Lostar Navy** (`hc-ink`): section headings, active navigation, navy buttons, dark journey/download bands and diagram/control ink; it matches the shared `--blue-800`.
-- **Lostar Yellow** (`hc-yellow`): the main House Core download action, journey numbers, selected navigation underline and focus on dark bands; it matches the shared `--yellow`.
-- **Deep Navy** (`blue-900`): the hero headline and hover state of navy buttons.
-- **Download Hover** (`yellow-hover`): the yellow CTA’s hover state.
+- **Lostar Navy** (`blue-800`): display headings, primary actions, dark sections, diagram ink and footer.
+- **Lostar Yellow** (`yellow`): important actions on navy, current-page navigation markers, small diagram accents and focus on dark surfaces.
+- **Deep Navy** (`blue-900`) and **Yellow Hover** (`yellow-hover`): the corresponding button hover colors.
 
 ### Secondary
 
-- **Technical Teal** (`hc-teal`): thin capability icons, offer labels and focus on light backgrounds. It supports the existing brand colors.
+- **Technical Teal** (`focus`): light-surface focus rings, checklist strokes and House Core capability icons. It remains a functional supporting accent.
 
 ### Neutral
 
-- **White** (`white`): base page, drawing stage, fields and download rows.
-- **Anthracite** (`anthracite`): inherited body text.
-- **Technical Slate** (`hc-muted`): House Core explanatory copy, captions and field notes.
-- **Shared Slate** (`gray-700`): incumbent navigation and the home entry’s supporting copy.
-- **Light Paper** (`hc-paper`): plan framing, document section and request surface.
-- **Paper Rule** (`hc-line`): section rules, rows and panel divisions.
-- **Control Border** (`gray-300`): shared secondary-button border; **Field Border** (`field-border`): House Core input border.
-- **Pale Blue** (`blue-050`): secondary-button hover fill.
-- **Dark-surface Copy** (`dark-copy`) and **Dark Divider** (`dark-divider`): readable supporting text and separators within navy bands.
+- **White** (`white`): page ground, solid header, fields and download rows.
+- **Anthracite** (`anthracite`): normal body text.
+- **Technical Slate** (`gray-700`): descriptions, navigation, captions and notes.
+- **Light Paper** (`gray-050`): diagram grounds, alternating sections and request containers.
+- **Control Border** (`gray-300`) and **Paper Rule** (`gray-200`): field/button outlines and section/row dividers.
+- **Pale Blue** (`blue-050`): outlined-button hover fill.
+- **Dark Copy** (`dark-copy`) and **Dark Divider** (`dark-divider`): secondary text and rules on navy.
+- **Download Hover** (`download-hover`): House Core’s white operating-system rows on hover.
 
-**The Identity Continuity Rule.** Keep the existing logo assets, navy/yellow identity and Rockstar display family across the new surface and its home-page entry.
+House Core’s existing `hc-ink`, `hc-yellow`, `hc-muted`, `hc-paper`, `hc-line` and `hc-teal` CSS variables are local aliases of the shared palette represented here; they do not establish a separate palette. Unused stylesheet declarations are not promoted into normative tokens.
 
-**The Focus Contrast Rule.** Use teal focus outlines on light surfaces and yellow outlines inside the navy journey, download section and shared footer.
+**The Identity Continuity Rule.** Keep the existing logo assets, navy/yellow palette and Rockstar display face across industrial and House Core pages.
+
+**The Focus Contrast Rule.** Use teal focus outlines on light surfaces and yellow outlines inside navy sections and the footer.
 
 ## Typography
 
-**Display Font:** Rockstar, with Inter, Helvetica Neue, Arial and sans-serif fallbacks. The bundled font face is `site/fonts/Rockstar-ExtraBold.otf`, registered at weight 800. Its compact uppercase appearance comes from the font; do not add unnecessary letter spacing or convert all prose to uppercase.
+**Display Font:** Rockstar, then Helvetica Neue, Arial, sans-serif. The local ExtraBold face is registered at weight 800 with `font-display: swap`. Its condensed, uppercase appearance supplies the display character; headings use zero tracking and balanced wrapping.
 
-**Body Font:** Inter, Helvetica Neue, Arial, sans-serif. Inter is requested by the stack but is not separately bundled or imported by these pages, so system fallbacks are part of the implemented behavior. There is no separate mono family; installation commands inherit the body face.
+**Body Font:** Helvetica Neue, Arial, sans-serif. Inter is no longer in the implemented font stack. Body text is explicitly 16px with 1.6 line-height; paragraphs are limited to 70ch. There is no separate mono family.
 
-The wide difference between heavy titles and quiet supporting text carries the hierarchy. Use the frontmatter’s `display`, `headline` and `title` roles for the House Core headings, `body` for normal paragraphs, `lead` for hero/download introductions, and `label`, `navigation`, `button`, `field` and `small` for controls. Major headings have zero tracking. Capability and form headings use the observed 27px title variant; the default title is 28px.
+The frontmatter records the actual desktop hierarchy: shared display, larger home display, contact display and House Core display; shared and House Core headlines; display titles and service-row titles; body, lead, labels, controls and captions. Shared lead text is 19px/1.65. Supporting section introductions use 17–18px. Body and interface text are normal weight except labels, navigation and actions, which are semibold.
 
-The body is the browser’s 16px default with paragraph line-height 1.65; inherited non-paragraph UI text keeps the shared 1.5 line-height. Section introductions commonly use 17px. Hero copy is constrained to a 510px column; FAQ paragraphs are limited to 65ch. The frontmatter records desktop heading roles; the responsive sizes are specified below.
+Specialized roles remain limited to their contexts. Home service-row headings are 34px Rockstar. Work-sequence titles are 18px/1.3 semibold body type. House Core capability headings use 22px/1.35 semibold body type and hardware-offer headings use 24px/1.3; its request title remains 27px Rockstar. House Core paragraphs use 1.65 line-height, while controls inherit the shared system. Request values inherit the labels’ semibold weight through `font: inherit`; no regular-weight field override is implemented.
+
+Responsive heading sizes are described with their layouts below. Do not restore earlier House Core sizes that are superseded by the final overrides in its stylesheet.
 
 ## Layout
 
-The shared header is fixed at 72px high, with a 136px logo, centered navigation, a right-hand CTA and a menu control when space narrows. It uses a translucent white fill, a bottom border and a 12px backdrop blur. Main content clears the fixed header. The House Core subnavigation is a separate normal-flow row with a 66px minimum height.
+The site is a set of six static pages with common navigation and footer. Shared content uses a maximum 1280px width and 48px side gutters. Section padding follows `section-space`, ranging from 72px to 112px; House Core uses `hc-space`, capped at 120px. Generous gaps separate large content groups; fine ruled rows handle denser information.
 
-House Core content uses a maximum 1280px width and 48px side gutters. Section vertical padding follows the fluid `section` spacing token. The hero pairs a 0.9fr copy column with a 1.15fr plan column; its gap scales from 32px to 64px, with 64px top and 72px bottom padding. Most following sections use two unequal columns, generous 64–80px gaps, and thin ruled rows. The three-step navy journey is an equal three-column band. The home entry uses the incumbent section container with a two-column split and 64px gap; it does not replace the industrial home layout.
+The fixed shared header is solid white, 80px high on desktop, with a one-pixel bottom rule, a 144px logo, centered links and a right-hand request CTA. It has no blur or translucency. Main content clears the header through the shared height variable. The footer uses three columns (1.2fr / 0.8fr / 0.8fr), 64px gaps and a lower ruled row; it has no yellow top border.
 
-Responsive behavior is deliberate and scoped:
+Home and service heroes use a 1.1fr / 0.9fr grid, pairing direct copy with a relevant diagram. The home hero is navy with white type; service heroes are white with pale diagram grounds. Home service links are ruled rows with title, description and arrow columns. Industrial pages then use a 0.72fr / 1.28fr explanation grid, definition rows, a pale supply section, a navy request band and native FAQ rows. The home House Core entry integrates the product name in its H2 beside the plan, without a standalone kicker.
 
-- At 1600px and above, the hero gap becomes 80px and its title 88px.
-- At 1060px and below, the shared main navigation becomes a toggleable full-width panel below the header. The menu button is 44px square.
-- At 1050px and below, House Core gutters become 28px, hero columns become 0.9fr / 1fr with a 30px gap, H1 uses `clamp(46px, 6vw, 66px)`, H2 is 44px, and major section gaps become 40px. “di Lostar” leaves the subnavigation.
-- At 760px and below, House Core gutters become 20px and its main grids stack. The hero uses 40px / 44px vertical padding, a 36px gap and `clamp(48px, 9vw, 68px)` H1; H2 is 40px. The document copy comes before its image. Form fields stack, request padding becomes 24px, and the journey becomes three ruled rows. Subnavigation is 60px high and omits “Il progetto.” The home entry stacks with a 28px gap.
-- At 640px and below, the shared header uses `1fr auto`, hides its CTA and right-aligns the menu button; its logo is 120px wide. The shared footer stacks. Shared buttons become full-width unless a House Core component explicitly keeps an auto width, as the hero, document and closing CTAs do.
+The contact page uses a 0.85fr / 1.15fr checklist/form split. Forms share a square paper container, a 22px content gap and paired field rows where room permits. Recipient status precedes editable fields. The service selector changes the supporting document checklist; incoming service links can preselect the corresponding request type. These are functional controls, not decorative filters.
 
-The incumbent industrial layout also has a 900px breakpoint; preserve its existing behavior instead of interpreting it as a new House Core rule. Anchor scroll padding is 140px on House Core, reduced to 90px below 760px.
+Shared responsive behavior:
+
+- At 1120px and below, content gutters become 32px, the header CTA is hidden, hero gaps become 40px, the home H1 becomes 76px and large section splits reduce to 44px gaps.
+- At 860px and below, the header becomes 72px high and its 46px menu button appears at the right. Navigation becomes a vertical panel below the header. Home/service heroes retain two columns (1fr / 0.8fr) with a 30px gap; their H1 sizes become 60px / 52px and leads 17px. Section intros and service explanations stack. The work sequence becomes two columns, contact field pairs stack, and request padding becomes 24px.
+- At 640px and below, shared content has 20px gutters, the logo is 128px and the main content grids stack with 34px gaps. Home H1 uses `clamp(48px, 12vw, 66px)`; service/contact H1 is 46px and shared H2 is 38px. Service rows become title/description plus a trailing arrow. The work sequence becomes one column. Contact form precedes the checklist and uses 24px vertical / 20px horizontal padding. Action-group buttons fill the available width and form actions stack. Footer brand spans both columns of the two-column link grid; its lower row stacks.
+
+House Core retains its plan-specific structure: a 0.9fr / 1.15fr hero, a three-step navy journey, two-column capability rows and separate document, hardware, download and request sections. The subnavigation remains in normal flow below the shared header. At 1050px its gutters become 28px and major gaps narrow; at 760px gutters become 20px, its grids stack, document copy precedes the preview, field pairs stack and the journey becomes three ruled rows. The subnavigation reduces from 66px to 60px and drops its first link. Its effective H1 is the frontmatter’s House Core display role at all wider sizes, then `clamp(46px, 10vw, 62px)` at 760px and below. H2 is 44px below 1050px and 40px below 760px. Above 1600px its hero gap increases to 80px; the later H1 override still governs typography.
+
+Shared anchor scroll padding is 104px. House Core overrides it to 140px, reduced to 90px below 760px. Native drawing proportions and visible captions are preserved across the breakpoints.
 
 ## Elevation & Depth
 
-The House Core surface is predominantly flat. White, paper and navy zones, fine rules and the drawing itself create separation. The exported document preview alone uses a soft paper shadow (`0 18px 36px #0b25451a`). The shared stylesheet retains its earlier visual shadow (`0 16px 40px rgba(11, 37, 69, 0.12)`) for incumbent imagery; it is not the default for new House Core panels. Header translucency is the only blurred layer in this surface.
+The full site is flat: white, paper and navy fields, one-pixel rules and drawing geometry supply structure. The sole implemented shadow is the House Core PDF-preview shadow (`0 18px 36px #0b25451a`), which suggests a document resting on paper. Shared service rows, form surfaces, diagrams, header and footer have no box shadow. There is no backdrop blur.
 
-**The Surface Scope Rule.** Use the light-table composition for House Core; do not apply its page structure to the industrial service pages by default.
+**The Flat Surface Rule.** Separate sections with white, paper, navy and fine rules; reserve the observed paper shadow for the House Core document preview.
 
 ## Shapes
 
-Technical surfaces and download rows have square corners. Fields use the `field` radius and shared buttons/menu controls use `control`. Dividers are generally one pixel, while the first hardware offer has a two-pixel navy top rule and the shared footer has a four-pixel yellow top border. Line icons use open strokes; capability/download icons are 26px with a 1.5px stroke, while shared button icons are 17px with a 2px stroke. Keep the existing logo artwork intact.
+Diagram grounds, service rows, request panels and download rows are square. Native fields use the `field` radius; shared buttons and the mobile menu use `control`. Most dividers are one pixel; the current navigation marker is three pixels and House Core’s first hardware offer uses a two-pixel top rule. Avoid turning ruled structures into floating rounded cards.
+
+Shared button icons are 18px with a 1.5px stroke, service arrows 24px with a 1.5px stroke and text-link arrows 19px. House Core capability/download icons are 26px with a 1.5px stroke. Icons remain outline SVGs. Keep the supplied logo artwork intact.
 
 ## Components
 
-### Buttons
+### Buttons and text links
 
-Compact, substantial rectangular controls. House Core buttons use the frontmatter padding, a 52px minimum height, a 10px label/icon gap, centered wrapping text and the `control` radius. The shared header/home button baseline remains 44px minimum height with 14px text and horizontal 18px padding. Yellow signals the main House Core download; navy is used for document downloads and request actions; white with a gray outline is secondary. Hover uses the recorded sibling variants. Pressing a button shifts it down one pixel.
+Shared buttons are 50px minimum height with 12px/22px padding, a 12px label/icon gap, semibold 15px/1.4 text and four-pixel corners. At the smallest shared breakpoint horizontal padding becomes 18px. The compact header CTA is 44px minimum height with 10px/16px padding and 14px text. House Core buttons explicitly retain 52px minimum height and 12px/22px padding.
 
-Button transitions are 140ms ease for transform, background and border color. Focus is a three-pixel outline offset by five pixels; use the surface-appropriate color described above. Reduced-motion preference removes transitions and animations and restores automatic scrolling.
+Navy is the standard primary action; yellow provides the dominant action on dark sections and House Core downloads; white with a control-border outline is secondary. Hover variants are recorded in the frontmatter. The only button transition is 160ms ease on background, color and border-color. There is no pressed translation or separate custom active style. Text links keep an underline, with a thicker underline on hover.
 
-### Inputs / Fields
+### Shared navigation
 
-Plain white fields on the paper request surface. Use a one-pixel field border, `field` radius, 12px padding, 48px minimum height and 16px text. Labels are 14px semibold with an 8px gap. Textareas have a 106px minimum height and resize vertically. The request surface uses 32px padding, a 22px row gap and 18px gaps within the two-field row; it becomes one column on mobile. Validation is native browser validation; this page does not define custom error or disabled visual variants. Form status is text in a live status region.
+Navigation links use semibold 14px body text, 48px minimum height and a 26px gap at full width. The current page is navy with a three-pixel yellow marker; hover changes text to navy. At the mobile-menu breakpoint the panel sits below the 72px header and uses 46px link targets, with a shorter current marker. The menu button exposes its expanded state and controls the same link set. A focus-revealed skip link precedes the header; main targets can receive focus.
 
-### Navigation
+### Service rows and technical figures
 
-Shared navigation uses compact bold sans-serif links, with a two-pixel yellow underline on the current page and navy text on hover/current state. The underline transform has a 160ms ease transition. Mobile expansion is controlled by the menu button’s `aria-expanded`; its panel begins below the fixed header. The separate House Core subnavigation uses 14px semibold links with a visible hover underline, reducing to 13px below 760px. Preserve the focus-revealed skip link before the header.
+Home service links are full-width ruled rows with a 34px display title, muted description and arrow. Hover underlines the title and shifts the arrow four pixels in 160ms ease. Desktop rows use 34px vertical padding; mobile rows use 26px and preserve the arrow beside the text. Interior service pages use definition rows and unboxed checklists, with body-type labels instead of extra display headings.
 
-### Layered plan
+Industrial drawings are clean illustrative SVGs, with visible captions explaining that they are schematic rather than supplied configurations or completed work. House Core’s home entry has the same visible demo caption. Caption text sits outside the drawing ground; do not crop it away when reusing a figure.
 
-A square paper-framed figure containing a white drawing stage, a labelled heading, a fieldset and a caption. The real plan remains the main subject. The layer selector uses native 17px navy-accent checkboxes, 14px labels and 8px label gaps. A visible text status with `aria-live="polite"` states which layers are shown. The controls are revealed after the interactive SVG is available; a descriptive static image remains the fallback. Checkbox changes control the existing geometry without decorative animation.
+### Request forms and recipient status
 
-### Download rows / Containers
+Both request forms use white fields on paper, one-pixel control borders, two-pixel corners, 12px input padding, 48px minimum field height, 16px values and labels separated by 8px. Shared field pairs have an 18px gap. Contact textarea minimum height is 140px; House Core’s is 106px. Both resize vertically.
 
-Operating-system downloads are square white rows on navy, with three columns: a 44px icon track, flexible copy and a trailing download icon. They use 24px padding and an 18px gap; mobile uses 22px padding and a 12px gap. The primary label is 18px bold, the note 13px muted. Hover changes the surface to the observed pale neutral `#f0f3f5`; focus stays yellow because these rows belong to the navy download section. There is no pill/chip system in the new surface.
+The recipient notice is a square bordered block before the first editable field. On the contact page it has a white fill; House Core’s pending notice inherits the paper surface. The notice explains the current channel before the user enters information. When a recipient is unavailable, the interface supports copying text and does not expose an email-send claim. Preserve the neutral introduction and contextual document list. Fieldsets start disabled until initialization, and a noscript explanation remains available; validation and disabled appearance use native browser behavior rather than invented error tokens. Status feedback is textual in a live status region.
 
-### Disclosure rows
+### Disclosures
 
-FAQ and installation help use native `details` / `summary`. FAQ rows have a fine bottom rule, 22px bottom padding and margin, an 18px semibold summary, and a 15px answer. Installation help on navy uses a smaller 15px summary and light supporting text. Keep native expansion behavior, keyboard interaction and visible focus; there is no custom opening animation.
+Service and House Core FAQs use native `details` / `summary`, an 18px semibold summary, a fine bottom rule and 22px row separation. Answers use 15px muted body text. House Core installation help uses a smaller summary within the navy download section. There is no custom open/close animation.
+
+### House Core plan and downloads
+
+The layered plan is a square paper-framed figure with a white drawing stage, labelled heading, native checkbox fieldset and visible text status. Checkboxes are 17px, navy-accented and labelled in 14px body text. Controls appear only once the interactive SVG is ready; a descriptive static plan is the fallback. Toggling layers updates existing geometry and the live text state without decorative motion.
+
+Operating-system downloads are square white rows on navy, with a 44px icon track, flexible copy and trailing download icon. They use 24px padding / 18px gaps, reduced to 22px / 12px on the House Core mobile breakpoint. The focus outline stays yellow. There is no chip/tag component system in the implemented website.
+
+### Focus and motion
+
+Interactive controls use a three-pixel focus outline offset by five pixels. Teal is used on light surfaces and yellow within navy bands and the footer. Navigation/current states, labels and status text complement color. Reduced-motion preference removes transitions and animations and uses automatic scrolling. Beyond button colors, service-arrow hover and smooth anchor scrolling, the site has no decorative motion system.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- Do preserve the existing Lostar logo and the Rockstar / sans-serif hierarchy.
-- Do show project geometry and exported documents with a visible description of their demonstrative status.
-- Do use the current container widths and stacked mobile reading order before adding new layout rules.
-- Do preserve native controls, visible focus, text status and reduced-motion behavior.
-- Do keep House Core composition rules scoped to House Core and its home entry.
+- Do preserve the shared logo, type stacks, header and footer on every page.
+- Do use ruled rows and clear service headings to organize industrial content.
+- Do keep diagram/demo captions visible and accurate about what the image represents.
+- Do show recipient availability before editable request fields and keep action labels consistent with the available channel.
+- Do preserve the mobile reading order, keyboard focus and reduced-motion behavior.
+- Do use House Core’s plan and document evidence within its specialized layouts.
 
 ### Don't:
 
-- Don’t treat the House Core light-table composition as a new identity for the industrial services.
-- Don’t replace the plan or real exported document with generic decorative feature cards.
-- Don’t remove layer labels, the live visibility status or the static plan fallback.
-- Don’t use color alone to communicate a selected layer or an interaction state.
-- Don’t describe illustrative imagery as a photograph of a completed Lostar installation.
+- Don’t retain the superseded House-only scope or a separate earlier industrial style.
+- Don’t add stock metrics, invented project photography or unverified ratings to technical diagrams.
+- Don’t use decorative standalone kickers above the main content headings.
+- Don’t introduce a translucent or blurred header, raised service cards or ornamental motion.
+- Don’t hide a request limitation below the effort it qualifies or imply an upload/send operation that the interface does not perform.

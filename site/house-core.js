@@ -1,22 +1,3 @@
-const menuButton = document.querySelector('.menu-button');
-const mainNav = document.querySelector('.main-nav');
-function closeMenu() {
-  mainNav.classList.remove('is-open');
-  menuButton.setAttribute('aria-expanded', 'false');
-  menuButton.setAttribute('aria-label', 'Apri menu');
-}
-menuButton.addEventListener('click', () => {
-  const open = mainNav.classList.toggle('is-open');
-  menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu');
-});
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && mainNav.classList.contains('is-open')) {
-    closeMenu(); menuButton.focus();
-  }
-});
-mainNav.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
-
 async function loadPlan() {
   try {
     const response = await fetch('./assets/house-demo/house-demo.svg');
@@ -55,17 +36,21 @@ function requestText() {
   return `Buongiorno Lostar,\n\nvorrei valutare il mio progetto House Core.\n\nNome: ${fields.get('nome')}\nComune dell'intervento: ${fields.get('comune')}\nRichiesta: ${fields.get('servizio')}\n\nIl progetto:\n${fields.get('progetto')}\n\nAllegati: aggiungo a questa email lo ZIP dei layer esportati da House Core.\n\nGrazie.`;
 }
 async function loadContact() {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
   try {
-    const response = await fetch('./contact-config.json');
+    const response = await fetch('./contact-config.json', { signal: controller.signal });
     if (!response.ok) throw new Error('config');
     const config = await response.json();
     if (typeof config.email === 'string' && /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(config.email)) contactEmail = config.email;
   } catch { /* The draft helper stays usable without a configured recipient. */ }
+  finally { clearTimeout(timeout); }
   const channel = document.querySelector('#hc-contact-channel');
   if (contactEmail) {
     const link = document.createElement('a');
     link.href = `mailto:${contactEmail}`; link.textContent = contactEmail; link.className = 'hc-address hc-link';
     channel.replaceChildren(link);
+    document.querySelector('#hc-mail-button').hidden = false;
   } else {
     channel.className = 'hc-pending';
     channel.textContent = 'Anteprima: il recapito Lostar per ricevere i layer è in configurazione. Puoi già preparare e copiare la richiesta; nessun file viene inviato da questa pagina.';
@@ -98,3 +83,5 @@ copyButton.addEventListener('click', async () => {
     status.textContent = 'Copia il testo selezionato e incollalo nella tua email, poi allega lo ZIP.';
   }
 });
+
+document.querySelector('#hc-fields').disabled = false;

@@ -1,6 +1,6 @@
 # Correzione editoriale e privacy — 23 settembre 2026
 
-La richiesta successiva dell’utente sostituisce il brief precedente: eliminare ogni riferimento pubblico all’indirizzo reale della casa, inclusi nomi file, metadati e download. La parola chiave principale è «strisce LED Torino»; titolo e sottotitoli devono mettere in evidenza quel tema, con sezioni correlate su soffitto, profili LED, domotica, alimentazione, materiali e preventivo. Il progetto di origine resta una fonte interna anonima. Il testo storico sotto non autorizza a ripubblicare l’indirizzo.
+La richiesta successiva dell’utente sostituisce il brief precedente: eliminare ogni riferimento pubblico all’indirizzo reale della casa, inclusi nomi file, metadati e download. La parola chiave principale è «strisce LED Torino»; il titolo principale e i metadati mantengono la keyword. L’ultima correzione dell’utente richiede di togliere «Torino» dai sottotitoli e dall’indice, usando sezioni tematiche su soffitto, profili LED, domotica, alimentazione, materiali e preventivo. Il progetto di origine resta una fonte interna anonima. Il testo storico sotto non autorizza a ripubblicare l’indirizzo.
 
 # Primo articolo Lostar: luce e progetto
 

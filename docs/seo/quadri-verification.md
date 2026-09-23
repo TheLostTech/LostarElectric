@@ -47,3 +47,13 @@ Non sono stati misurati volumi di ricerca, ranking, impressioni, visite, convers
 ## Disponibilità del dominio
 
 Durante la lavorazione il DNS locale conservava i record della pagina di parcheggio Squarespace. Autoritativi, Google e Cloudflare restituivano il record Vercel. La connessione HTTPS con risoluzione esplicita all'indirizzo Vercel restituiva il sito corretto. Si tratta di evidenza su cache e instradamento, non di un motivo per cambiare nuovamente i DNS o i nameserver. La verifica di produzione del nuovo articolo viene registrata dopo il deploy.
+
+## Verifica di produzione
+
+Osservata il 2026-09-23T16:17:36+02:00. Commit contenuti `d7df7bd`, deployment `dpl_4gkETEhZPB1vrP1CKk9amCTFnYWC`, stato READY e alias lostartechnology.com assegnato.
+
+Verificati nove URL HTTPS sul dominio canonico: homepage, articolo, indice, pagina quadri, articolo LED, sitemap, robots, CSS e SVG. Tutti rispondono HTTP 200. HTML dell’articolo identico al file sorgente; canonical, date luglio/settembre e House Studio presenti. Nessun X-Robots-Tag noindex sulla risposta canonica. Sitemap include il nuovo articolo e robots indica la sitemap del dominio.
+
+Per il dominio canonico è stata usata la risoluzione esplicita al record Vercel 216.198.79.1: la cache DNS del resolver locale continua a restituire il precedente parcheggio, mentre Cloudflare restituisce Vercel. Ciò verifica deploy e instradamento corretto, non che ogni cache utente sia già aggiornata. Il dominio di deployment unico restituisce 302 verso Vercel SSO alle richieste prive di sessione; il sito canonico è invece pubblico. L’alias lostar-electric.vercel.app redirige con 308 al dominio canonico.
+
+Verificata anche la pagina pubblicata in Chrome nella sessione Vercel già autenticata: titolo, contenuto e date visibili corretti. L’anteprima del deployment è stata lasciata aperta per l’utente; fuori da una sessione autorizzata può richiedere il login Vercel.

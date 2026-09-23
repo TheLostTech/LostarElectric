@@ -1,0 +1,204 @@
+{
+  "checked_at": "2026-09-23T14:38:07.503468+00:00",
+  "boundary": "Static source, links and metadata; not indexing, ranking, rich-result eligibility or AI citation measurement.",
+  "pages": [
+    {
+      "path": "site/articoli/quadri-elettrici.html",
+      "url": "https://lostartechnology.com/articoli/quadri-elettrici",
+      "title": "Quadri elettrici: carichi, protezioni e domotica | Lostar",
+      "title_length": 57,
+      "description_length": 151,
+      "h1": [
+        "Quadri elettrici: carichi, protezioni e casa domotica"
+      ],
+      "schema_types": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Thing",
+        "WebSite"
+      ],
+      "internal_targets_checked": 46,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "site/articoli/strisce-led-soffitto-torino.html",
+      "url": "https://lostartechnology.com/articoli/strisce-led-soffitto-torino",
+      "title": "Strisce LED Torino: soffitto e domotica | Lostar",
+      "title_length": 48,
+      "description_length": 152,
+      "h1": [
+        "Strisce LED Torino: illuminazione a soffitto e domotica"
+      ],
+      "schema_types": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Thing",
+        "WebSite"
+      ],
+      "internal_targets_checked": 48,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "site/articoli.html",
+      "url": "https://lostartechnology.com/articoli",
+      "title": "Articoli: quadri elettrici, LED e domotica | Lostar",
+      "title_length": 51,
+      "description_length": 150,
+      "h1": [
+        "Articoli su impianti e casa domotica."
+      ],
+      "schema_types": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "ImageObject",
+        "ItemList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ],
+      "internal_targets_checked": 36,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "site/automazione.html",
+      "url": "https://lostartechnology.com/automazione",
+      "title": "Cablaggio bordo macchina e quadri di comando | Lostar",
+      "title_length": 53,
+      "description_length": 147,
+      "h1": [
+        "Quadri e cablaggi bordo macchina."
+      ],
+      "schema_types": [
+        "BreadcrumbList",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ],
+      "internal_targets_checked": 30,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "site/collaudo.html",
+      "url": "https://lostartechnology.com/collaudo",
+      "title": "Collaudo e modifiche di quadri elettrici | Lostar Electric",
+      "title_length": 58,
+      "description_length": 147,
+      "h1": [
+        "Modifiche e verifiche su quadri elettrici."
+      ],
+      "schema_types": [
+        "BreadcrumbList",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ],
+      "internal_targets_checked": 30,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "site/contatti.html",
+      "url": "https://lostartechnology.com/contatti",
+      "title": "Preventivo quadri elettrici e domotica | Contatti Lostar",
+      "title_length": 56,
+      "description_length": 145,
+      "h1": [
+        "Preventivo per il tuo impianto."
+      ],
+      "schema_types": [
+        "BreadcrumbList",
+        "ContactPage",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ],
+      "internal_targets_checked": 28,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "site/house-core.html",
+      "url": "https://lostartechnology.com/house-core",
+      "title": "House Core e House Studio: progetta la casa domotica | Lostar",
+      "title_length": 61,
+      "description_length": 144,
+      "h1": [
+        "House Core per la casa domotica."
+      ],
+      "schema_types": [
+        "ImageObject",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ],
+      "internal_targets_checked": 45,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "site/index.html",
+      "url": "https://lostartechnology.com/",
+      "title": "Quadri elettrici, automazione e House Core | Lostar Electric",
+      "title_length": 60,
+      "description_length": 153,
+      "h1": [
+        "Quadri elettrici. Automazione. Domotica."
+      ],
+      "schema_types": [
+        "ImageObject",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ],
+      "internal_targets_checked": 43,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "site/quadri.html",
+      "url": "https://lostartechnology.com/quadri",
+      "title": "Quadri elettrici: assemblaggio e cablaggio | Lostar Electric",
+      "title_length": 60,
+      "description_length": 154,
+      "h1": [
+        "Quadri elettrici su progetto."
+      ],
+      "schema_types": [
+        "BreadcrumbList",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ],
+      "internal_targets_checked": 31,
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "site_errors": [],
+  "summary": {
+    "pages": 9,
+    "errors": 0,
+    "warnings": 0,
+    "internal_targets_checked": 337
+  }
+}

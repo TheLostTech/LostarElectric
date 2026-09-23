@@ -21,7 +21,7 @@ function redirectLegacyHash() {
   const onHome = /\/(?:index\.html)?$/.test(location.pathname);
   const route = location.hash.slice(1);
   if (onHome && ['quadri','automazione','collaudo','house-core','contatti'].includes(route)) {
-    location.replace(`./${route}.html`);
+    location.replace(`/${route}`);
   }
 }
 redirectLegacyHash();

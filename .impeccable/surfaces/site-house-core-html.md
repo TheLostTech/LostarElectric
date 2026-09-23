@@ -30,3 +30,7 @@ FIRST VIEWPORT: Titolo ampio a sinistra con azione di download; a destra pianta 
 FORM: Tavolo luminoso dei livelli, posizione 4, seed 81af8426. Interazione firma: checkbox che sovrappongono arredi, luci e percorsi alla stessa geometria; il PDF scaricabile prova la continuità.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+## SEO refinement · 23 September 2026
+
+The subsequent refinement keeps this Persuade surface and its plan, PDF, download and request components. The H1 names House Core as the local home system; download actions name House Studio as the free virtual planning application. ZIP preview status, separate hardware/installation scope and request limitations remain explicit. No CSS or global design-token change applies. Direction, independent SHIP verdict, asset provenance and verification boundaries are recorded in `docs/seo/site-seo-direction.md`, `docs/seo/site-finish-review.md` and `docs/seo/site-design-documentation.md`.

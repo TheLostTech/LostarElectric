@@ -34,3 +34,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 ## Delivery limitations
 
 Contact recipient remains unconfirmed (email null). The preview must never claim to send or upload. No new questions or invented contact data. Existing Vercel TEAM_ACCESS_REQUIRED denial is unresolved; no further deployment attempts without account-state change. GitHub PR remains a draft, updated to full-site scope after verification.
+
+## SEO refinement · 23 September 2026
+
+The subsequent bounded SEO pass covers all nine public HTML pages. Home remains Persuade and reuses the established service FAQ disclosures and editorial link band, with clearer service headings and House Core / House Studio terminology. Identity, CSS, layout primitives and existing controls are preserved. See `docs/seo/site-seo-direction.md`, the independent SHIP review in `docs/seo/site-finish-review.md` and `docs/seo/site-design-documentation.md` for provenance and evidence limits. Release state for this pass belongs to `docs/seo/site-seo-review-2026-09-23.md`; earlier delivery statements above describe their original phase.

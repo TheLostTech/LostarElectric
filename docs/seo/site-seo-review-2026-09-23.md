@@ -18,7 +18,7 @@ Fonte vendor: [report SEOptimer](https://www.seoptimer.com/lostartechnology.com#
 | Link HTML interni che richiedono redirect `.html` | 156 | 0 |
 | Indice testuale opzionale `llms.txt` | assente | presente |
 
-Il confronto deriva dai sorgenti Git prima/dopo, non dal ricalcolo di SEOptimer. Evidenza: `site-metadata-comparison.json`. Audit statico: `site-audit-after-2026-09-23.json`; 9 pagine e 337 riferimenti interni controllati, nessun errore o salto di livello dei titoli. Comando: `python3 scripts/seo-audit.py --output docs/seo/site-audit-after-2026-09-23.json`.
+Il confronto deriva dai sorgenti Git prima/dopo, non dal ricalcolo di SEOptimer. Evidenza: `site-metadata-comparison.json`. Audit statico: `site-audit-after-2026-09-23.json`; 9 pagine e 346 riferimenti interni controllati, nessun errore o salto di livello dei titoli. Comando: `python3 scripts/seo-audit.py --output docs/seo/site-audit-after-2026-09-23.json`.
 
 Implementati:
 
@@ -87,4 +87,21 @@ Responsabile editoriale/commerciale: Lostar, per dati aziendali, veridicità del
 
 ## Pubblicazione e nuova misura
 
-Da completare con identificativo del rilascio, esito HTTP pubblico e disponibilità di una nuova rilevazione SEOptimer. Il voto iniziale B resta l'ultimo voto osservato fino a una scansione nuova.
+Rilascio iniziale delle ottimizzazioni: commit `2385476`, deployment Vercel `dpl_AbzBy6wLsb92VKFbDy1whk3LLDNn`, pronto e assegnato al dominio definitivo. I 24 controlli HTTP pubblici sono passati: nove pagine identiche ai sorgenti, metadati/assets/robots/sitemap/llms serviti, route inesistente 404, redirect 308 delle vecchie route e tre download disponibili. Il redirect `/contatti.html?servizio=quadri` conserva la query in `/contatti?servizio=quadri`.
+
+SEOptimer, dopo il rilascio, ha nuovamente rifiutato Quick Audit per limite giornaliero gratuito. **B resta il voto storico osservato, non il voto del codice aggiornato.** Nessun piano a pagamento è stato attivato.
+
+Test indipendente Seobility sulla homepage aggiornata, modalità standard senza JavaScript: **87/100**, metadati 100%, qualità pagina 90%, struttura 100%, link 62%, server 100%, fattori esterni 3%. Il report mostra la nuova descrizione House Studio, HTTP 200 e stato Follow/Index; ha quindi letto il rilascio corretto. Questo punteggio riguarda la homepage e non è direttamente confrontabile con il B di SEOptimer. Seobility trova un backlink da un dominio: la differenza rispetto a zero di SEOptimer dipende dai rispettivi indici e non misura un backlink acquisito durante il lavoro.
+
+Il test ha individuato l'assenza di apple-touch-icon: aggiunta l'icona del marchio a 180×180 su fondo bianco in tutte le pagine, con provenienza incorporata. Non sono state alterate le righe servizio interamente cliccabili, la ripetizione dei link nei menu/footer o le query che preselezionano il servizio per inseguire gli avvisi euristici. Nessuna destinazione esterna o condivisione social artificiale aggiunta solo per il punteggio.
+
+Fonte vendor osservata: [Seobility, homepage Lostar](https://www.seobility.net/en/seocheck/check/?url=https%3A%2F%2Flostartechnology.com%2F&mode=standard). Dettagli riproducibili in `seobility-home-2026-09-23.json`.
+
+
+### Verifica finale dopo l'icona
+
+Rilascio finale del sito: commit `bd97343`, deployment `dpl_Gk3Pj8QP2LkURsLWL9iz7FCJUtuq`, pronto sul dominio canonico. **25/25 controlli pubblici superati**, compreso il PNG Apple; tutte le nove risposte HTML coincidono con i file locali. Il browser sul deployment autenticato ha verificato il passaggio `/#quadri` → `/quadri`, homepage finale, canonical e link all'icona. Non è stato modificato il comportamento dei form.
+
+Una seconda scansione Seobility della stessa homepage e nella stessa modalità rileva **88/100**, rispetto a 87 prima dell'icona: metadati 100%, qualità pagina 94%, struttura 100%, link 62%, server 100%, fattori esterni 3%. L'avviso sull'icona Apple è risolto. È un incremento osservato nel controllo on-page del vendor, non una misura del posizionamento su Google.
+
+La revisione indipendente Impeccable ha concluso SHIP nel perimetro visivo esaminato. La sola modifica successiva riguarda l'icona e i suoi metadati, verificati nei nove sorgenti e nella risposta pubblica; CSS e layout restano invariati. Documentazione completata in `site-design-documentation.md`; nessuna modifica al sistema grafico globale.

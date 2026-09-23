@@ -24,5 +24,19 @@
     "No external links from homepage",
     "One backlink from one referring domain in vendor index"
   ],
-  "limits": "Not a whole-site score or evidence of ranking; not comparable to SEOptimer grade B."
+  "limits": "Not a whole-site score or evidence of ranking; not comparable to SEOptimer grade B.",
+  "followup": {
+    "checked_at": "2026-09-23T14:47:41.294805+00:00",
+    "deployment": "dpl_Gk3Pj8QP2LkURsLWL9iz7FCJUtuq",
+    "only_change": "Branded apple-touch-icon asset linked from all pages",
+    "on_page_score": 88,
+    "metadata": 100,
+    "page_quality": 94,
+    "page_structure": 100,
+    "links": 62,
+    "server": 100,
+    "external_factors": 3,
+    "apple_touch_icon": "One or more Apple Touch icons are specified.",
+    "comparison": "Same provider, same homepage URL and Standard crawl mode; 87 to 88 after the single additional icon change. Not comparable to SEOptimer B."
+  }
 }

@@ -12,6 +12,11 @@ Progetto Vercel esistente: `lostar-electric` nel team `alessandrolostumbo-9141s-
 - Anteprima pronta: https://lostar-electric-nxqq8dqws-alessandrolostumbo-9141s-projects.vercel.app
 - Dopo la conferma esplicita dell'utente, i sei record del preset Squarespace sono stati sostituiti con i due record Vercel elencati sotto. I preset email e Domain Connect sono rimasti invariati.
 - I DNS autoritativi restituiscono i nuovi valori; l'API Vercel segnala `misconfigured: false` per apex e www. Il record HTTPS del parcheggio è assente. Il dominio apex risponde con HTTPS valido e HTTP 200 sull'indirizzo Vercel. Alcuni resolver possono conservare il parcheggio durante il TTL precedente di quattro ore.
+- Pubblicato in produzione il commit `998ff24`, deployment `dpl_5FbceHCPMsY7MZFoCMR54j5Lqqyi` (https://lostar-electric-patkhgwlf-alessandrolostumbo-9141s-projects.vercel.app).
+- Certificati Vercel emessi per apex e www, rinnovo automatico abilitato.
+- `www.lostartechnology.com` e `lostar-electric.vercel.app` restituiscono 308 verso il dominio definitivo, conservando percorso e query. Verificato con `/house-core?dominio=test`.
+- Verificate in produzione le sei pagine con HTTPS valido, HTTP 200, canonical e `og:url` coerenti, robots e sitemap con sei URL. Verificati HTTP 200 per i download Windows, Mac e archivio PDF d'esempio.
+- La verifica di contenuti e download è stata eseguita con `curl --resolve lostartechnology.com:443:216.198.79.1`, senza disabilitare la verifica TLS: la rete locale conservava ancora il DNS precedente. I resolver pubblici Google (`8.8.8.8`) e Cloudflare (`1.1.1.1`) restituivano già il nuovo record. Nessuna modifica ulteriore ai DNS è necessaria per la propagazione.
 
 ## DNS configurati
 

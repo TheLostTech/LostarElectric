@@ -50,3 +50,5 @@ Il 23 settembre 2026 Alessandro ha richiesto che il sito e i materiali pubblici 
 ## Open decisions
 
 Indirizzo reale di ricezione richieste chiesto all'utente; quello nel vecchio kit era un segnaposto. Nessuna infrastruttura di ricezione allegati esiste nel sito attuale. Non dichiarare spedizioni riuscite senza backend.
+
+Il documento di prodotto House Core fornito da Alessandro il 23 settembre 2026 distingue House Core (software e computer locale della casa) da House Studio (app desktop per progettare in virtuale). Per i nuovi contenuti usare questi nomi, descrivere i download correnti come pacchetti di anteprima e non attribuire al software funzioni di protezione o certificazione elettrica. Gli esempi della casa prototipo restano anonimi anche per marche e modelli dei suoi impianti. Le fonti tecniche generiche possono essere citate senza attribuirne i prodotti alla casa.

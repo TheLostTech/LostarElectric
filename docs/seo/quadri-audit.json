@@ -1,0 +1,167 @@
+{
+  "answer_signals": {
+    "question_marks": 3,
+    "word_count": 2824
+  },
+  "canonical": "https://lostartechnology.com/articoli/quadri-elettrici",
+  "findings": [],
+  "h1_count": 1,
+  "headings": [
+    {
+      "level": 1,
+      "question": false,
+      "text": "Quadri elettrici: carichi, protezioni e casa domotica"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "In questa guida"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici: il progetto comincia dalla vita in casa"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici e circuiti: dare un nome a ogni funzione"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici: come bilanciare i carichi"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "La contemporaneità di cucina e lavanderia"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Monofase, trifase e gestione delle priorità"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici: magnetotermici e differenziali"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "La parte termica e la parte magnetica"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Il differenziale e la continuità di servizio"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici e contattori: comandare i grandi carichi"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici domotici: misurare senza confondere le funzioni"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici e geometria dell’impianto: dove passa l’energia"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Dal quadro all’isola, passando dal controsoffitto"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Accessibilità, spazio e locali da bagno"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici a norma: progetto, verifiche e documenti"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Le norme dell’impianto e quelle del quadro"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Chi progetta e chi rilascia la dichiarazione"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici: dal computo dei materiali al preventivo"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici e House Core: dalla pianta al progetto condiviso"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Quadri elettrici interrogabili: che cosa resta senza corrente?"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Dal progetto virtuale alle tavole dei quadri elettrici"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici: le domande prima di acquistare"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Quanti circuiti servono nei quadri elettrici di casa?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Quadri elettrici più grandi significano più potenza?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Posso rendere domotici i quadri elettrici già esistenti?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "House Core realizza lo schema elettrico esecutivo?"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quadri elettrici: prepara il tuo progetto con Lostar"
+    }
+  ],
+  "jsonld_blocks": 1,
+  "jsonld_parse_errors": 0,
+  "jsonld_types": [
+    "BlogPosting",
+    "BreadcrumbList"
+  ],
+  "limitations": [
+    "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+    "Static parsing may miss content rendered only after JavaScript."
+  ],
+  "link_count": 46,
+  "question_heading_count": 5,
+  "robots_meta": "",
+  "source": "site/articoli/quadri-elettrici.html",
+  "title": "Quadri elettrici: carichi, protezioni e domotica | Lostar",
+  "local_absolute_path_omitted": true
+}

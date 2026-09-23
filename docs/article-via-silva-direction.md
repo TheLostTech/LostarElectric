@@ -1,3 +1,7 @@
+# Correzione editoriale e privacy — 23 settembre 2026
+
+La richiesta successiva dell’utente sostituisce il brief precedente: eliminare ogni riferimento pubblico all’indirizzo reale della casa, inclusi nomi file, metadati e download. La parola chiave principale è «strisce LED Torino»; titolo e sottotitoli devono mettere in evidenza quel tema, con sezioni correlate su soffitto, profili LED, domotica, alimentazione, materiali e preventivo. Il progetto di origine resta una fonte interna anonima. Il testo storico sotto non autorizza a ripubblicare l’indirizzo.
+
 # Primo articolo Lostar: luce e progetto
 
 Modalità Read. Estensione editoriale del catalogo tecnico Lostar esistente: logo, Rockstar, navy/giallo, superfici piatte e regole sottili invariati. Brief esplicito dell'utente: titoli e sottosezioni, storia commerciale sul prototipo via Silva 5, tema strisce LED soffitto Torino e collegamento a House Core. Nessun rifacimento del mondo visivo.

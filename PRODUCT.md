@@ -38,6 +38,8 @@ Nome Lostar e House Core, italiano diretto, tono competente e concreto. Logo esi
 
 Sito statico in produzione su lostar-electric.vercel.app, copia originaria in site/. Repo remoto TheLostTech/LostarElectric conteneva il kit del marchio, non la copia statica in produzione. Export PDF e pacchetti 22 settembre 2026 già costruiti nel progetto House OS locale. Esempi pubblici da generare con soli dati sintetici, esplicitamente indicati; nessun progetto privato del cliente da pubblicare. Le illustrazioni quadri del sito sono segnaposti, non foto di lavori reali.
 
+Il 23 settembre 2026 Alessandro ha richiesto che il sito e i materiali pubblici non contengano l’indirizzo reale della casa, compresi nomi di file, metadati e pacchetti scaricabili. Le informazioni del progetto possono alimentare esempi anonimi; presentare il caso come progetto dimostrativo House Core. La priorità editoriale è il tema cercato dal cliente: per il primo articolo, «strisce LED Torino», con illuminazione a soffitto e domotica nei titoli e sottotitoli.
+
 ## Product Principles
 
 - La progettazione virtuale gratuita è il punto d'ingresso.

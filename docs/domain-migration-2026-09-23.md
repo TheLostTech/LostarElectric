@@ -45,3 +45,7 @@ TTL comune: 4 ore. Questi sono i sei record del parcheggio Squarespace da sostit
 | HTTPS | @ | `1 . alpn="h2,http/1.1" ipv4hint="198.185.159.144,198.185.159.145,198.49.23.144,198.49.23.145"` |
 
 Gli altri preset rilevati sono Squarespace Domain Connect e Sicurezza della posta elettronica: conservarli integralmente.
+
+## Search Console
+
+Il 23 settembre 2026, dopo conferma esplicita dell’utente, è stata verificata la proprietà dominio lostartechnology.com nell’account Google aziendale Lostar tramite un record TXT aggiuntivo su Squarespace. Il record di verifica deve essere conservato. I record di hosting, email e Domain Connect non sono stati modificati. Sitemap elaborata correttamente con otto pagine rilevate; richiesta di indicizzazione del primo articolo accettata. Vedi [verifica articolo e Google](article-via-silva-verification.md).

@@ -21,6 +21,12 @@
 
 ## Google
 
-La procedura di proprietà dominio Search Console è preparata nell’account aziendale, ma non completata: manca la conferma richiesta dalla policy del controllo del browser per attribuire accesso persistente. Nessun TXT di verifica Google è stato aggiunto, nessuna sitemap inviata da Search Console e nessuna richiesta di indicizzazione completata in questa fase. La sitemap pubblica è già aggiornata e indicata nel robots. Non viene dichiarata né garantita l’indicizzazione o una posizione.
+Dopo la conferma esplicita dell’utente, il 23 settembre 2026 è stato aggiunto il TXT Google alla radice del dominio su Squarespace. Search Console ha confermato «Proprietà verificata» nell’account aziendale Lostar. Il record è stato controllato anche sui DNS autoritativi; i record web, email e Domain Connect sono invariati. Il TXT deve restare presente per mantenere la verifica.
+
+La sitemap https://lostartechnology.com/sitemap.xml è stata inviata e il dettaglio finale riporta «Sitemap elaborata correttamente», ultima lettura 23/09/26, otto pagine rilevate e zero video. Il riepilogo aveva inizialmente mostrato «Impossibile recuperare», poi superato dal risultato di elaborazione nel dettaglio.
+
+Il test in tempo reale dell’articolo, eseguito il 23 settembre 2026 alle 15:11, riporta «L’URL è disponibile per Google», «La pagina può essere indicizzata» e un elemento Breadcrumb valido. È stata inviata la richiesta di indicizzazione: Google ha mostrato «Indicizzazione richiesta» e ha confermato l’inserimento dell’URL nella coda di scansione prioritaria. Lo stato dell’indice precedente alla richiesta era «Rilevata, ma attualmente non indicizzata»: la richiesta accettata non è una prova di indicizzazione già avvenuta e non garantisce posizioni.
+
+Proprietà: https://search.google.com/u/2/search-console?resource_id=sc-domain%3Alostartechnology.com. Verifica, invio sitemap ed esiti sono stati letti direttamente nell’interfaccia Search Console dell’account Lostar.
 
 Riferimenti consultati: [policy anti-spam Google, keyword stuffing e doorway abuse](https://developers.google.com/search/docs/essentials/spam-policies), [verifica proprietà Search Console](https://support.google.com/webmasters/answer/9008080?hl=it).

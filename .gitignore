@@ -3,3 +3,5 @@
 .impeccable/review/
 .impeccable/mocks/
 node_modules/
+docs/brand/
+.agents/

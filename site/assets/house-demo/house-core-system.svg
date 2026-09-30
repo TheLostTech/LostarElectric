@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="diagram-title diagram-desc">
+  <title id="diagram-title">House Core collega la casa al suo assistente</title>
+  <desc id="diagram-desc">Diagramma concettuale, senza dati reali: ambienti, circuiti elettrici dichiarati, dispositivi compatibili e misure disponibili convergono nel modello locale House Core. L'assistente consulta il contesto, lo spiega e propone azioni entro i limiti autorizzati.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#e8eef1" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#0b2545"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="720" fill="#f4f6f6"/>
+  <rect x="25" y="25" width="1150" height="670" fill="#fff" stroke="#d5dfe2" stroke-width="2"/>
+  <rect x="26" y="102" width="1148" height="592" fill="url(#grid)"/>
+  <path d="M25 103H1175" stroke="#d5dfe2" stroke-width="2"/>
+  <rect x="25" y="25" width="9" height="78" fill="#f4b500"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#0b2545">
+    <text x="61" y="78" font-size="34" font-weight="700" letter-spacing="-.5">La casa, in un unico modello.</text>
+    <text x="1138" y="75" font-size="15" font-weight="700" letter-spacing="1.5" text-anchor="end">HOUSE CORE · LOCALE</text>
+  </g>
+
+  <!-- Relations are deliberately schematic: the diagram does not imply discovered wiring or live readings. -->
+  <g fill="none" stroke="#0b2545" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M338 244H392V305H429" marker-end="url(#arrow)"/>
+    <path d="M338 455H392V414H429" marker-end="url(#arrow)"/>
+    <path d="M862 244H807V305H772" marker-end="url(#arrow)"/>
+    <path d="M862 455H807V414H772" marker-end="url(#arrow)"/>
+    <path d="M600 512V559" marker-end="url(#arrow)"/>
+  </g>
+  <g fill="#f4b500" stroke="#0b2545" stroke-width="2">
+    <circle cx="392" cy="305" r="6"/>
+    <circle cx="392" cy="414" r="6"/>
+    <circle cx="807" cy="305" r="6"/>
+    <circle cx="807" cy="414" r="6"/>
+  </g>
+
+  <!-- Rooms and zones -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="70" y="159" width="268" height="170" fill="#fff" stroke="#0b2545" stroke-width="2"/>
+    <path d="M70 159H338" stroke="#f4b500" stroke-width="7"/>
+    <g fill="none" stroke="#0b2545" stroke-width="2.5" stroke-linecap="square">
+      <path d="M91 186H135V226H113V252H91Z"/>
+      <path d="M113 226H145V252H113"/>
+      <path d="M91 207H113"/>
+    </g>
+    <text x="165" y="211" fill="#0b2545" font-size="24" font-weight="700">Ambienti</text>
+    <text x="91" y="286" fill="#526170" font-size="19">Stanze e zone</text>
+  </g>
+
+  <!-- Electrical relationships -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="70" y="370" width="268" height="170" fill="#fff" stroke="#0b2545" stroke-width="2"/>
+    <path d="M70 370H338" stroke="#f4b500" stroke-width="7"/>
+    <g fill="none" stroke="#0b2545" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M94 414H119V438H147"/>
+      <path d="M119 438V461H147"/>
+      <circle cx="94" cy="414" r="5" fill="#fff"/>
+      <circle cx="147" cy="438" r="5" fill="#fff"/>
+      <circle cx="147" cy="461" r="5" fill="#fff"/>
+    </g>
+    <text x="165" y="421" fill="#0b2545" font-size="23" font-weight="700">Impianto</text>
+    <text x="91" y="497" fill="#526170" font-size="19">Circuiti dichiarati</text>
+  </g>
+
+  <!-- Compatible devices -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="862" y="159" width="268" height="170" fill="#fff" stroke="#0b2545" stroke-width="2"/>
+    <path d="M862 159H1130" stroke="#f4b500" stroke-width="7"/>
+    <g fill="none" stroke="#0b2545" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="886" y="190" width="48" height="48" rx="5"/>
+      <path d="M898 212H922M910 200V224"/>
+      <path d="M892 244H928"/>
+    </g>
+    <text x="952" y="211" fill="#0b2545" font-size="24" font-weight="700">Dispositivi</text>
+    <text x="884" y="286" fill="#526170" font-size="19">Compatibili e collegati</text>
+  </g>
+
+  <!-- Measurements; no values imply live telemetry -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="862" y="370" width="268" height="170" fill="#fff" stroke="#0b2545" stroke-width="2"/>
+    <path d="M862 370H1130" stroke="#f4b500" stroke-width="7"/>
+    <g fill="none" stroke="#0b2545" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M887 447H898L905 425L913 457L921 438H934"/>
+      <path d="M887 466H934" stroke="#a7b5be"/>
+    </g>
+    <text x="952" y="421" fill="#0b2545" font-size="24" font-weight="700">Misure</text>
+    <text x="884" y="497" fill="#526170" font-size="19">Solo dati disponibili</text>
+  </g>
+
+  <!-- Local operational model -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="429" y="236" width="342" height="276" fill="#0b2545"/>
+    <rect x="429" y="236" width="342" height="9" fill="#f4b500"/>
+    <g fill="none" stroke="#f4b500" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M567 290H592V273H625V290H650V326H567Z"/>
+      <path d="M580 312H637M592 312V326M625 312V326"/>
+      <circle cx="600" cy="301" r="4" fill="#f4b500"/>
+    </g>
+    <text x="600" y="373" text-anchor="middle" fill="#fff" font-size="37" font-weight="700">House Core</text>
+    <text x="600" y="409" text-anchor="middle" fill="#d0dce5" font-size="19">Gemello operativo locale</text>
+    <path d="M463 438H737" stroke="#3a5069" stroke-width="2"/>
+    <text x="600" y="472" text-anchor="middle" fill="#fff" font-size="18">Relazioni · stati · eventi</text>
+  </g>
+
+  <!-- Assistant reads the same model; it is subject to permissions. -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="245" y="574" width="710" height="88" fill="#fff" stroke="#0b2545" stroke-width="2"/>
+    <rect x="245" y="574" width="12" height="88" fill="#f4b500"/>
+    <path d="M286 598H326V627H307L296 638V627H286Z" fill="none" stroke="#0b2545" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M295 608H317M295 616H310" stroke="#0b2545" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="349" y="611" fill="#0b2545" font-size="22" font-weight="700">Assistente</text>
+    <text x="349" y="638" fill="#526170" font-size="18">Consulta il contesto, spiega e propone azioni autorizzate.</text>
+  </g>
+</svg>

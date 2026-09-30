@@ -1,0 +1,9 @@
+{
+  "sourceSvg": "house-core-system-social.svg",
+  "renderer": "Google Chrome headless at 1200x630 CSS pixels",
+  "purpose": "Open Graph and Twitter preview for the House Core product page",
+  "dataset": "Conceptual diagram only; no private house or live measurements",
+  "privateHouseDataUsed": false,
+  "aiGeneratedRaster": false,
+  "createdAt": "2026-09-30T21:48:41Z"
+}

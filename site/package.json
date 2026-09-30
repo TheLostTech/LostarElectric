@@ -1,0 +1,16 @@
+{
+  "name": "lostar-electric-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Lostar site with a protected server-side contact endpoint.",
+  "scripts": {
+    "build:botid": "esbuild src/botid-client.js --bundle --format=iife --minify --outfile=botid-client.js",
+    "test": "node --test ../tests/contact-api.test.js"
+  },
+  "dependencies": {
+    "botid": "1.5.11"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

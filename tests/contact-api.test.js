@@ -1,6 +1,15 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
-const contact = require('../site/api/contact');
+const { createContactHandler } = require('../site/api/contact');
+
+const verificationCalls = [];
+let botVerdict = { isHuman: true, isBot: false };
+let botError = null;
+const contact = createContactHandler(async options => {
+  verificationCalls.push(options);
+  if (botError) throw botError;
+  return botVerdict;
+});
 
 const ENV_KEYS = ['CONTACT_RECIPIENT', 'CONTACT_SENDER', 'RESEND_API_KEY'];
 const originalEnv = Object.fromEntries(ENV_KEYS.map(key => [key, process.env[key]]));
@@ -18,6 +27,9 @@ function reset() {
     else process.env[key] = originalEnv[key];
   }
   global.fetch = originalFetch;
+  verificationCalls.length = 0;
+  botVerdict = { isHuman: true, isBot: false };
+  botError = null;
 }
 
 function request(method, body, headers = {}) {
@@ -69,6 +81,18 @@ test('GET reports availability without exposing a destination', async () => {
     assert.equal(result.status, 200);
     assert.deepEqual(result.body, { available: true });
     assert.equal(result.headers['cache-control'], 'no-store');
+    assert.equal(verificationCalls.length, 0);
+  } finally { reset(); }
+});
+
+test('POST stays copy-only when delivery is not configured', async () => {
+  try {
+    reset();
+    for (const key of ENV_KEYS) delete process.env[key];
+    const result = await call(request('POST', validTechnical()));
+    assert.equal(result.status, 503);
+    assert.deepEqual(result.body, { ok: false, error: 'unavailable' });
+    assert.equal(verificationCalls.length, 0);
   } finally { reset(); }
 });
 
@@ -94,6 +118,9 @@ test('valid technical request sends only the expected plain-text message', async
     assert.equal(sent.html, undefined);
     assert.equal(sent.attachments, undefined);
     assert.doesNotMatch(JSON.stringify(result), /private@example\.test|test-key/);
+    assert.equal(verificationCalls.length, 1);
+    assert.equal(verificationCalls[0].advancedOptions.checkLevel, 'basic');
+    assert.equal(verificationCalls[0].advancedOptions.headers.host, 'lostartechnology.com');
   } finally { reset(); }
 });
 
@@ -112,6 +139,7 @@ test('House Core accepts its service labels and requires email and commune', asy
     body.fields.comune = '';
     assert.equal((await call(request('POST', body))).status, 400);
     assert.equal(sends, 1);
+    assert.equal(verificationCalls.length, 1);
   } finally { reset(); }
 });
 
@@ -145,6 +173,33 @@ test('honeypot quietly skips sending; upstream failure stays generic', async () 
     assert.equal(result.status, 502);
     assert.deepEqual(result.body, { ok: false, error: 'send_failed' });
     assert.equal(sends, 1);
+    assert.equal(verificationCalls.length, 1);
     assert.doesNotMatch(JSON.stringify(result), /private@example\.test/);
+  } finally { reset(); }
+});
+
+test('BotID denial and verification outage fail closed before sending', async () => {
+  try {
+    configure();
+    let sends = 0;
+    global.fetch = async () => { sends++; return { ok: true }; };
+    botVerdict = { isHuman: false, isBot: true };
+    let result = await call(request('POST', validTechnical()));
+    assert.equal(result.status, 403);
+    assert.deepEqual(result.body, { ok: false, error: 'verification_failed' });
+    assert.equal(sends, 0);
+
+    botVerdict = {};
+    result = await call(request('POST', validTechnical()));
+    assert.equal(result.status, 403);
+    assert.equal(sends, 0);
+
+    botError = new Error('Provider error with private@example.test');
+    result = await call(request('POST', validTechnical()));
+    assert.equal(result.status, 503);
+    assert.deepEqual(result.body, { ok: false, error: 'verification_unavailable' });
+    assert.doesNotMatch(JSON.stringify(result), /private@example\.test/);
+    assert.equal(verificationCalls.length, 3);
+    assert.equal(sends, 0);
   } finally { reset(); }
 });

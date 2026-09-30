@@ -1,4 +1,5 @@
 // The destination and sending credentials exist only in the Vercel Function environment.
+const { checkBotId } = require('botid/server');
 const MAX_BODY_BYTES = 8192;
 const EMAIL_PATTERN = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
 const TECHNICAL_SERVICES = {
@@ -123,7 +124,8 @@ function emailText(data) {
   ].join('\n');
 }
 
-module.exports = async function contact(request, response) {
+function createContactHandler(verifyBotId = checkBotId) {
+  return async function contact(request, response) {
   if (request.method === 'GET') {
     reply(response, 200, { available: configured() });
     return;
@@ -163,6 +165,21 @@ module.exports = async function contact(request, response) {
     return;
   }
 
+  // BotID Basic is required for every valid request before the mail provider is called.
+  try {
+    const verification = await verifyBotId({
+      advancedOptions: { checkLevel: 'basic', headers: request.headers }
+    });
+    if (verification.isHuman !== true || verification.isBot !== false) {
+      reply(response, 403, { ok: false, error: 'verification_failed' });
+      return;
+    }
+  } catch {
+    // Fail closed if BotID, its Vercel request context, or OIDC is unavailable.
+    reply(response, 503, { ok: false, error: 'verification_unavailable' });
+    return;
+  }
+
   try {
     const sent = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -185,4 +202,8 @@ module.exports = async function contact(request, response) {
     // Never forward or log provider errors: they may contain a private address.
     reply(response, 502, { ok: false, error: 'send_failed' });
   }
-};
+  };
+}
+
+module.exports = createContactHandler();
+module.exports.createContactHandler = createContactHandler;

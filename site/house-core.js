@@ -42,7 +42,7 @@ async function loadContact() {
     const response = await fetch('/api/contact', { signal: controller.signal });
     if (!response.ok) throw new Error('config');
     const config = await response.json();
-    contactAvailable = config.available === true;
+    contactAvailable = config.available === true && window.lostarBotIdReady === true;
   } catch { /* The draft helper stays usable without a configured recipient. */ }
   finally { clearTimeout(timeout); }
   const channel = document.querySelector('#hc-contact-channel');
@@ -51,7 +51,7 @@ async function loadContact() {
     document.querySelector('#hc-mail-button').hidden = false;
   } else {
     channel.className = 'hc-pending';
-    channel.textContent = 'L’invio dal sito non è ancora disponibile. Puoi preparare e copiare la richiesta; nessun dato o file viene inviato.';
+    channel.textContent = 'L’invio dal sito non è disponibile ora. Puoi preparare e copiare la richiesta; nessun dato o file viene inviato.';
     document.querySelector('#hc-mail-button').hidden = true;
   }
 }
@@ -70,12 +70,26 @@ form.addEventListener('submit', async event => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ form: 'house-core', fields, website: fields.website || '' })
     });
+    if (response.status === 403 || response.status === 503) {
+      contactAvailable = false;
+      button.hidden = true;
+      const channel = document.querySelector('#hc-contact-channel');
+      channel.className = 'hc-pending';
+      channel.textContent = 'La richiesta non è stata recapitata a Lostar. Puoi copiarne il testo e conservarlo.';
+      status.textContent = 'Non siamo riusciti a verificare la richiesta. Usa Copia richiesta per conservarla.';
+      return;
+    }
     const result = response.ok ? await response.json() : {};
     status.textContent = result.ok === true
       ? 'Richiesta inviata. Ti ricontatteremo per ricevere lo ZIP dei layer.'
       : 'Non siamo riusciti a inviare la richiesta. Riprova più tardi o copia il testo.';
   } catch {
-    status.textContent = 'Non siamo riusciti a inviare la richiesta. Riprova più tardi o copia il testo.';
+    contactAvailable = false;
+    button.hidden = true;
+    const channel = document.querySelector('#hc-contact-channel');
+    channel.className = 'hc-pending';
+    channel.textContent = 'Non possiamo confermare l’invio. Puoi copiare la richiesta e conservarla.';
+    status.textContent = 'Non possiamo confermare l’invio. Usa Copia richiesta per conservare il testo.';
   } finally { button.disabled = false; }
 });
 copyButton.addEventListener('click', async () => {

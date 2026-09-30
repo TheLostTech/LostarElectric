@@ -1,4 +1,7 @@
 README.md
+src/
+node_modules/
+.env*
 assets/house-demo/snapshot.json
 assets/house-demo/quantities.json
 assets/house-demo/verification.json

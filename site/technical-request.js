@@ -36,7 +36,7 @@ async function initializeTechnicalContact() {
   try {
     const response = await fetch('/api/contact', { signal: controller.signal });
     const config = response.ok ? await response.json() : {};
-    contactAvailable = config.available === true;
+    contactAvailable = config.available === true && window.lostarBotIdReady === true;
   } catch { /* Preparation stays available if the recipient cannot be loaded. */ }
   finally { clearTimeout(timeout); }
   const channel = document.querySelector('#technical-channel');
@@ -44,7 +44,7 @@ async function initializeTechnicalContact() {
     channel.textContent = 'Invia la richiesta a Lostar senza allegati. Ti ricontatteremo per i documenti utili al preventivo.';
     document.querySelector('#technical-mail').hidden = false;
   } else {
-    channel.textContent = 'L’invio dal sito non è ancora disponibile. Puoi compilare e copiare il testo; nessuna richiesta viene inviata.';
+    channel.textContent = 'L’invio dal sito non è disponibile ora. Puoi compilare e copiare il testo; nessuna richiesta viene inviata.';
   }
 }
 initializeTechnicalContact();
@@ -62,12 +62,22 @@ technicalForm.addEventListener('submit', async event => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ form: 'technical', fields, website: fields.website || '' })
     });
+    if (response.status === 403 || response.status === 503) {
+      contactAvailable = false;
+      button.hidden = true;
+      document.querySelector('#technical-channel').textContent = 'La richiesta non è stata recapitata a Lostar. Puoi copiarne il testo e conservarlo.';
+      technicalStatus.textContent = 'Non siamo riusciti a verificare la richiesta. Usa Copia il testo per conservarla.';
+      return;
+    }
     const result = response.ok ? await response.json() : {};
     technicalStatus.textContent = result.ok === true
       ? 'Richiesta inviata. Ti ricontatteremo per gli eventuali documenti utili.'
       : 'Non siamo riusciti a inviare la richiesta. Riprova più tardi o copia il testo.';
   } catch {
-    technicalStatus.textContent = 'Non siamo riusciti a inviare la richiesta. Riprova più tardi o copia il testo.';
+    contactAvailable = false;
+    button.hidden = true;
+    document.querySelector('#technical-channel').textContent = 'Non possiamo confermare l’invio. Puoi copiare il testo e conservarlo.';
+    technicalStatus.textContent = 'Non possiamo confermare l’invio. Usa Copia il testo per conservare la richiesta.';
   } finally { button.disabled = false; }
 });
 document.querySelector('#technical-copy').addEventListener('click', async () => {

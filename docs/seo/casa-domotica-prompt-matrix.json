@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "prompts": [
+    {
+      "id": "001-definition",
+      "topic": "Casa domotica e House Core",
+      "intent": "definition",
+      "prompt": "Che cos’è una casa domotica e come funziona?",
+      "prompt_sha256": "5251471bd42c6aeaaaf87d10a10e421a715a07ffe8e87e7ac42f3d1e9bd40ea9"
+    },
+    {
+      "id": "002-planning",
+      "topic": "Casa domotica e House Core",
+      "intent": "planning",
+      "prompt": "Come progettare una casa domotica prima di acquistare i dispositivi?",
+      "prompt_sha256": "6e7b89b8f7e837d3b48543ae2dfb34de75754d1b369635be5bdd16092dc2d86b"
+    },
+    {
+      "id": "003-cost",
+      "topic": "Casa domotica e House Core",
+      "intent": "cost",
+      "prompt": "Quanto costa una casa domotica e quali voci entrano nel preventivo?",
+      "prompt_sha256": "616b95a6c2033f3d86646f59c5129db76524e4b4703c0303e7e732ef5fc9ceda"
+    },
+    {
+      "id": "004-offline",
+      "topic": "Casa domotica e House Core",
+      "intent": "offline",
+      "prompt": "Una casa domotica funziona senza Internet?",
+      "prompt_sha256": "1b4f2c345cb08cb1d29c4e9e0acfdadadb0f5862cef675669c2d2e3a61d4748e"
+    },
+    {
+      "id": "005-retrofit",
+      "topic": "Casa domotica e House Core",
+      "intent": "retrofit",
+      "prompt": "Come trasformare una casa esistente in casa domotica?",
+      "prompt_sha256": "b71ce6e01e2f50db35d4ce02e93afda7dad10eca3b440f9103a7be205a4de302"
+    },
+    {
+      "id": "006-compatibility",
+      "topic": "Casa domotica e House Core",
+      "intent": "compatibility",
+      "prompt": "House Core funziona con i dispositivi che ho già?",
+      "prompt_sha256": "f21cb53f92554013bfc8d759761a3cf0f5d428ccbb6bfda6f3122e62b64b7a89"
+    },
+    {
+      "id": "007-free",
+      "topic": "Casa domotica e House Core",
+      "intent": "free",
+      "prompt": "Che cosa comprende House Studio gratuito?",
+      "prompt_sha256": "bbd50bfd9dadbddacc7d7a456c931201c58dff58361520344893acb6a8589b15"
+    },
+    {
+      "id": "008-assistant",
+      "topic": "Casa domotica e House Core",
+      "intent": "assistant",
+      "prompt": "Che cosa può fare l’assistente di House Core e quali sono i suoi limiti?",
+      "prompt_sha256": "bc6cb155496033601885ccd4995448528e4c095536d29ec82500835cd6958683"
+    },
+    {
+      "id": "009-materials",
+      "topic": "Casa domotica e House Core",
+      "intent": "materials",
+      "prompt": "Come usare i PDF dei layer per preparare il computo dei materiali?",
+      "prompt_sha256": "39a51d24e75641a4f918f6acfdc61abe4c361a309939b4e7a6041988f601a0f9"
+    },
+    {
+      "id": "010-local",
+      "topic": "Casa domotica e House Core",
+      "intent": "local",
+      "prompt": "Quali informazioni servono per chiedere un preventivo casa domotica a Torino o in Piemonte?",
+      "prompt_sha256": "6d5b48f6a2507be487570188e30561bb8a46a8e9bc09020393cc5eefdee0fe45"
+    }
+  ],
+  "measurement_status": "not_run",
+  "surfaces": [
+    "Google Search",
+    "Google AI Overviews / AI Mode"
+  ],
+  "geography": [
+    "Italia",
+    "Nord Italia",
+    "Piemonte",
+    "Torino"
+  ],
+  "limitations": [
+    "Prepared query set, not observed visibility, search volume, indexing, ranking or AI citations."
+  ]
+}

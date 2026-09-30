@@ -1,0 +1,747 @@
+[
+  {
+    "answer_signals": {
+      "question_marks": 3,
+      "word_count": 2824
+    },
+    "canonical": "https://lostartechnology.com/articoli/quadri-elettrici",
+    "findings": [],
+    "h1_count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "question": false,
+        "text": "Quadri elettrici: carichi, protezioni e casa domotica"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "In questa guida"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici: il progetto comincia dalla vita in casa"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici e circuiti: dare un nome a ogni funzione"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici: come bilanciare i carichi"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "La contemporaneità di cucina e lavanderia"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Monofase, trifase e gestione delle priorità"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici: magnetotermici e differenziali"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "La parte termica e la parte magnetica"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Il differenziale e la continuità di servizio"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici e contattori: comandare i grandi carichi"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici domotici: misurare senza confondere le funzioni"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici e geometria dell’impianto: dove passa l’energia"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Dal quadro all’isola, passando dal controsoffitto"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Accessibilità, spazio e locali da bagno"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici a norma: progetto, verifiche e documenti"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Le norme dell’impianto e quelle del quadro"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Chi progetta e chi rilascia la dichiarazione"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici: dal computo dei materiali al preventivo"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici e House Core: dalla pianta al progetto condiviso"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Quadri elettrici interrogabili: che cosa resta senza corrente?"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Dal progetto virtuale alle tavole dei quadri elettrici"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici: le domande prima di acquistare"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Quanti circuiti servono nei quadri elettrici di casa?"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Quadri elettrici più grandi significano più potenza?"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Posso rendere domotici i quadri elettrici già esistenti?"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "House Core realizza lo schema elettrico esecutivo?"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici: prepara il tuo progetto con Lostar"
+      }
+    ],
+    "jsonld_blocks": 1,
+    "jsonld_parse_errors": 0,
+    "jsonld_types": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "limitations": [
+      "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+      "Static parsing may miss content rendered only after JavaScript."
+    ],
+    "link_count": 46,
+    "question_heading_count": 5,
+    "robots_meta": "",
+    "source": "site/articoli/quadri-elettrici.html",
+    "title": "Quadri elettrici: carichi, protezioni e domotica | Lostar"
+  },
+  {
+    "answer_signals": {
+      "question_marks": 5,
+      "word_count": 2163
+    },
+    "canonical": "https://lostartechnology.com/articoli/strisce-led-soffitto-torino",
+    "findings": [],
+    "h1_count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "question": false,
+        "text": "Strisce LED Torino: illuminazione a soffitto e domotica"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "In questa guida"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Strisce LED: progettare la luce di casa"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Strisce LED a soffitto: velette e cartongesso"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Velette LED e illuminazione indiretta"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Profili LED in alluminio e diffusori opalini"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Controsoffitto, illuminazione LED e impianti"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Strisce LED e domotica: le scene luminose"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Strisce LED in cucina: luce sul piano di lavoro"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "LED dimmerabili per soggiorno e libreria"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Strisce LED analogiche o indirizzabili: cosa cambia?"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Domotica LED: luce notturna e controller"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Il computo LED: metri, cavi e alimentatori"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Alimentatori LED: distanze, cavi e caduta di tensione"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Driver e controller LED accessibili"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "House Core: dal progetto ai layer PDF"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Impianto LED: hardware e preventivo"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Strisce LED: domande su soffitto e domotica"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Le strisce LED possono essere la luce principale?"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Strisce LED a soffitto: serve il cartongesso?"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Quanto costa un impianto con strisce LED?"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Come progettare le strisce LED prima dell’acquisto?"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "House Core per la domotica: cosa comprende la versione gratuita?"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Progetta la tua illuminazione con House Core"
+      }
+    ],
+    "jsonld_blocks": 1,
+    "jsonld_parse_errors": 0,
+    "jsonld_types": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "limitations": [
+      "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+      "Static parsing may miss content rendered only after JavaScript."
+    ],
+    "link_count": 40,
+    "question_heading_count": 6,
+    "robots_meta": "",
+    "source": "site/articoli/strisce-led-soffitto-torino.html",
+    "title": "Strisce LED Torino: soffitto e domotica | Lostar"
+  },
+  {
+    "answer_signals": {
+      "question_marks": 1,
+      "word_count": 201
+    },
+    "canonical": "https://lostartechnology.com/articoli",
+    "findings": [
+      "no question-shaped headings detected"
+    ],
+    "h1_count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "question": false,
+        "text": "Storie e progetti."
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": ""
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": ""
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Il progetto comincia dalla tua pianta."
+      }
+    ],
+    "jsonld_blocks": 0,
+    "jsonld_parse_errors": 0,
+    "jsonld_types": [],
+    "limitations": [
+      "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+      "Static parsing may miss content rendered only after JavaScript."
+    ],
+    "link_count": 26,
+    "question_heading_count": 0,
+    "robots_meta": "",
+    "source": "site/articoli.html",
+    "title": "Articoli: quadri elettrici, LED e domotica | Lostar"
+  },
+  {
+    "answer_signals": {
+      "question_marks": 5,
+      "word_count": 378
+    },
+    "canonical": "https://lostartechnology.com/automazione",
+    "findings": [
+      "no question-shaped headings detected"
+    ],
+    "h1_count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "question": false,
+        "text": "Quadri e cablaggi"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Ogni collegamento"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Una fornitura"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Raccontaci cosa"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Definiamo"
+      }
+    ],
+    "jsonld_blocks": 0,
+    "jsonld_parse_errors": 0,
+    "jsonld_types": [],
+    "limitations": [
+      "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+      "Static parsing may miss content rendered only after JavaScript."
+    ],
+    "link_count": 22,
+    "question_heading_count": 0,
+    "robots_meta": "",
+    "source": "site/automazione.html",
+    "title": "Quadri e cablaggi bordo macchina | Lostar Electric"
+  },
+  {
+    "answer_signals": {
+      "question_marks": 5,
+      "word_count": 389
+    },
+    "canonical": "https://lostartechnology.com/collaudo",
+    "findings": [
+      "no question-shaped headings detected"
+    ],
+    "h1_count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "question": false,
+        "text": "Modifiche e verifiche"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Da cosa parte"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Intervento e documenti,"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Descrivi il quadro"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Le prime"
+      }
+    ],
+    "jsonld_blocks": 0,
+    "jsonld_parse_errors": 0,
+    "jsonld_types": [],
+    "limitations": [
+      "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+      "Static parsing may miss content rendered only after JavaScript."
+    ],
+    "link_count": 22,
+    "question_heading_count": 0,
+    "robots_meta": "",
+    "source": "site/collaudo.html",
+    "title": "Modifiche e collaudo di quadri esistenti | Lostar Electric"
+  },
+  {
+    "answer_signals": {
+      "question_marks": 3,
+      "word_count": 228
+    },
+    "canonical": "https://lostartechnology.com/contatti",
+    "findings": [],
+    "h1_count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "question": false,
+        "text": "Parlaci del tuo progetto."
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Documenti utili per un quadro nuovo"
+      },
+      {
+        "level": 3,
+        "question": true,
+        "text": "Stai progettando casa?"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "La tua richiesta"
+      }
+    ],
+    "jsonld_blocks": 0,
+    "jsonld_parse_errors": 0,
+    "jsonld_types": [],
+    "limitations": [
+      "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+      "Static parsing may miss content rendered only after JavaScript."
+    ],
+    "link_count": 20,
+    "question_heading_count": 1,
+    "robots_meta": "",
+    "source": "site/contatti.html",
+    "title": "Contatti e richieste di preventivo | Lostar Electric"
+  },
+  {
+    "answer_signals": {
+      "question_marks": 8,
+      "word_count": 981
+    },
+    "canonical": "https://lostartechnology.com/house-core",
+    "findings": [
+      "no question-shaped headings detected"
+    ],
+    "h1_count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "question": false,
+        "text": "Progetta la casa domotica."
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Ambienti, luci e impianti."
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Planimetria e arredi"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Luci virtuali"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Percorsi e quote"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Assistente di progetto"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Esporta planimetria,"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Hardware per"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Hardware Lostar"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Installazione su richiesta"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Scarica House Core."
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Condividi i layer."
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Prepara la richiesta"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Domande frequenti."
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Strisce LED: soffitto e domotica."
+      }
+    ],
+    "jsonld_blocks": 0,
+    "jsonld_parse_errors": 0,
+    "jsonld_types": [],
+    "limitations": [
+      "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+      "Static parsing may miss content rendered only after JavaScript."
+    ],
+    "link_count": 33,
+    "question_heading_count": 0,
+    "robots_meta": "",
+    "source": "site/house-core.html",
+    "title": "House Core gratuito per progettare la casa domotica | Lostar"
+  },
+  {
+    "answer_signals": {
+      "question_marks": 4,
+      "word_count": 367
+    },
+    "canonical": "https://lostartechnology.com/",
+    "findings": [
+      "no question-shaped headings detected"
+    ],
+    "h1_count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "question": false,
+        "text": "Quadri elettrici."
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Di cosa ha bisogno"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Quadri elettrici"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Bordo macchina"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Collaudo e modifiche"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Progetta la casa"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Come nasce una fornitura."
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Il tuo progetto"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "La proposta"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "La realizzazione"
+      },
+      {
+        "level": 3,
+        "question": false,
+        "text": "Le verifiche"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Hai un progetto"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Strisce LED: soffitto e domotica."
+      }
+    ],
+    "jsonld_blocks": 0,
+    "jsonld_parse_errors": 0,
+    "jsonld_types": [],
+    "limitations": [
+      "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+      "Static parsing may miss content rendered only after JavaScript."
+    ],
+    "link_count": 30,
+    "question_heading_count": 0,
+    "robots_meta": "",
+    "source": "site/index.html",
+    "title": "Quadri elettrici, automazione e House Core | Lostar Electric"
+  },
+  {
+    "answer_signals": {
+      "question_marks": 5,
+      "word_count": 402
+    },
+    "canonical": "https://lostartechnology.com/quadri",
+    "findings": [
+      "no question-shaped headings detected"
+    ],
+    "h1_count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "question": false,
+        "text": "Quadri elettrici"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Il quadro adatto"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Cosa possiamo"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Partiamo dal"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Prima del"
+      },
+      {
+        "level": 2,
+        "question": false,
+        "text": "Quadri elettrici nella casa domotica."
+      }
+    ],
+    "jsonld_blocks": 0,
+    "jsonld_parse_errors": 0,
+    "jsonld_types": [],
+    "limitations": [
+      "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+      "Static parsing may miss content rendered only after JavaScript."
+    ],
+    "link_count": 23,
+    "question_heading_count": 0,
+    "robots_meta": "",
+    "source": "site/quadri.html",
+    "title": "Quadri elettrici su progetto | Lostar Electric"
+  }
+]

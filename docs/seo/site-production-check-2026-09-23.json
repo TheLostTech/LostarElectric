@@ -1,0 +1,204 @@
+{
+  "checked_at": "2026-09-23T14:46:43.706843+00:00",
+  "method": "curl with Vercel IPv4 override; canonical hostname and normal TLS verification retained. Local resolver still caches the previous Squarespace address.",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "0cef43d20eec82f088a3814fd61a0520f7369adff896e85fd33a392bfb36192c",
+      "ok": true
+    },
+    {
+      "path": "/contatti",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "d003249ef36866d50a8cf708adfc35e5da9dcf714d4e4b7148f8b359fb499d5d",
+      "ok": true
+    },
+    {
+      "path": "/quadri",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "9f250aee56e667f725a0ccf8577bf4b373d092ca4d7116c3e0e289b2f5218a23",
+      "ok": true
+    },
+    {
+      "path": "/house-core",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "2e86cfcfaf54826d0839bda10885a3f615f957fac1007ee9eebcd0a385b0e5be",
+      "ok": true
+    },
+    {
+      "path": "/automazione",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "2b29cc153fe01b0495f60fa902efaa811ebb42caefa36a58621d4f6a28be3c06",
+      "ok": true
+    },
+    {
+      "path": "/collaudo",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "2bd0ee47e970be0aa161ba3d13dbb9f08e79c58e61d981a3815b3014358ca8df",
+      "ok": true
+    },
+    {
+      "path": "/articoli",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "c6a6d688c42044fbc252e912a133c46275ed9824a9adf5b9d121b80798ac5e94",
+      "ok": true
+    },
+    {
+      "path": "/articoli/quadri-elettrici",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "e1ae83572d068fbc950d72141c783c17c0b734d30dc053772d372d09e50d0e50",
+      "ok": true
+    },
+    {
+      "path": "/articoli/strisce-led-soffitto-torino",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "d099ae6cf1743b7f59df465be89b1963b180b0b28972349e504c284d3dfed085",
+      "ok": true
+    },
+    {
+      "path": "/assets/apple-touch-icon.png",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "42b2eecdd1c20ea25d0511514e54f9034fbb4527653d3b2ed705310e04fb42a1",
+      "ok": true
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "92e477bce50f821fb79ab498e7051a652c2f7f308e5653391113670dc2237271",
+      "ok": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "f8f08113e418d1c86531d85db80e3f997bfc761b2d731f72b92b77f6402ded73",
+      "ok": true
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "1e1cfd18d25bceacaa22dabcd1ba033d90b6a7e6b0f97a9309fe410fa1c4bcb6",
+      "ok": true
+    },
+    {
+      "path": "/assets/social/lostar.png",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "62041d77bf0e1861d6b99452089012bd6836956e3928fdd725c4cfc98da2db89",
+      "ok": true
+    },
+    {
+      "path": "/assets/social/logo.png",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "d8e2f9a688139026d86829ee0537acc599e8e37e749cd0336e4e1cf3f3660fb3",
+      "ok": true
+    },
+    {
+      "path": "/script.js",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "a1d65ce58538d77b95504d4e037593fc8a0e8f9ead9efeb92b6ee1b7681fb2c8",
+      "ok": true
+    },
+    {
+      "path": "/contact-config.json",
+      "status": 200,
+      "expected": 200,
+      "matches_local": true,
+      "noindex_header": false,
+      "body_sha256": "ce9c31863ec8e72ab49abc12af6bd3faa9ca99b070437e74276591b4bacb3758",
+      "ok": true
+    },
+    {
+      "path": "/seo-missing-check-20260923",
+      "status": 404,
+      "expected": 404,
+      "matches_local": null,
+      "noindex_header": false,
+      "body_sha256": "195c58cdb877f61f0277371a395c452e0d34f996fa826d972f1c088f0e4453a8",
+      "ok": true
+    },
+    {
+      "path": "/contatti.html?servizio=quadri",
+      "headers": "HTTP/2 308 \ncache-control: public, max-age=0, must-revalidate\ncontent-type: text/plain\ndate: Wed, 23 Sep 2026 14:46:42 GMT\nlocation: /contatti?servizio=quadri\nrefresh: 0;url=/contatti?servizio=quadri\nserver: Vercel\nstrict-transport-security: max-age=63072000\nx-vercel-id: fra1::szwf6-1790174802365-6cbac98ba2fe",
+      "ok": true
+    },
+    {
+      "path": "/house-core.html",
+      "headers": "HTTP/2 308 \ncache-control: public, max-age=0, must-revalidate\ncontent-type: text/plain\ndate: Wed, 23 Sep 2026 14:46:42 GMT\nlocation: /house-core\nrefresh: 0;url=/house-core\nserver: Vercel\nstrict-transport-security: max-age=63072000\nx-vercel-id: fra1::bbszg-1790174802446-0fe76648f206",
+      "ok": true
+    },
+    {
+      "path": "/articoli/",
+      "headers": "HTTP/2 308 \ncache-control: public, max-age=0, must-revalidate\ncontent-type: text/plain\ndate: Wed, 23 Sep 2026 14:46:42 GMT\nlocation: /articoli\nrefresh: 0;url=/articoli\nserver: Vercel\nstrict-transport-security: max-age=63072000\nx-vercel-id: fra1::m55wf-1790174802524-b05e838f807b",
+      "ok": true
+    },
+    {
+      "path": "/articoli/quadri-elettrici.html",
+      "headers": "HTTP/2 308 \ncache-control: public, max-age=0, must-revalidate\ncontent-type: text/plain\ndate: Wed, 23 Sep 2026 14:46:42 GMT\nlocation: /articoli/quadri-elettrici\nrefresh: 0;url=/articoli/quadri-elettrici\nserver: Vercel\nstrict-transport-security: max-age=63072000\nx-vercel-id: fra1::9264t-1790174802606-42e1952e59be",
+      "ok": true
+    },
+    {
+      "path": "/downloads/House-Studio-Windows-Preview-2026-09-22.zip",
+      "headers": "HTTP/2 200 \naccept-ranges: bytes\naccess-control-allow-origin: *\nage: 0\ncache-control: public, max-age=0, must-revalidate\ncontent-disposition: inline; filename=\"House-Studio-Windows-Preview-2026-09-22.zip\"\ncontent-type: application/zip\ndate: Wed, 23 Sep 2026 14:46:42 GMT\netag: \"f602f81039ac0f00e8a2717845df8de5\"\nlast-modified: Wed, 23 Sep 2026 14:46:42 GMT\nserver: Vercel\nstrict-transport-security: max-age=63072000\nx-vercel-cache: MISS\nx-vercel-id: fra1::7brnl-1790174802706-fc465f412b2d\ncontent-length: 4440492",
+      "ok": true
+    },
+    {
+      "path": "/downloads/House-Studio-Mac-Preview-2026-09-22.zip",
+      "headers": "HTTP/2 200 \naccept-ranges: bytes\naccess-control-allow-origin: *\nage: 0\ncache-control: public, max-age=0, must-revalidate\ncontent-disposition: inline; filename=\"House-Studio-Mac-Preview-2026-09-22.zip\"\ncontent-type: application/zip\ndate: Wed, 23 Sep 2026 14:46:43 GMT\netag: \"f0e7e64b25430a4de5d611629a8191a9\"\nlast-modified: Wed, 23 Sep 2026 14:46:43 GMT\nserver: Vercel\nstrict-transport-security: max-age=63072000\nx-vercel-cache: MISS\nx-vercel-id: fra1::hdf9v-1790174803081-ba07485ca34e\ncontent-length: 4433509",
+      "ok": true
+    },
+    {
+      "path": "/downloads/house-core-esempio.zip",
+      "headers": "HTTP/2 200 \naccept-ranges: bytes\naccess-control-allow-origin: *\nage: 0\ncache-control: public, max-age=0, must-revalidate\ncontent-disposition: inline; filename=\"house-core-esempio.zip\"\ncontent-type: application/zip\ndate: Wed, 23 Sep 2026 14:46:43 GMT\netag: \"181355c7560d92dbba8d5bb599095dfd\"\nlast-modified: Wed, 23 Sep 2026 14:46:43 GMT\nserver: Vercel\nstrict-transport-security: max-age=63072000\nx-vercel-cache: MISS\nx-vercel-id: fra1::2mmgb-1790174803563-8e4914cc9b43\ncontent-length: 210833",
+      "ok": true
+    }
+  ],
+  "failed": 0
+}

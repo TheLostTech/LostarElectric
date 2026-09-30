@@ -1,0 +1,61 @@
+{
+  "project": "Casa esempio · progetto dimostrativo",
+  "fictional": true,
+  "exportedAt": "2026-09-23T10:00:00.000Z",
+  "dimensionsM": {
+    "width": 8,
+    "height": 6
+  },
+  "roomCount": 3,
+  "ledStripCount": 3,
+  "lightObjectCount": 4,
+  "furnitureCount": 20,
+  "openingCount": 6,
+  "routeCount": 4,
+  "verticalSegmentCount": 2,
+  "objects": 31,
+  "ledMetres": 9,
+  "routeMetres": 10.679999999999998,
+  "verticalMetres": 1.3000000000000003,
+  "areaM2": 48,
+  "displayTotals": {
+    "area": "48 m²",
+    "led": "9 m",
+    "routes": "10,68 m",
+    "verticals": "1,30 m"
+  },
+  "pdfs": [
+    {
+      "name": "00-quadro-generale-e-computo.pdf",
+      "pages": 9,
+      "bytes": 64684
+    },
+    {
+      "name": "03-arredi.pdf",
+      "pages": 7,
+      "bytes": 68882
+    },
+    {
+      "name": "04-luci.pdf",
+      "pages": 3,
+      "bytes": 38624
+    },
+    {
+      "name": "06-linee-luce.pdf",
+      "pages": 4,
+      "bytes": 40401
+    }
+  ],
+  "zip": "downloads/house-core-esempio.zip",
+  "svg": "assets/house-demo/house-demo.svg",
+  "preview": "assets/house-demo/general-preview.png",
+  "groups": [
+    "demo-arredi",
+    "demo-luci",
+    "demo-percorsi"
+  ],
+  "renderer": "House Core buildLayerPdfs + zipLayerPdfs",
+  "symbols": "House Core PlanSymbols.tsx planSymbolLayers",
+  "syntheticDataset": true,
+  "aiGeneratedRaster": false
+}

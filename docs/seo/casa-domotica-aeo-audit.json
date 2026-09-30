@@ -1,0 +1,184 @@
+{
+  "answer_signals": {
+    "question_marks": 7,
+    "word_count": 2597
+  },
+  "canonical": "https://lostartechnology.com/articoli/casa-domotica",
+  "final_url": "site/articoli/casa-domotica.html",
+  "findings": [],
+  "h1_count": 1,
+  "headings": [
+    {
+      "level": 1,
+      "question": false,
+      "text": "Casa domotica: dal progetto alla vita di ogni giorno"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "In questa guida"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Casa domotica: cosa significa e come funziona"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "House Studio progetta, House Core gestisce la casa"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Casa domotica: una giornata racconta il progetto"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Al mattino, capire che cosa sta succedendo"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "In cucina, la luce segue quello che fai"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Nel tempo, la casa conserva le informazioni utili"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Progettare una casa domotica prima di acquistare i dispositivi"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "La planimetria 2D mette in ordine le decisioni"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "La vista 3D aiuta a leggere lo spazio"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Casa domotica e impianto elettrico: sapere che cosa è collegato"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "I livelli separano gli impianti senza perdere la casa"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Casa domotica con assistente: comandi, scene e regole"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Una scena raccoglie un momento della giornata"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Una regola nasce da una richiesta, poi viene verificata"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Casa domotica senza Internet: cosa funziona in locale"
+    },
+    {
+      "level": 3,
+      "question": false,
+      "text": "Privacy e assistente: conta il modello che scegli"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Trasformare una casa esistente in casa domotica"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Quanto costa una casa domotica: le voci del preventivo"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Casa domotica: dai layer PDF al computo dei materiali"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Casa domotica con House Core: cosa puoi provare oggi"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "Casa domotica: domande frequenti"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Casa domotica e smart home sono la stessa cosa?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Una casa domotica può funzionare senza Internet?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Posso progettare una casa domotica gratis?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Devo sostituire tutti i dispositivi che possiedo?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "Che cosa succede se il computer House Core si spegne?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "La casa domotica fa risparmiare energia?"
+    },
+    {
+      "level": 3,
+      "question": true,
+      "text": "I PDF House Core sostituiscono il progetto dell’elettricista?"
+    },
+    {
+      "level": 2,
+      "question": false,
+      "text": "La tua casa domotica comincia dalla pianta"
+    }
+  ],
+  "jsonld_blocks": 1,
+  "jsonld_parse_errors": 0,
+  "jsonld_types": [
+    "BlogPosting",
+    "BreadcrumbList",
+    "Organization",
+    "WebSite"
+  ],
+  "limitations": [
+    "Read-only structure check; does not prove indexing, retrieval, citation, ranking, or conversion.",
+    "Static parsing may miss content rendered only after JavaScript."
+  ],
+  "link_count": 41,
+  "question_heading_count": 7,
+  "robots_meta": "index, follow, max-image-preview:large",
+  "source": "site/articoli/casa-domotica.html",
+  "title": "Casa domotica: come funziona, progetto e costi | Lostar"
+}

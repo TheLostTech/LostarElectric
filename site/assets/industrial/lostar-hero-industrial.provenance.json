@@ -1,0 +1,9 @@
+{
+  "origin": "OpenAI built-in imagegen, 2026-09-30",
+  "ai_generated": true,
+  "role": "Illustrative homepage hero; not a photo of a Lostar project",
+  "original_dimensions": "1672x941 PNG",
+  "conversion": "macOS sips to JPEG, quality 84",
+  "prompt_file": "docs/lostar-hero-image-prompt.txt",
+  "sha256": "a30c5f7b35e6fd05ef97042dbfa1938c010650a57898f38b7d0668a9d3cc6e30"
+}

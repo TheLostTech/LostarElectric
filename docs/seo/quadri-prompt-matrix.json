@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "prompts": [
+    {
+      "id": "001-custom",
+      "topic": "Quadri elettrici e casa domotica",
+      "intent": "custom",
+      "prompt": "A cosa servono i quadri elettrici in una casa domotica?",
+      "prompt_sha256": "e37acf4b59adc9be0ab10ed575fca7ab187938eacf24a25d5b7718c4f5a13490"
+    },
+    {
+      "id": "002-custom",
+      "topic": "Quadri elettrici e casa domotica",
+      "intent": "custom",
+      "prompt": "Che differenza c’è fra magnetotermico, differenziale e contattore?",
+      "prompt_sha256": "ac612b98b683c25b27a4e470cf2643020428ed3ee0621fb06804d3859f1970d4"
+    },
+    {
+      "id": "003-custom",
+      "topic": "Quadri elettrici e casa domotica",
+      "intent": "custom",
+      "prompt": "Come si valutano i carichi contemporanei di cucina e lavanderia?",
+      "prompt_sha256": "7d224ec5d2fc7a783169b11b2dfd03207f44bea232be78875c51fdfb4c4789bf"
+    },
+    {
+      "id": "004-custom",
+      "topic": "Quadri elettrici e casa domotica",
+      "intent": "custom",
+      "prompt": "Dove posizionare il quadro elettrico durante una ristrutturazione?",
+      "prompt_sha256": "7d131838fdedea4ef62ebc9cc61462578a05c6667d5c2a17226f3e2af16f747f"
+    },
+    {
+      "id": "005-custom",
+      "topic": "Quadri elettrici e casa domotica",
+      "intent": "custom",
+      "prompt": "Quali documenti preparare per un preventivo di quadri elettrici a Torino?",
+      "prompt_sha256": "0c5435ae94eb23a7292a8c2ed45f1f66dfbd469fd3fed058681cc88f3c002391"
+    },
+    {
+      "id": "006-custom",
+      "topic": "Quadri elettrici e casa domotica",
+      "intent": "custom",
+      "prompt": "Come aiuta House Core a preparare i layer di un impianto elettrico?",
+      "prompt_sha256": "59bf10484895976591c76cbc582d427cf65aff6c7d78b3d5bb1cfd94c1f73732"
+    },
+    {
+      "id": "007-custom",
+      "topic": "Quadri elettrici e casa domotica",
+      "intent": "custom",
+      "prompt": "I PDF di House Core certificano che un impianto elettrico è a norma?",
+      "prompt_sha256": "a80f1023addb42fce202cfecd57b37b381efd65fea5da9cf09a7c7754367c6cf"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "sourcePdf": "00-quadro-generale-e-computo.pdf",
+  "sourcePage": 1,
+  "renderer": "House Core export-config.ts buildLayerPdfs; rasterized by pdftoppm",
+  "dataset": "Entirely fictional public demonstration, authored in generate-house-demo.mts",
+  "privateHouseDataUsed": false,
+  "aiGeneratedRaster": false,
+  "createdAt": "2026-09-23T10:00:00.000Z"
+}

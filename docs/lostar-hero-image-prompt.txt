@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: wide homepage hero photographic background for an Italian industrial electrical automation company
+Primary request: a believable, premium documentary-style photograph of a modern electrical control cabinet in a real industrial workshop. The right side contains an open grey steel cabinet with authentic DIN rails, neatly arranged modular breakers, contactors, cable ducts, terminal blocks, and orderly wiring. The left half is deep dark navy negative space with subtle out-of-focus industrial context, suitable for overlaid web headline.
+Scene/backdrop: clean but lived-in technical workshop, not a showroom; no people.
+Style/medium: real-world editorial industrial photography, meticulous physical detail, credible component spacing and wiring, restrained and sophisticated.
+Composition/framing: extra-wide horizontal 16:9 cinematic crop; cabinet subject concentrated in right 45%, open usable negative space across left 55%; straight architectural perspective, clear focal plane on cabinet.
+Lighting/mood: cool neutral industrial practical light, controlled contrast, subtle reflections, no dramatic colored glow.
+Color palette: deep navy #071A31 and #0B2545, cool steel grey, tiny restrained #F4B500 accents only where physically plausible.
+Materials/textures: powder-coated steel, plastic DIN modules, copper wiring, fine cable insulation.
+Constraints: image only, absolutely no text overlays, no logos, no UI, no watermark; component labels may be indistinct/unreadable to avoid fictitious technical information. No human figures, no robot, no orange glow, no sci-fi, no decorative circuit graphics.

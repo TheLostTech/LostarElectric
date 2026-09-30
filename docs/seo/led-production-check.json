@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-23",
+  "deployment": "https://lostar-electric-4wp91qkb1-alessandrolostumbo-9141s-projects.vercel.app",
+  "production_domain": "https://lostartechnology.com",
+  "delivery": "HTTPS with TLS validation; Vercel IP pinned because local DNS may retain Squarespace cache",
+  "results": [
+    {
+      "route": "/articoli/strisce-led-soffitto-torino",
+      "matches_local": true,
+      "sha256": "c39cc9d4f924e8d0cc5d92c38b859a0177f5edc148516bf64abcb21ea9ed306a",
+      "subheadings_with_torino": [],
+      "jsonld_types": [
+        "BlogPosting",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/",
+      "matches_local": true,
+      "sha256": "284cc070af20e69fa70a8c7e2eecb966b63bcab207e53f1db698aaa6d1c16a7d"
+    },
+    {
+      "route": "/house-core",
+      "matches_local": true,
+      "sha256": "631ef3bdf79faa2087ab7b03b06b011af03536485c4d5febb7f39b1952e5bf63"
+    },
+    {
+      "route": "/articoli",
+      "matches_local": true,
+      "sha256": "5fedc86b90d09cede9ae171f7b014771a3b147d89520ba698d6470a8e52e1c2f"
+    },
+    {
+      "route": "/robots.txt",
+      "matches_local": true,
+      "sha256": "92e477bce50f821fb79ab498e7051a652c2f7f308e5653391113670dc2237271"
+    },
+    {
+      "route": "/sitemap.xml",
+      "matches_local": true,
+      "sha256": "c51d13844c348f5b27d8eeb50b9fe5904cdaaf6b672879cd532e00c451bc054f"
+    }
+  ]
+}

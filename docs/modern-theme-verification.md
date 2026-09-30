@@ -1,0 +1,13 @@
+# Verifica del tema industriale · 30 settembre 2026
+
+Il tema applica l'anteprima approvata alle 12 pagine del sito: header navy e logo inverso, Archivo locale, home con immagine illustrativa a tutta larghezza, hero dei servizi scuri e CTA gialle. La palette e i fatti verificati sull'attività di Lostar sono preservati. L'immagine della home è dichiarata dimostrativa nella pagina e ha prompt e provenienza registrati.
+
+- Controllo visivo: desktop 1280 × 720, tablet 768 × 900, mobile 390 × 844 e larghezza minima 320 px. Nessun overflow orizzontale sulle pagine principali e sugli articoli. Il titolo della home rientra a 320 px.
+- Navigazione: il menu mobile apre con stato `aria-expanded` coerente; il focus da tastiera dell'header ha un contorno giallo visibile sul navy. La didascalia dimostrativa rimane sopra il gradiente e prima dei tre percorsi mobile.
+- Struttura: un solo H1 per pagina, nessun ID duplicato, collegamenti e risorse locali risolti, dati strutturati della home validi.
+- SEO statico: `python3 scripts/seo-audit.py --output docs/seo/modern-theme-audit.json` ha controllato 12 pagine e 512 destinazioni interne con 0 errori e 0 avvisi. L'audit non misura indicizzazione o ranking.
+- Il rilevatore Impeccable è stato eseguito una volta prima delle ultime correzioni e dell'aggiornamento di `DESIGN.md`; lo snapshot in `docs/modern-theme-detect.json` contiene 79 segnalazioni, in gran parte su padding e token allora non documentati. La didascalia sotto 11 px, il testo chiaro del service hero e il contrasto del focus nell'header sono stati corretti. La revisione visiva indipendente finale ha dato esito `ship`, senza problemi materiali residui.
+
+Il server statico locale richiede i nomi `.html`; gli URL puliti dipendono dalla configurazione Vercel. Il modulo lato server `/api/contact` non gira nel server Python locale. In Vercel, l'invio resta non disponibile finché non sono configurate le tre variabili private `CONTACT_RECIPIENT`, `CONTACT_SENDER` e `RESEND_API_KEY`; il fallback copia il testo senza inviare dati. La verifica visuale qui sopra precede l'attivazione dell'invio e non prova una consegna email reale.
+
+Dopo la modifica del canale contatti, `node --test tests/contact-api.test.js` supera 5 test con invio simulato e senza rete verso il provider. Il controllo visivo locale dei moduli Contatti e House Core a 1280, 390 e 320 px conferma l'avviso prima dei campi, il solo pulsante di copia quando l'invio è disattivo, l'email del visitatore in entrambi e nessun overflow. Il nuovo audit statico in `docs/seo/private-contact-audit.json` riporta ancora 12 pagine, 512 destinazioni interne, 0 errori e 0 avvisi. Nessuna email reale è stata inviata.

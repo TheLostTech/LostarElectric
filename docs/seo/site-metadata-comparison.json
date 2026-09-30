@@ -1,0 +1,137 @@
+[
+  {
+    "path": "site/articoli/quadri-elettrici.html",
+    "before": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 15
+    },
+    "after": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 0
+    }
+  },
+  {
+    "path": "site/articoli/strisce-led-soffitto-torino.html",
+    "before": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 15
+    },
+    "after": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 0
+    }
+  },
+  {
+    "path": "site/articoli.html",
+    "before": {
+      "jsonld": 0,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 15
+    },
+    "after": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 0
+    }
+  },
+  {
+    "path": "site/automazione.html",
+    "before": {
+      "jsonld": 0,
+      "og_image": false,
+      "twitter_card": false,
+      "html_links": 18
+    },
+    "after": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 0
+    }
+  },
+  {
+    "path": "site/collaudo.html",
+    "before": {
+      "jsonld": 0,
+      "og_image": false,
+      "twitter_card": false,
+      "html_links": 18
+    },
+    "after": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 0
+    }
+  },
+  {
+    "path": "site/contatti.html",
+    "before": {
+      "jsonld": 0,
+      "og_image": false,
+      "twitter_card": false,
+      "html_links": 16
+    },
+    "after": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 0
+    }
+  },
+  {
+    "path": "site/house-core.html",
+    "before": {
+      "jsonld": 0,
+      "og_image": false,
+      "twitter_card": false,
+      "html_links": 16
+    },
+    "after": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 0
+    }
+  },
+  {
+    "path": "site/index.html",
+    "before": {
+      "jsonld": 0,
+      "og_image": false,
+      "twitter_card": false,
+      "html_links": 25
+    },
+    "after": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 0
+    }
+  },
+  {
+    "path": "site/quadri.html",
+    "before": {
+      "jsonld": 0,
+      "og_image": false,
+      "twitter_card": false,
+      "html_links": 18
+    },
+    "after": {
+      "jsonld": 1,
+      "og_image": true,
+      "twitter_card": true,
+      "html_links": 0
+    }
+  }
+]

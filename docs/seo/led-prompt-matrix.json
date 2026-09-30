@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "prompts": [
+    {
+      "id": "001-custom",
+      "topic": "Strisce LED, domotica e House Core",
+      "intent": "custom",
+      "prompt": "Come progettare strisce LED a soffitto per una ristrutturazione a Torino?",
+      "prompt_sha256": "ca4f41500c390dbf5aae82ae6e856bee46ff9d4c0fc19149a6ab26c9ffe950a6"
+    },
+    {
+      "id": "002-custom",
+      "topic": "Strisce LED, domotica e House Core",
+      "intent": "custom",
+      "prompt": "Quali materiali servono oltre alle strisce LED per un impianto domotico?",
+      "prompt_sha256": "6e939cf6cce1b429e8896f248796e1b6075038a212710c9be70ba87eb527eb79"
+    },
+    {
+      "id": "003-custom",
+      "topic": "Strisce LED, domotica e House Core",
+      "intent": "custom",
+      "prompt": "Qual è la differenza tra strisce LED analogiche e indirizzabili con WLED?",
+      "prompt_sha256": "83cd0243e8e2ed8d934689e97573325579b97ec16bf6ba57597a933d7b52fb33"
+    },
+    {
+      "id": "004-custom",
+      "topic": "Strisce LED, domotica e House Core",
+      "intent": "custom",
+      "prompt": "Quali dati preparare per un preventivo di illuminazione LED a Torino?",
+      "prompt_sha256": "7b89a4a59d9076d92393606d1d49b34386aad07d2af5049e45b68bd56fa94810"
+    },
+    {
+      "id": "005-custom",
+      "topic": "Strisce LED, domotica e House Core",
+      "intent": "custom",
+      "prompt": "Che cosa permette di fare House Core gratuito prima di acquistare l’hardware?",
+      "prompt_sha256": "ffe02a0f1b9a5965752e7df9731b99912afbb403ddedb5da1bae72291d26b50a"
+    },
+    {
+      "id": "006-custom",
+      "topic": "Strisce LED, domotica e House Core",
+      "intent": "custom",
+      "prompt": "House Core gratuito certifica il dimensionamento elettrico dell’impianto?",
+      "prompt_sha256": "398fbe3292947f4bcdad960cfaa76d451baf28a32dd6108309ce57f5411bf3a1"
+    }
+  ]
+}

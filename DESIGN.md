@@ -194,13 +194,13 @@ components:
 
 The approved theme keeps Lostar's logo and navy/yellow palette while giving the site a stronger industrial presence. A dark shared header, variable Archivo type, a full-bleed illustrative panel image on home and bold white service heroes create the visual entry. The ruled service rows and pale technical drawing grounds carry the detail below the first viewport.
 
-This system covers home, industrial services, contacts, House Core, articles and utility pages. Shared navigation, typography, footer, controls, focus treatment and palette keep them coherent. The home hero image is explicitly illustrative, not a photographed Lostar installation. Industrial service pages retain schematic figures; House Core retains its specialized plan, document and download layouts. Surface strategy remains in `docs/lostar-site-direction.md` and `.impeccable/surfaces/site-index-html.md`; product commitments remain in `PRODUCT.md`.
+This system covers home, industrial services, contacts, House Core, articles and utility pages. Shared navigation, typography, footer, controls, focus treatment and palette keep them coherent. The home hero image is explicitly illustrative, not a photographed Lostar installation. Industrial service pages retain schematic figures; House Core opens with a conceptual system diagram and assistant story, then its interactive plan, document and download layouts. Surface strategy remains in `docs/lostar-site-direction.md` and `.impeccable/surfaces/site-index-html.md`; product commitments remain in `PRODUCT.md`.
 
 **Key Characteristics:**
 
 - Existing Lostar logo and navy/yellow palette, with Archivo variable type throughout the active theme.
 - Dark shared header, full-bleed illustrative home image and bold navy service heroes.
-- Illustrative SVG diagrams for industrial services; interactive plan and PDF evidence for House Core.
+- Illustrative SVG diagrams for industrial services; a conceptual House Core model diagram, an interactive virtual plan and PDF evidence for House Studio.
 - Unified request controls, visible send availability and contextual document lists.
 - Responsive reading order, native disclosures and high-contrast keyboard focus.
 
@@ -255,7 +255,7 @@ The site is a set of six static pages with common navigation and footer. Shared 
 
 The fixed shared header is deep navy, 86px high on desktop, with a subtle bottom rule, reverse logo, light links and a yellow right-hand request CTA. It has no blur or translucency. Main content clears the header through the shared height variable. The footer uses three columns (1.2fr / 0.8fr / 0.8fr), 64px gaps and a lower ruled row; it remains deep navy.
 
-Home uses a full-width illustrative industrial image with a navy overlay, white headline, yellow action and visible caption. Three navy paths beneath it lead to Quadri elettrici, Automazione and House Core; they remain visible and stack on mobile. Service heroes retain the copy/diagram grid but now sit on navy, with white type and yellow actions. Below the heroes, ruled service rows, explanation grids, definition rows, pale supply sections, request bands and native FAQ rows preserve the technical reading path. The home House Core entry still pairs its title with the plan.
+Home uses a full-width illustrative industrial image with a navy overlay, white headline, yellow action and visible caption. Three navy paths beneath it lead to Quadri elettrici, Automazione and House Core; they remain visible and stack on mobile. Service heroes retain the copy/diagram grid but now sit on navy, with white type and yellow actions. Below the heroes, ruled service rows, explanation grids, definition rows, pale supply sections, request bands and native FAQ rows preserve the technical reading path. The home House Core entry now pairs the operating-system introduction with the same conceptual model diagram as the product page.
 
 The contact page uses a 0.85fr / 1.15fr checklist/form split. Forms share a square paper container, a 22px content gap and paired field rows where room permits. Send availability precedes editable fields. The service selector changes the supporting document checklist; incoming service links can preselect the corresponding request type. These are functional controls, not decorative filters.
 
@@ -266,7 +266,7 @@ Shared responsive behavior:
 - At 860px and below, the header becomes 72px high and its 46px menu button appears at the right. Navigation becomes a dark vertical panel below the header. Home keeps its image background and three visible paths; service hero grids retain two columns until mobile. Section intros and service explanations stack. The work sequence becomes two columns, contact field pairs stack, and request padding becomes 24px.
 - At 640px and below, shared content has 20px gutters, the logo is 138px and the main content grids stack with 34px gaps. The home image shifts right under a stronger navy overlay; its H1 uses `clamp(48px, 13vw, 70px)` and the three paths stack. Service H1 uses `clamp(44px, 11vw, 64px)`, while shared H2 remains 38px. Service rows become title/description plus a trailing arrow. The work sequence becomes one column. Contact form precedes the checklist and uses 24px vertical / 20px horizontal padding. Action-group buttons fill the available width and form actions stack. Footer brand spans both columns of the two-column link grid; its lower row stacks.
 
-House Core retains its plan-specific structure: a 0.9fr / 1.15fr hero, a three-step navy journey, two-column capability rows and separate document, hardware, download and request sections. The subnavigation remains in normal flow below the shared header. At 1050px its gutters become 28px and major gaps narrow; at 760px gutters become 20px, its grids stack, document copy precedes the preview, field pairs stack and the journey becomes three ruled rows. The subnavigation reduces from 66px to 60px and drops its first link. Its effective H1 is the frontmatter’s House Core display role at all wider sizes, then `clamp(46px, 10vw, 62px)` at 760px and below. H2 is 44px below 1050px and 40px below 760px. Above 1600px its hero gap increases to 80px; the later H1 override still governs typography.
+House Core uses a copy/diagram hero, then three linked facets of the product, editorial rows for the house model, a navy assistant section with one explicitly illustrative dialogue, and the original plan, document, hardware, download and request sections. The subnavigation remains below the shared header and uses short labels that fit at 320px. At 950px the hero stacks to keep the diagram readable; at 760px the other grids stack, document copy precedes the preview, field pairs stack and the journey becomes three ruled rows. The 1200px-wide diagram scrolls within a focusable figure at narrow mobile widths; a visible hint explains the gesture, and its alternative text carries the complete relationship. H1 follows the House Core display role, with a 38px override below 360px so no word is stranded. H2 is 44px below 1050px and 40px below 760px.
 
 Shared anchor scroll padding is 104px. House Core overrides it to 140px, reduced to 90px below 760px. Native drawing proportions and visible captions are preserved across the breakpoints.
 
@@ -298,7 +298,7 @@ Navigation links use semibold 14px light text, 48px minimum height and a respons
 
 The three immediate home paths are large links on a navy strip below the photograph. Later home service links are full-width ruled rows with a 34px Archivo title, muted description and arrow. Hover subtly fills the row, underlines the title and shifts the arrow four pixels. Desktop rows use 34px vertical padding; mobile rows use 26px and preserve the arrow beside the text. Interior service pages use definition rows and unboxed checklists, with body-type labels instead of extra display headings.
 
-The home hero uses a local illustrative raster, shown full-bleed under a navy contrast overlay. Its visible caption says the pictured panel does not document a Lostar realization. Industrial service drawings remain illustrative SVGs, with captions explaining that they are schematic rather than supplied configurations or completed work. House Core’s home entry has a visible demo caption. Keep all captions visible when reusing a figure.
+The home hero uses a local illustrative raster, shown full-bleed under a navy contrast overlay. Its visible caption says the pictured panel does not document a Lostar realization. Industrial service drawings remain illustrative SVGs, with captions explaining that they are schematic rather than supplied configurations or completed work. House Core’s model diagram and social preview are conceptual, with no live or private house data; the plan lower on the page is a synthetic demo. Keep all captions visible when reusing a figure.
 
 ### Request forms and send availability
 
@@ -310,7 +310,9 @@ The availability notice is a square bordered block before the first editable fie
 
 Service and House Core FAQs use native `details` / `summary`, an 18px semibold summary, a fine bottom rule and 22px row separation. Answers use 15px muted body text. House Core installation help uses a smaller summary within the navy download section. There is no custom open/close animation.
 
-### House Core plan and downloads
+### House Core system diagram, plan and downloads
+
+The first viewport diagram shows declared ambient and circuit relationships, compatible connected devices, available measures, the local model and assistant. It uses the approved navy/yellow palette and crisp vector geometry. The mobile figure may scroll sideways without causing whole-page overflow and is keyboard-focusable. The shared-link raster is generated from an authored SVG in the same palette and records its provenance.
 
 The layered plan is a square paper-framed figure with a white drawing stage, labelled heading, native checkbox fieldset and visible text status. Checkboxes are 17px, navy-accented and labelled in 14px body text. Controls appear only once the interactive SVG is ready; a descriptive static plan is the fallback. Toggling layers updates existing geometry and the live text state without decorative motion.
 

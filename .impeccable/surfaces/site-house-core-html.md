@@ -1,36 +1,28 @@
 ---
-version: 1
+version: 2
 slug: "site-house-core-html"
 primary_target: "site/house-core.html"
-related_targets: ["site/house-core.css","site/house-core.js"]
+related_targets: ["site/house-core.css", "site/house-core.js", "site/index.html", "site/assets/house-demo/house-core-system.svg"]
 ---
 
-# House Core · nuova pagina commerciale
+# House Core · sistema operativo della casa
 
-Mode: Persuade. Scope: sostituire House Core, raccordo dalla home e verso contatti; preservare servizi industriali. Utente ha confermato la strategia direttamente. La domanda opzionale sul processo visuale è ancora senza risposta: si prosegue su anteprima navigabile, senza registrare una preferenza persistente.
+Mode: Persuade. Scope: pagina House Core e raccordo dalla home, senza cambiare il posizionamento dei servizi industriali. L'utente ha corretto il racconto il 30 settembre 2026: House Core non si limita a progettazione di interni e illuminazione; è un sistema operativo locale con un assistente che conosce, aiuta e monitora la casa. Ha confermato che l'assistente è già nel prodotto scaricabile e ha indicato il repository del sistema operativo come fonte.
 
-## Visual derivation
+## Fonte e verità
 
-Mechanism: progettare la propria casa in virtuale, esportare i layer e far valutare hardware/installazione a Lostar. Scene: proprietario e progettista confrontano planimetria e quantità prima del cantiere. Common rut: promessa AI astratta con feature cards; opposite rut: sito edilizio con foto stock.
-
-Grounded systems: 1 tavola di presentazione architettonica; 2 catalogo componenti elettrici; 3 tavolo di revisione progetti; 4 tavolo luminoso con fogli di impianto sovrapposti; 5 fascicolo tecnico di consegna; 6 segnaletica di cantiere; 7 sequenza di montaggio di un quadro. Seed 81af8426, assigned 4. La pianta è geometria vera di un esempio sintetico e riusa i simboli di House Core.
-
-Challengers weighed on audience identification / clarity: acetate manual competitive for layer semantics but loses immediate property scene; its donation is exact visibility of selected layers. Pulp rocket declined on both; donation: large-scale readable subject. Terminal declined on both; donation: explicit state text. Algorave declined on both; donation: controls modify the actual visual output. Raku declined on both; donation: visible stages from project to physical result. Jacquard declined on both; donation: data traceability from drawing to quantities. Only the chosen grounded world carries visual expression, no borrowed costumes.
+La fonte narrativa è `Sistema operativo casa/docs/prodotto/house-core.md`, soprattutto Parte prima, materiale per la landing e Parte quarta. Il codice e gli ZIP pubblicati del 23 settembre confermano che House Studio include chat, comandi semplici, risposte sullo stato virtuale, registri e memoria. Nessun modello linguistico è preconfigurato; la conversazione più ricca richiede configurazione AI. Senza licenza i dispositivi e i consumi sono simulati. Monitorare e comandare una casa reale richiede hardware compatibile, configurazione e licenza. Non promettere serie storiche o diagnosi delle anomalie, compatibilità universale, protezione elettrica o conoscenza di dati non dichiarati/misurati. La casa prototipo resta privata: nessun indirizzo o dato riconoscibile nei testi e negli asset.
 
 ## Direction contract
 
-THESIS: La casa virtuale diventa materiale concreto per un preventivo. La pagina mostra la pianta e i documenti, non una promessa astratta dell'AI.
+THESIS: La casa è un modello vivo che l'assistente può consultare, spiegare e aiutare a governare. House Studio gratuito è il primo modo per provarlo, non il prodotto intero.
 
-OWN-WORLD: Tavolo luminoso, superfici chiare, segni blu Lostar, giallo per la scelta primaria, forme nette. Titoli Rockstar e testo leggibile; planimetria e documenti sostituiscono griglie di schede.
+OWN-WORLD: Stessa identità Lostar: blu #0B2545, giallo #F4B500, superfici chiare, titoli Rockstar, testo Archivo, diagrammi tecnici nitidi. Il diagramma nel primo viewport mostra la relazione tra casa dichiarata, dati disponibili, modello locale e assistente. La planimetria interattiva resta più avanti come prova di House Studio.
 
-STORY: Scarica gratis; costruisci la casa e i suoi impianti; seleziona i layer PDF; condividili per hardware ed eventuale installazione.
+STORY: House Core come sistema operativo; modello di ambienti e impianti; assistente e confini di azione; prova virtuale con House Studio; PDF per il confronto tecnico; percorso verso hardware e casa connessa; download e richiesta.
 
-FIRST VIEWPORT: Titolo ampio a sinistra con azione di download; a destra pianta sintetica quotata 8x6m con livelli e stato esplicito. Identità House Core nella navigazione interna. A 390px testo, CTA e diagramma si dispongono in ordine senza scorrimento orizzontale.
+FIRST VIEWPORT: H1 che nomina House Core e la capacità di rispondere. Testo che spiega modello, assistente e limiti. CTA per scoprire il sistema e per provare House Studio. A lato, schema concettuale con didascalia che non finge dati live.
 
-FORM: Tavolo luminoso dei livelli, posizione 4, seed 81af8426. Interazione firma: checkbox che sovrappongono arredi, luci e percorsi alla stessa geometria; il PDF scaricabile prova la continuità.
+FORM: Il contenuto alterna diagramma, righe editoriali del modello e domande che un proprietario può fare alla casa. Niente griglia di feature indistinte. La planimetria con selezione dei layer e il PDF dimostrativo mostrano che il modello è anche progettuale.
 
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
-
-## SEO refinement · 23 September 2026
-
-The subsequent refinement keeps this Persuade surface and its plan, PDF, download and request components. The H1 names House Core as the local home system; download actions name House Studio as the free virtual planning application. ZIP preview status, separate hardware/installation scope and request limitations remain explicit. No CSS or global design-token change applies. Direction, independent SHIP verdict, asset provenance and verification boundaries are recorded in `docs/seo/site-seo-direction.md`, `docs/seo/site-finish-review.md` and `docs/seo/site-design-documentation.md`.
+FINISH: Verificare contrasto, leggibilità, overflow a 1440, 768, 390 e 320 px, funzionamento della navigazione, interazione dei layer, download e form; mantenere accessibili gli esempi concettuali e documentare la distinzione tra virtuale e reale.

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">House Core, la casa che sa risponderti</title>
+  <desc id="desc">Anteprima grafica Lostar in blu e giallo: ambienti, impianti e misure disponibili alimentano il modello locale House Core, consultato dall'assistente.</desc>
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#27415e" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0b2545"/>
+  <rect x="594" width="606" height="630" fill="url(#grid)"/>
+  <path d="M0 16H1200M0 614H1200" stroke="#294661"/>
+  <path d="M68 92h78" stroke="#f4b500" stroke-width="8"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="68" y="143" fill="#f4b500" font-size="19" font-weight="700" letter-spacing="3">HOUSE CORE · LOSTAR</text>
+    <text x="68" y="245" fill="#fff" font-size="71" font-weight="800" letter-spacing="-2">La casa che sa</text>
+    <text x="68" y="326" fill="#fff" font-size="71" font-weight="800" letter-spacing="-2">risponderti.</text>
+    <text x="68" y="398" fill="#d9e4ed" font-size="25">Il sistema operativo locale della casa.</text>
+    <text x="68" y="554" fill="#d9e4ed" font-size="17">Un modello vivo. Un assistente con un contesto.</text>
+  </g>
+  <g stroke="#f4b500" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M791 179H855V237M791 329H855V271M1054 179H995V237M1054 329H995V271M925 329v60"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="700" text-anchor="middle">
+    <rect x="649" y="143" width="142" height="70" rx="4" fill="#fff"/><text x="720" y="186" fill="#0b2545" font-size="18">Ambienti</text>
+    <rect x="649" y="294" width="142" height="70" rx="4" fill="#fff"/><text x="720" y="337" fill="#0b2545" font-size="18">Impianti</text>
+    <rect x="1054" y="143" width="124" height="70" rx="4" fill="#fff"/><text x="1116" y="186" fill="#0b2545" font-size="18">Dispositivi</text>
+    <rect x="1054" y="294" width="124" height="70" rx="4" fill="#fff"/><text x="1116" y="337" fill="#0b2545" font-size="18">Misure</text>
+    <rect x="854" y="213" width="142" height="116" rx="4" fill="#f4b500"/><text x="925" y="264" fill="#0b2545" font-size="20">House Core</text><text x="925" y="291" fill="#0b2545" font-size="14">modello locale</text>
+    <rect x="823" y="389" width="204" height="67" rx="4" fill="#fff" stroke="#f4b500" stroke-width="3"/><text x="925" y="430" fill="#0b2545" font-size="19">Assistente</text>
+  </g>
+  <text x="1096" y="553" font-family="Arial, Helvetica, sans-serif" text-anchor="end" fill="#b9cad7" font-size="14">SCHEMA CONCETTUALE</text>
+</svg>

@@ -3,7 +3,7 @@ const technicalStatus = document.querySelector('#technical-status');
 const serviceSelect = technicalForm.elements.servizio;
 const documentTitle = document.querySelector('#documents-title');
 const documentList = document.querySelector('#document-list');
-let technicalEmail = '';
+let contactAvailable = false;
 const requestGuides = {
   quadri: { title: 'Documenti utili per un quadro nuovo', items: ['Schema elettrico', 'Distinta componenti o capitolato', 'Ingombri e ambiente di installazione', 'Descrizione delle utenze e tempi desiderati'] },
   automazione: { title: 'Documenti utili per il bordo macchina', items: ['Schema elettrico della macchina', 'Elenco di ingressi e uscite, sensori e attuatori', 'Distinta e componenti da utilizzare', 'Attività richieste sul quadro e in campo'] },
@@ -28,38 +28,53 @@ updateGuide();
 function technicalText() {
   const f = new FormData(technicalForm);
   const optional = (value) => String(value || '').trim() || 'Non indicato';
-  return `Buongiorno Lostar,\n\nNome: ${f.get('nome')}\nEmail: ${f.get('email')}\nAzienda: ${optional(f.get('azienda'))}\nComune: ${optional(f.get('comune'))}\nRichiesta: ${serviceSelect.selectedOptions[0].textContent}\n\n${f.get('progetto')}\n\nDocumenti: aggiungo a questa email il materiale disponibile.\n\nGrazie.`;
+  return `Buongiorno Lostar,\n\nNome: ${f.get('nome')}\nEmail: ${f.get('email')}\nAzienda: ${optional(f.get('azienda'))}\nComune: ${optional(f.get('comune'))}\nRichiesta: ${serviceSelect.selectedOptions[0].textContent}\n\n${f.get('progetto')}\n\nDocumenti: posso condividere il materiale disponibile dopo un primo contatto.\n\nGrazie.`;
 }
 async function initializeTechnicalContact() {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 5000);
   try {
-    const response = await fetch('./contact-config.json', { signal: controller.signal });
+    const response = await fetch('/api/contact', { signal: controller.signal });
     const config = response.ok ? await response.json() : {};
-    if (typeof config.email === 'string' && /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(config.email)) technicalEmail = config.email;
+    contactAvailable = config.available === true;
   } catch { /* Preparation stays available if the recipient cannot be loaded. */ }
   finally { clearTimeout(timeout); }
   const channel = document.querySelector('#technical-channel');
-  if (technicalEmail) {
-    const link = document.createElement('a'); link.href = `mailto:${technicalEmail}`; link.textContent = technicalEmail; link.className = 'text-link'; channel.replaceChildren(link);
+  if (contactAvailable) {
+    channel.textContent = 'Invia la richiesta a Lostar senza allegati. Ti ricontatteremo per i documenti utili al preventivo.';
     document.querySelector('#technical-mail').hidden = false;
   } else {
-    channel.textContent = 'Il recapito per l’invio non è ancora disponibile in questa anteprima. Puoi compilare e copiare il testo; nessuna richiesta viene inviata.';
+    channel.textContent = 'L’invio dal sito non è ancora disponibile. Puoi compilare e copiare il testo; nessuna richiesta viene inviata.';
   }
 }
 initializeTechnicalContact();
-technicalForm.addEventListener('submit', event => {
+technicalForm.addEventListener('submit', async event => {
   event.preventDefault();
   if (!technicalForm.reportValidity()) return;
-  if (!technicalEmail) { technicalStatus.textContent = 'Il recapito non è ancora disponibile. Usa Copia il testo per conservare la richiesta.'; return; }
-  window.location.href = `mailto:${technicalEmail}?subject=${encodeURIComponent('Lostar — richiesta di preventivo')}&body=${encodeURIComponent(technicalText())}`;
-  technicalStatus.textContent = 'La bozza si apre nel tuo programma di posta. Aggiungi gli allegati e invia da lì. Se non si apre, copia il testo e usa l’indirizzo indicato.';
+  if (!contactAvailable) { technicalStatus.textContent = 'L’invio non è ancora disponibile. Usa Copia il testo per conservare la richiesta.'; return; }
+  const button = document.querySelector('#technical-mail');
+  button.disabled = true;
+  technicalStatus.textContent = 'Invio in corso…';
+  const fields = Object.fromEntries(new FormData(technicalForm));
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ form: 'technical', fields, website: fields.website || '' })
+    });
+    const result = response.ok ? await response.json() : {};
+    technicalStatus.textContent = result.ok === true
+      ? 'Richiesta inviata. Ti ricontatteremo per gli eventuali documenti utili.'
+      : 'Non siamo riusciti a inviare la richiesta. Riprova più tardi o copia il testo.';
+  } catch {
+    technicalStatus.textContent = 'Non siamo riusciti a inviare la richiesta. Riprova più tardi o copia il testo.';
+  } finally { button.disabled = false; }
 });
 document.querySelector('#technical-copy').addEventListener('click', async () => {
   if (!technicalForm.reportValidity()) return;
   try {
     await navigator.clipboard.writeText(technicalText());
-    technicalStatus.textContent = 'Testo copiato. Incollalo nella tua email e aggiungi i documenti disponibili.';
+    technicalStatus.textContent = 'Testo copiato. Conservalo per quando l’invio sarà disponibile.';
   } catch {
     let draft = document.querySelector('#technical-draft');
     if (!draft) {
@@ -68,7 +83,7 @@ document.querySelector('#technical-copy').addEventListener('click', async () => 
       label.append(draft); technicalForm.append(label);
     }
     draft.value = technicalText(); draft.focus(); draft.select();
-    technicalStatus.textContent = 'Il browser non consente la copia automatica. Copia il testo selezionato e incollalo nella tua email.';
+    technicalStatus.textContent = 'Il browser non consente la copia automatica. Copia il testo selezionato e conservalo.';
   }
 });
 document.querySelector('#technical-fields').disabled = false;

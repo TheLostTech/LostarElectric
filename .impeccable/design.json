@@ -425,11 +425,11 @@
       "css": ".ds-service{display:grid;grid-template-columns:.95fr 1fr 32px;gap:40px;align-items:center;padding:34px 0;border-bottom:1px solid var(--gray-200,#d5dfe2);text-decoration:none;font:16px/1.6 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-service h3{margin:0;color:var(--blue-800,#0b2545);font:800 34px/1.04 var(--font-display,Archivo,\"Helvetica Neue\",Arial,sans-serif);letter-spacing:-.035em;text-wrap:balance}.ds-service p{margin:0;color:var(--gray-700,#526170);max-width:570px}.ds-service svg{width:24px;height:24px;fill:none;stroke:var(--blue-800,#0b2545);stroke-width:1.5;transition:transform 160ms ease}.ds-service:hover{background:var(--gray-050,#f4f6f6)}.ds-service:hover h3{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px}.ds-service:hover svg{transform:translateX(4px)}.ds-service:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}@media(max-width:640px){.ds-service{grid-template-columns:1fr 24px;gap:14px 22px;padding:26px 0}.ds-service h3{grid-column:1;font-size:29px}.ds-service p{grid-column:1;font-size:15px}.ds-service svg{grid-column:2;grid-row:1/3}}@media(prefers-reduced-motion:reduce){.ds-service svg{transition:none}}"
     },
     {
-      "name": "Request surface and recipient notice",
+      "name": "Request surface and delivery notice",
       "kind": "card",
       "refersTo": "request-surface",
-      "description": "Contact form surface with the current channel limitation placed before the field.",
-      "html": "<section class=\"ds-request\"><h2>La tua richiesta</h2><p class=\"ds-recipient\">Il recapito per l’invio non è ancora disponibile in questa anteprima. Puoi compilare e copiare il testo; nessuna richiesta viene inviata.</p><label>Nome<input autocomplete=\"name\"></label></section>",
+      "description": "Contact form surface with delivery availability placed before the field.",
+      "html": "<section class=\"ds-request\"><h2>La tua richiesta</h2><p class=\"ds-recipient\">L’invio dal sito non è ancora disponibile. Puoi compilare e copiare il testo; nessuna richiesta viene inviata.</p><label>Nome<input autocomplete=\"name\"></label></section>",
       "css": ".ds-request{display:grid;gap:22px;background:var(--gray-050,#f4f6f6);padding:32px;font:16px/1.6 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-request h2{margin:0;color:var(--blue-800,#0b2545);font:800 30px/1.04 var(--font-display,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-recipient{margin:0;padding:16px;background:#fff;border:1px solid var(--gray-200,#d5dfe2);font-size:14px;line-height:1.6;color:var(--gray-700,#526170);overflow-wrap:anywhere}.ds-request label{display:grid;gap:8px;font-size:14px;font-weight:600;line-height:1.5;color:var(--blue-800,#0b2545)}.ds-request input{min-height:48px;border:1px solid var(--gray-300,#a7b5be);border-radius:2px;padding:12px;background:#fff;color:var(--blue-800,#0b2545);font:inherit;font-size:16px}.ds-request input:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}@media(max-width:860px){.ds-request{padding:24px}}@media(max-width:640px){.ds-request{padding:24px 20px}}"
     },
     {
@@ -464,7 +464,7 @@
       "Existing Lostar logo and navy/yellow palette, with Archivo variable type throughout the active theme.",
       "Dark shared header, full-bleed illustrative home image and bold navy service heroes.",
       "Illustrative SVG diagrams for industrial services; interactive plan and PDF evidence for House Core.",
-      "Unified request controls, visible recipient status and contextual document lists.",
+      "Unified request controls, visible send availability and contextual document lists.",
       "Responsive reading order, native disclosures and high-contrast keyboard focus."
     ],
     "rules": [
@@ -489,7 +489,7 @@
       "Do keep the illustrative home image caption visible and legible against the image.",
       "Do use ruled rows and clear service headings to organize industrial content.",
       "Do keep diagram/demo captions visible and accurate about what the image represents.",
-      "Do show recipient availability before editable request fields and keep action labels consistent with the available channel.",
+      "Do show send availability before editable request fields and keep action labels consistent with the available channel.",
       "Do preserve the mobile reading order, keyboard focus and reduced-motion behavior.",
       "Do use House Core’s plan and document evidence within its specialized layouts."
     ],
@@ -498,7 +498,7 @@
       "Don’t present the illustrative home image or service diagrams as photographed Lostar work, or add stock metrics or unverified ratings.",
       "Don’t use decorative standalone kickers above the main content headings.",
       "Don’t introduce a translucent or blurred header, raised service cards or ornamental motion.",
-      "Don’t hide a request limitation below the effort it qualifies or imply an upload/send operation that the interface does not perform."
+      "Don’t hide a delivery limitation below the effort it qualifies or imply an upload when the forms send text only."
     ]
   }
 }

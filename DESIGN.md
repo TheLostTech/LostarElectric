@@ -167,7 +167,7 @@ components:
     backgroundColor: '{colors.gray-050}'
     rounded: '{rounded.surface}'
     padding: 32px
-  recipient-notice:
+  delivery-notice:
     backgroundColor: '{colors.white}'
     textColor: '{colors.gray-700}'
     rounded: '{rounded.surface}'
@@ -201,7 +201,7 @@ This system covers home, industrial services, contacts, House Core, articles and
 - Existing Lostar logo and navy/yellow palette, with Archivo variable type throughout the active theme.
 - Dark shared header, full-bleed illustrative home image and bold navy service heroes.
 - Illustrative SVG diagrams for industrial services; interactive plan and PDF evidence for House Core.
-- Unified request controls, visible recipient status and contextual document lists.
+- Unified request controls, visible send availability and contextual document lists.
 - Responsive reading order, native disclosures and high-contrast keyboard focus.
 
 Updated from the current `site/*.html` pages, `site/styles.css`, `site/modern-theme.css` and `site/house-core.css`, with the approved preview as direction. This supersedes the September technical-catalogue visual choices while retaining their verified content and House Core flow. Frontmatter owns primitive token values; `.impeccable/design.json` adds motion, breakpoints, elevation and isolated component examples. The named north star describes the active theme, not a new brand identity.
@@ -257,7 +257,7 @@ The fixed shared header is deep navy, 86px high on desktop, with a subtle bottom
 
 Home uses a full-width illustrative industrial image with a navy overlay, white headline, yellow action and visible caption. Three navy paths beneath it lead to Quadri elettrici, Automazione and House Core; they remain visible and stack on mobile. Service heroes retain the copy/diagram grid but now sit on navy, with white type and yellow actions. Below the heroes, ruled service rows, explanation grids, definition rows, pale supply sections, request bands and native FAQ rows preserve the technical reading path. The home House Core entry still pairs its title with the plan.
 
-The contact page uses a 0.85fr / 1.15fr checklist/form split. Forms share a square paper container, a 22px content gap and paired field rows where room permits. Recipient status precedes editable fields. The service selector changes the supporting document checklist; incoming service links can preselect the corresponding request type. These are functional controls, not decorative filters.
+The contact page uses a 0.85fr / 1.15fr checklist/form split. Forms share a square paper container, a 22px content gap and paired field rows where room permits. Send availability precedes editable fields. The service selector changes the supporting document checklist; incoming service links can preselect the corresponding request type. These are functional controls, not decorative filters.
 
 Shared responsive behavior:
 
@@ -300,11 +300,11 @@ The three immediate home paths are large links on a navy strip below the photogr
 
 The home hero uses a local illustrative raster, shown full-bleed under a navy contrast overlay. Its visible caption says the pictured panel does not document a Lostar realization. Industrial service drawings remain illustrative SVGs, with captions explaining that they are schematic rather than supplied configurations or completed work. House Core’s home entry has a visible demo caption. Keep all captions visible when reusing a figure.
 
-### Request forms and recipient status
+### Request forms and send availability
 
 Both request forms use white fields on paper, one-pixel control borders, two-pixel corners, 12px input padding, 48px minimum field height, 16px values and labels separated by 8px. Shared field pairs have an 18px gap. Contact textarea minimum height is 140px; House Core’s is 106px. Both resize vertically.
 
-The recipient notice is a square bordered block before the first editable field. On the contact page it has a white fill; House Core’s pending notice inherits the paper surface. The notice explains the current channel before the user enters information. When a recipient is unavailable, the interface supports copying text and does not expose an email-send claim. Preserve the neutral introduction and contextual document list. Fieldsets start disabled until initialization, and a noscript explanation remains available; validation and disabled appearance use native browser behavior rather than invented error tokens. Status feedback is textual in a live status region.
+The availability notice is a square bordered block before the first editable field. On the contact page it has a white fill; House Core’s pending notice inherits the paper surface. The notice explains the current channel before the user enters information. `GET /api/contact` reports only whether server-side delivery is configured; it does not reveal the private recipient. If unavailable, the send action is hidden and users can copy the request text locally. If available, `POST /api/contact` sends text fields, with no file upload. Preserve the neutral introduction and contextual document list. Fieldsets start disabled until initialization, and a noscript explanation remains available; validation and disabled appearance use native browser behavior rather than invented error tokens. Status feedback is textual in a live status region.
 
 ### Disclosures
 
@@ -328,7 +328,7 @@ Interactive controls use a three-pixel focus outline offset by five pixels. Teal
 - Do keep the illustrative home image caption visible and legible against the image.
 - Do use ruled rows and clear service headings to organize industrial content.
 - Do keep diagram/demo captions visible and accurate about what the image represents.
-- Do show recipient availability before editable request fields and keep action labels consistent with the available channel.
+- Do show send availability before editable request fields and keep action labels consistent with the available channel.
 - Do preserve the mobile reading order, keyboard focus and reduced-motion behavior.
 - Do use House Core’s plan and document evidence within its specialized layouts.
 
@@ -338,4 +338,4 @@ Interactive controls use a three-pixel focus outline offset by five pixels. Teal
 - Don’t present the illustrative home image or service diagrams as photographed Lostar work, or add stock metrics or unverified ratings.
 - Don’t use decorative standalone kickers above the main content headings.
 - Don’t introduce a translucent or blurred header, raised service cards or ornamental motion.
-- Don’t hide a request limitation below the effort it qualifies or imply an upload/send operation that the interface does not perform.
+- Don’t hide a delivery limitation below the effort it qualifies or imply an upload when the forms send text only.

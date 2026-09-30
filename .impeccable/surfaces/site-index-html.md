@@ -15,7 +15,7 @@ Mode: Persuade. On 30 September 2026 Alessandro approved the modern industrial d
 
 Confirmed domain from project brief and existing company materials: construction/cabling of electrical panels, distribution/control, machine panels, work on existing panels, checks and documentation. Describe scope as agreed in the quote; do not add PLC programming, emergency response, geographic coverage, universal certifications or rated product specifications. Remove unverified 48h guarantee and percentages. Explain revamping in Italian as modifica/aggiornamento; explain I/O as ingressi e uscite when used. No invented customers, testimonials or completed jobs. The home hero image is illustrative and visibly labelled as such; service diagrams are schematic, not evidence of a supplied configuration.
 
-Each page answers a different question: home chooses the need; quadri describes new supply; automazione describes machine signals/connections; collaudo describes existing-panel changes and verification; contacts prepares a complete request; House Core follows free design → exported layers → hardware/optional installation.
+Each page answers a different question: home chooses the need; quadri describes new supply; automazione describes machine signals/connections; collaudo describes existing-panel changes and verification; contacts sends a complete text request when the private delivery channel is configured; House Core follows free design → exported layers → hardware/optional installation.
 
 ## Direction contract
 
@@ -33,7 +33,7 @@ FINISH: Verify the desktop and mobile result, document the implemented system in
 
 ## Delivery limitations
 
-Contact recipient remains unconfirmed (email null). The preview must never claim to send or upload. Do not invent contact data. Publication state is separate from this visual direction.
+The recipient address is private server configuration, never a public asset or client-side value. The two forms show send availability reported by `GET /api/contact`; with the three required Vercel environment variables configured, `POST /api/contact` sends text through Resend. If unavailable, the send action is hidden and the copy-text fallback remains. Neither form uploads files; visitors share technical documents only after a first reply. Publication state is separate from this visual direction.
 
 ## SEO refinement · 23 September 2026
 

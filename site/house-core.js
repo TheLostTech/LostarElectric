@@ -30,47 +30,59 @@ loadPlan();
 const form = document.querySelector('#hc-request');
 const status = document.querySelector('#hc-form-status');
 const copyButton = document.querySelector('#hc-copy-request');
-let contactEmail = '';
+let contactAvailable = false;
 function requestText() {
   const fields = new FormData(form);
-  return `Buongiorno Lostar,\n\nvorrei valutare il mio progetto House Core.\n\nNome: ${fields.get('nome')}\nComune dell'intervento: ${fields.get('comune')}\nRichiesta: ${fields.get('servizio')}\n\nIl progetto:\n${fields.get('progetto')}\n\nAllegati: aggiungo a questa email lo ZIP dei layer esportati da House Core.\n\nGrazie.`;
+  return `Buongiorno Lostar,\n\nvorrei valutare il mio progetto House Core.\n\nNome: ${fields.get('nome')}\nEmail: ${fields.get('email')}\nComune dell'intervento: ${fields.get('comune')}\nRichiesta: ${fields.get('servizio')}\n\nIl progetto:\n${fields.get('progetto')}\n\nDocumenti: posso condividere lo ZIP dei layer dopo un primo contatto.\n\nGrazie.`;
 }
 async function loadContact() {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 5000);
   try {
-    const response = await fetch('./contact-config.json', { signal: controller.signal });
+    const response = await fetch('/api/contact', { signal: controller.signal });
     if (!response.ok) throw new Error('config');
     const config = await response.json();
-    if (typeof config.email === 'string' && /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(config.email)) contactEmail = config.email;
+    contactAvailable = config.available === true;
   } catch { /* The draft helper stays usable without a configured recipient. */ }
   finally { clearTimeout(timeout); }
   const channel = document.querySelector('#hc-contact-channel');
-  if (contactEmail) {
-    const link = document.createElement('a');
-    link.href = `mailto:${contactEmail}`; link.textContent = contactEmail; link.className = 'hc-address hc-link';
-    channel.replaceChildren(link);
+  if (contactAvailable) {
+    channel.textContent = 'Invia il riepilogo del progetto a Lostar. Ti ricontatteremo per ricevere lo ZIP dei layer.';
     document.querySelector('#hc-mail-button').hidden = false;
   } else {
     channel.className = 'hc-pending';
-    channel.textContent = 'Anteprima: il recapito Lostar per ricevere i layer è in configurazione. Puoi già preparare e copiare la richiesta; nessun file viene inviato da questa pagina.';
+    channel.textContent = 'L’invio dal sito non è ancora disponibile. Puoi preparare e copiare la richiesta; nessun dato o file viene inviato.';
     document.querySelector('#hc-mail-button').hidden = true;
   }
 }
 loadContact();
-form.addEventListener('submit', event => {
+form.addEventListener('submit', async event => {
   event.preventDefault();
   if (!form.reportValidity()) return;
-  if (!contactEmail) { status.textContent = 'Il recapito non è ancora configurato. Usa Copia richiesta per conservare il testo.'; return; }
-  const subject = 'House Core — richiesta preventivo';
-  window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(requestText())}`;
-  status.textContent = 'Apri la bozza nel tuo programma di posta e allega lo ZIP dei layer prima di inviare. Se la posta non si apre, copia la richiesta e scrivi all’indirizzo indicato.';
+  if (!contactAvailable) { status.textContent = 'L’invio non è ancora disponibile. Usa Copia richiesta per conservare il testo.'; return; }
+  const button = document.querySelector('#hc-mail-button');
+  button.disabled = true;
+  status.textContent = 'Invio in corso…';
+  const fields = Object.fromEntries(new FormData(form));
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ form: 'house-core', fields, website: fields.website || '' })
+    });
+    const result = response.ok ? await response.json() : {};
+    status.textContent = result.ok === true
+      ? 'Richiesta inviata. Ti ricontatteremo per ricevere lo ZIP dei layer.'
+      : 'Non siamo riusciti a inviare la richiesta. Riprova più tardi o copia il testo.';
+  } catch {
+    status.textContent = 'Non siamo riusciti a inviare la richiesta. Riprova più tardi o copia il testo.';
+  } finally { button.disabled = false; }
 });
 copyButton.addEventListener('click', async () => {
   if (!form.reportValidity()) return;
   try {
     await navigator.clipboard.writeText(requestText());
-    status.textContent = 'Richiesta copiata. Incollala nella tua email e aggiungi lo ZIP con i layer.';
+    status.textContent = 'Richiesta copiata. Conservala per quando l’invio sarà disponibile.';
   } catch {
     // Visible, selectable fallback also works without Clipboard API permission.
     let draft = document.querySelector('#hc-draft');
@@ -80,7 +92,7 @@ copyButton.addEventListener('click', async () => {
       label.append(draft); form.append(label);
     }
     draft.value = requestText(); draft.focus(); draft.select();
-    status.textContent = 'Copia il testo selezionato e incollalo nella tua email, poi allega lo ZIP.';
+    status.textContent = 'Copia il testo selezionato e conservalo.';
   }
 });
 

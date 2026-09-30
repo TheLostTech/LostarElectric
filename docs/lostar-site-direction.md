@@ -1,29 +1,33 @@
-# Lostar Electric · rifacimento dell'intero sito
+# Lostar Electric · tema approvato per l'intero sito
 
 ## Scope and purpose
 
-Mode: Persuade. User explicitly rejected the overall website copy and requested the entire site be rebuilt with Impeccable on 23 September 2026. This supersedes the previous House-Core-only scope. All six surfaces are included: home, quadri, automazione, collaudo, contatti, and House Core copy/shared chrome. Proceed directly within the existing Lostar identity and working preview; no new brand or imagery approval is inferred.
+Mode: Persuade. On 30 September 2026 Alessandro approved the modern industrial direction shown in the preview and asked to proceed. The theme applies across home, industrial services, contacts, House Core, articles and utility pages through shared chrome and typography. It retains the Lostar Electric name, logo and established navy/yellow palette. Precept is a visual reference; the repository does not contain a purchased template.
 
 ## Truth and language
 
-Confirmed domain from project brief and existing company materials: construction/cabling of electrical panels, distribution/control, machine panels, work on existing panels, checks and documentation. Describe scope as agreed in the quote; do not add PLC programming, emergency response, geographic coverage, universal certifications or rated product specifications. Remove unverified 48h guarantee and percentages. Explain revamping in Italian as modifica/aggiornamento; explain I/O as ingressi e uscite when used. No invented customers, photos, testimonials or completed jobs. Geometric diagrams are explicitly illustrative.
+Confirmed domain from project brief and existing company materials: construction/cabling of electrical panels, distribution/control, machine panels, work on existing panels, checks and documentation. Describe scope as agreed in the quote; do not add PLC programming, emergency response, geographic coverage, universal certifications or rated product specifications. Remove unverified 48h guarantee and percentages. Explain revamping in Italian as modifica/aggiornamento; explain I/O as ingressi e uscite when used. No invented customers, testimonials or completed jobs. The home hero image is illustrative and visibly labelled as such; service diagrams are schematic, not evidence of a supplied configuration.
 
 Each page answers a different question: home chooses the need; quadri describes new supply; automazione describes machine signals/connections; collaudo describes existing-panel changes and verification; contacts prepares a complete request; House Core follows free design → exported layers → hardware/optional installation.
 
 ## Direction contract
 
-THESIS: Explain the work, then help the visitor describe their project. Replace repeated slogans and anonymous feature boxes with concrete service entries, deliverables and a request path.
+THESIS: Lead with a memorable industrial visual, then explain the work and help the visitor describe their project. Keep concrete service entries, deliverables and a clear request path.
 
-OWN-WORLD: Existing Lostar navy, yellow, Rockstar and sans-serif. Industrial catalogue composition: large plain titles, crisp orthographic engineering diagrams, ruled rows, generous separation and a consistent navigation/footer. No fake photography, stock metrics, decorative blueprint grids or unverified ratings.
+OWN-WORLD: Existing Lostar navy and yellow with the local Archivo variable face for display and body text. Dark navy shared header, bold type, full-bleed illustrative industrial image on home, dark service heroes, crisp engineering diagrams, ruled rows and generous separation. No fabricated work photography, stock metrics, decorative blueprint grids or unverified ratings.
 
 STORY: Identify the right service; understand what Lostar supplies and what needs agreeing; prepare a request with the available technical material. Domestic visitors take the explicit House Core path.
 
-FIRST VIEWPORT: Home has a large navy field with white 'Quadri elettrici. Automazione. Domotica.' and one dominant technical diagram on a light ground. Service pages have an unambiguous title and short scope beside the relevant diagram. Primary actions name the request. Contacts starts with the actual request form. Mobile keeps headline, scope, action, then diagram.
+FIRST VIEWPORT: Home has the full-bleed illustrative industrial image under a navy contrast overlay, the bold white 'Energia. Sotto controllo.' headline, a yellow request action, a House Core link and three navy navigation paths to Quadri elettrici, Automazione and House Core. The image caption makes its illustrative status explicit. Service pages use navy heroes with white titles, concise scope, yellow actions and their existing diagrams. Contacts starts with the request form. On mobile the home headline, scope and actions remain readable over the image, and the three paths stack vertically.
 
-FORM: Extend the established Lostar visual system to all previously unrevised surfaces; rebuild the site composition and copy rather than inventing a competing brand. House Core retains its functional layered plan and real PDF evidence. Signature interaction: service links preselect the correct request type; the corresponding document checklist changes with that selection. Shared 160ms color/state transitions only, with reduced-motion handling.
+FORM: Use the dark shared header and reverse logo on every page; the local Archivo variable font replaces Rockstar in the active theme. House Core retains its functional layered plan, downloadable previews and PDF evidence. Service links preselect the correct request type; the corresponding document checklist changes with that selection. Transitions remain short and are removed for reduced-motion preferences.
 
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+FINISH: Verify the desktop and mobile result, document the implemented system in DESIGN.md and its sidecar, and retain provenance for the illustrative hero raster.
 
 ## Delivery limitations
 
-Contact recipient remains unconfirmed (email null). The preview must never claim to send or upload. No new questions or invented contact data. Existing Vercel TEAM_ACCESS_REQUIRED denial is unresolved; no further deployment attempts without account-state change. GitHub PR remains a draft, updated to full-site scope after verification.
+Contact recipient remains unconfirmed (email null). The preview must never claim to send or upload. Do not invent contact data. Publication state is separate from this visual direction.
+
+## Previous direction · 23 September 2026
+
+The earlier technical-catalogue direction used a white header, Rockstar headings and a schematic home hero. The approved 30 September visual theme supersedes those visual choices. The factual service scope, transparent request flow and House Core journey continue to apply.

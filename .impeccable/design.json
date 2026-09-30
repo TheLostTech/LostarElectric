@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-23T00:03:14.297004+00:00",
+  "generatedAt": "2026-09-30T20:36:24.049893+00:00",
   "title": "Design System: Lostar Electric",
   "extensions": {
     "colorMeta": {
@@ -213,24 +213,52 @@
           "oklch(84% 0.00419 236.50)",
           "oklch(95% 0.00419 236.50)"
         ]
+      },
+      "yellow-hover-bright": {
+        "role": "primary",
+        "displayName": "Bright Yellow Hover",
+        "tonalRamp": [
+          "oklch(15% 0.16400 83.00)",
+          "oklch(27% 0.16400 83.00)",
+          "oklch(38% 0.16400 83.00)",
+          "oklch(50% 0.16400 83.00)",
+          "oklch(61% 0.16400 83.00)",
+          "oklch(73% 0.16400 83.00)",
+          "oklch(84% 0.16400 83.00)",
+          "oklch(95% 0.16400 83.00)"
+        ]
+      },
+      "nav-copy": {
+        "role": "neutral",
+        "displayName": "Dark Header Copy",
+        "tonalRamp": [
+          "oklch(15% 0.01200 245.00)",
+          "oklch(27% 0.01200 245.00)",
+          "oklch(38% 0.01200 245.00)",
+          "oklch(50% 0.01200 245.00)",
+          "oklch(61% 0.01200 245.00)",
+          "oklch(73% 0.01200 245.00)",
+          "oklch(84% 0.01200 245.00)",
+          "oklch(95% 0.01200 245.00)"
+        ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Shared service H1."
+        "purpose": "Industrial service H1 on navy."
       },
       "display-home": {
         "displayName": "Display Home",
-        "purpose": "Larger home H1 on navy."
+        "purpose": "Uppercase home H1 over illustrative imagery."
       },
       "display-contact": {
         "displayName": "Display Contact",
-        "purpose": "Contact introduction H1."
+        "purpose": "Contact introduction H1 in Archivo."
       },
       "display-house-core": {
         "displayName": "Display House Core",
-        "purpose": "Effective House Core H1 after final cascade overrides."
+        "purpose": "House Core H1 in Archivo with its local line height."
       },
       "headline": {
         "displayName": "Headline",
@@ -274,7 +302,7 @@
       },
       "navigation": {
         "displayName": "Navigation",
-        "purpose": "Shared primary navigation links with inherited 1.6 line-height."
+        "purpose": "Light primary navigation links in the dark header."
       }
     },
     "shadows": [
@@ -288,12 +316,22 @@
       {
         "name": "button-state",
         "value": "background 160ms ease, color 160ms ease, border-color 160ms ease",
-        "purpose": "Shared action hover colors."
+        "purpose": "Shared action hover colors; modern shared controls also translate down 1px while pressed."
+      },
+      {
+        "name": "home-paths",
+        "value": "background 180ms ease, color 180ms ease",
+        "purpose": "Hover feedback on the three navy paths below the illustrative home hero."
+      },
+      {
+        "name": "service-row-fill",
+        "value": "background 180ms ease",
+        "purpose": "Subtle hover fill on home service rows."
       },
       {
         "name": "service-arrow",
         "value": "transform 160ms ease; transform: translateX(4px) on hover",
-        "purpose": "Directional hover feedback on home service rows."
+        "purpose": "Directional feedback on the ruled home service rows."
       },
       {
         "name": "anchor-scroll",
@@ -307,6 +345,10 @@
       }
     ],
     "breakpoints": [
+      {
+        "name": "modern-header-tight-max",
+        "value": "1200px"
+      },
       {
         "name": "shared-compact-max",
         "value": "1120px"
@@ -340,7 +382,7 @@
       "refersTo": "button-primary",
       "description": "Shared action with its implemented hover and focus treatments.",
       "html": "<button type=\"button\" class=\"ds-button-primary\">Richiedi un preventivo <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></button>",
-      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;border:1px solid transparent;border-radius:4px;padding:12px 22px;font:600 15px/1.4 var(--font-sans,\"Helvetica Neue\",Arial,sans-serif);text-align:center;text-decoration:none;cursor:pointer;transition:background 160ms ease,color 160ms ease,border-color 160ms ease;background:var(--blue-800,#0b2545);color:#fff;}.ds-button-primary:hover{background:var(--blue-900,#071a31);}.ds-button-primary:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}.ds-button-primary svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}@media(max-width:640px){.ds-button-primary{padding:12px 18px}}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none}}"
+      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;border:1px solid transparent;border-radius:3px;padding:12px 22px;font:700 15px/1.4 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif);text-align:center;text-decoration:none;cursor:pointer;transition:background 160ms ease,color 160ms ease,border-color 160ms ease;background:var(--blue-800,#0b2545);color:#fff;}.ds-button-primary:hover{background:var(--blue-900,#071a31);}.ds-button-primary:active{transform:translateY(1px)}.ds-button-primary:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}.ds-button-primary svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}@media(max-width:640px){.ds-button-primary{padding:12px 18px}}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none}}"
     },
     {
       "name": "Yellow action",
@@ -348,7 +390,7 @@
       "refersTo": "button-yellow",
       "description": "Shared action with its implemented hover and focus treatments.",
       "html": "<button type=\"button\" class=\"ds-button-yellow\">Prepara la richiesta <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></button>",
-      "css": ".ds-button-yellow{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;border:1px solid transparent;border-radius:4px;padding:12px 22px;font:600 15px/1.4 var(--font-sans,\"Helvetica Neue\",Arial,sans-serif);text-align:center;text-decoration:none;cursor:pointer;transition:background 160ms ease,color 160ms ease,border-color 160ms ease;background:var(--yellow,#f4b500);color:var(--blue-800,#0b2545);}.ds-button-yellow:hover{background:#dfaa10;}.ds-button-yellow:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}.ds-button-yellow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}@media(max-width:640px){.ds-button-yellow{padding:12px 18px}}@media(prefers-reduced-motion:reduce){.ds-button-yellow{transition:none}}"
+      "css": ".ds-button-yellow{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;border:1px solid transparent;border-radius:3px;padding:12px 22px;font:700 15px/1.4 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif);text-align:center;text-decoration:none;cursor:pointer;transition:background 160ms ease,color 160ms ease,border-color 160ms ease;background:var(--yellow,#f4b500);color:var(--blue-800,#0b2545);}.ds-button-yellow:hover{background:#ffca27;}.ds-button-yellow:active{transform:translateY(1px)}.ds-button-yellow:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}.ds-button-yellow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}@media(max-width:640px){.ds-button-yellow{padding:12px 18px}}@media(prefers-reduced-motion:reduce){.ds-button-yellow{transition:none}}"
     },
     {
       "name": "Secondary action",
@@ -356,7 +398,7 @@
       "refersTo": "button-secondary",
       "description": "Shared action with its implemented hover and focus treatments.",
       "html": "<button type=\"button\" class=\"ds-button-secondary\">Copia il testo</button>",
-      "css": ".ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;border:1px solid transparent;border-radius:4px;padding:12px 22px;font:600 15px/1.4 var(--font-sans,\"Helvetica Neue\",Arial,sans-serif);text-align:center;text-decoration:none;cursor:pointer;transition:background 160ms ease,color 160ms ease,border-color 160ms ease;background:#fff;color:var(--blue-800,#0b2545);border-color:var(--gray-300,#a7b5be);}.ds-button-secondary:hover{background:var(--blue-050,#eef4fa);border-color:var(--blue-800,#0b2545);}.ds-button-secondary:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}.ds-button-secondary svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}@media(max-width:640px){.ds-button-secondary{padding:12px 18px}}@media(prefers-reduced-motion:reduce){.ds-button-secondary{transition:none}}"
+      "css": ".ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;border:1px solid transparent;border-radius:3px;padding:12px 22px;font:700 15px/1.4 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif);text-align:center;text-decoration:none;cursor:pointer;transition:background 160ms ease,color 160ms ease,border-color 160ms ease;background:#fff;color:var(--blue-800,#0b2545);border-color:var(--gray-300,#a7b5be);}.ds-button-secondary:hover{background:var(--blue-050,#eef4fa);border-color:var(--blue-800,#0b2545);}.ds-button-secondary:active{transform:translateY(1px)}.ds-button-secondary:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}.ds-button-secondary svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}@media(max-width:640px){.ds-button-secondary{padding:12px 18px}}@media(prefers-reduced-motion:reduce){.ds-button-secondary{transition:none}}"
     },
     {
       "name": "Labelled request field",
@@ -364,23 +406,23 @@
       "refersTo": "input",
       "description": "Shared native field; values inherit the semibold label weight.",
       "html": "<label class=\"ds-field\">Nome<input name=\"nome\" autocomplete=\"name\" required></label>",
-      "css": ".ds-field{display:grid;gap:8px;font:600 14px/1.5 var(--font-sans,\"Helvetica Neue\",Arial,sans-serif);color:var(--blue-800,#0b2545)}.ds-field input{width:100%;min-height:48px;border:1px solid var(--gray-300,#a7b5be);border-radius:2px;padding:12px;background:#fff;color:var(--blue-800,#0b2545);font:inherit;font-size:16px;caret-color:var(--blue-800,#0b2545)}.ds-field input:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}"
+      "css": ".ds-field{display:grid;gap:8px;font:600 14px/1.5 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif);color:var(--blue-800,#0b2545)}.ds-field input{width:100%;min-height:48px;border:1px solid var(--gray-300,#a7b5be);border-radius:2px;padding:12px;background:#fff;color:var(--blue-800,#0b2545);font:inherit;font-size:16px;caret-color:var(--blue-800,#0b2545)}.ds-field input:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}"
     },
     {
       "name": "Shared navigation links",
       "kind": "nav",
       "refersTo": "navigation",
-      "description": "Current-page marker and compact navigation typography.",
+      "description": "Light navigation with white current state and a yellow marker on the dark shared header.",
       "html": "<nav class=\"ds-nav\" aria-label=\"Servizi\"><a href=\"#quadri\" aria-current=\"page\">Quadri elettrici</a><a href=\"#automazione\">Automazione</a><a href=\"#contatti\">Contatti</a></nav>",
-      "css": ".ds-nav{display:flex;align-items:center;justify-content:center;gap:26px;font-family:var(--font-sans,\"Helvetica Neue\",Arial,sans-serif)}.ds-nav a{display:flex;align-items:center;min-height:48px;position:relative;font-size:14px;font-weight:600;line-height:1.6;color:var(--gray-700,#526170);white-space:nowrap;text-decoration:none}.ds-nav a:hover,.ds-nav a[aria-current=page]{color:var(--blue-800,#0b2545)}.ds-nav a[aria-current=page]::after{content:\"\";position:absolute;bottom:2px;left:0;right:0;height:3px;background:var(--yellow,#f4b500)}.ds-nav a:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}"
+      "css": ".ds-nav{background:var(--blue-900,#071a31);display:flex;align-items:center;justify-content:center;gap:26px;font-family:var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-nav a{display:flex;align-items:center;min-height:48px;position:relative;font-size:14px;font-weight:600;line-height:1.6;color:var(--nav-copy,#e4ebf1);white-space:nowrap;text-decoration:none}.ds-nav a:hover,.ds-nav a[aria-current=page]{color:#fff}.ds-nav a[aria-current=page]::after{content:\"\";position:absolute;bottom:2px;left:0;right:0;height:2px;background:var(--yellow,#f4b500)}.ds-nav a:focus-visible{outline:3px solid var(--yellow,#f4b500);outline-offset:5px;}"
     },
     {
       "name": "Ruled service link",
       "kind": "custom",
       "refersTo": "service-row",
-      "description": "Home service selector with a title, short scope and moving arrow.",
+      "description": "Ruled home service row with Archivo heading, subtle hover fill and moving arrow.",
       "html": "<a class=\"ds-service\" href=\"#quadri\"><h3>Quadri elettrici</h3><p>Assemblaggio e cablaggio di quadri a partire dallo schema e dalla distinta componenti.</p><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
-      "css": ".ds-service{display:grid;grid-template-columns:.95fr 1fr 32px;gap:40px;align-items:center;padding:34px 0;border-bottom:1px solid var(--gray-200,#d5dfe2);text-decoration:none;font:16px/1.6 var(--font-sans,\"Helvetica Neue\",Arial,sans-serif)}.ds-service h3{margin:0;color:var(--blue-800,#0b2545);font:800 34px/1.08 var(--font-display,Rockstar,\"Helvetica Neue\",Arial,sans-serif);letter-spacing:0;text-wrap:balance}.ds-service p{margin:0;color:var(--gray-700,#526170);max-width:570px}.ds-service svg{width:24px;height:24px;fill:none;stroke:var(--blue-800,#0b2545);stroke-width:1.5;transition:transform 160ms ease}.ds-service:hover h3{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px}.ds-service:hover svg{transform:translateX(4px)}.ds-service:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}@media(max-width:640px){.ds-service{grid-template-columns:1fr 24px;gap:14px 22px;padding:26px 0}.ds-service h3{grid-column:1;font-size:29px}.ds-service p{grid-column:1;font-size:15px}.ds-service svg{grid-column:2;grid-row:1/3}}@media(prefers-reduced-motion:reduce){.ds-service svg{transition:none}}"
+      "css": ".ds-service{display:grid;grid-template-columns:.95fr 1fr 32px;gap:40px;align-items:center;padding:34px 0;border-bottom:1px solid var(--gray-200,#d5dfe2);text-decoration:none;font:16px/1.6 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-service h3{margin:0;color:var(--blue-800,#0b2545);font:800 34px/1.04 var(--font-display,Archivo,\"Helvetica Neue\",Arial,sans-serif);letter-spacing:-.035em;text-wrap:balance}.ds-service p{margin:0;color:var(--gray-700,#526170);max-width:570px}.ds-service svg{width:24px;height:24px;fill:none;stroke:var(--blue-800,#0b2545);stroke-width:1.5;transition:transform 160ms ease}.ds-service:hover{background:var(--gray-050,#f4f6f6)}.ds-service:hover h3{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px}.ds-service:hover svg{transform:translateX(4px)}.ds-service:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}@media(max-width:640px){.ds-service{grid-template-columns:1fr 24px;gap:14px 22px;padding:26px 0}.ds-service h3{grid-column:1;font-size:29px}.ds-service p{grid-column:1;font-size:15px}.ds-service svg{grid-column:2;grid-row:1/3}}@media(prefers-reduced-motion:reduce){.ds-service svg{transition:none}}"
     },
     {
       "name": "Request surface and recipient notice",
@@ -388,7 +430,7 @@
       "refersTo": "request-surface",
       "description": "Contact form surface with the current channel limitation placed before the field.",
       "html": "<section class=\"ds-request\"><h2>La tua richiesta</h2><p class=\"ds-recipient\">Il recapito per l’invio non è ancora disponibile in questa anteprima. Puoi compilare e copiare il testo; nessuna richiesta viene inviata.</p><label>Nome<input autocomplete=\"name\"></label></section>",
-      "css": ".ds-request{display:grid;gap:22px;background:var(--gray-050,#f4f6f6);padding:32px;font:16px/1.6 var(--font-sans,\"Helvetica Neue\",Arial,sans-serif)}.ds-request h2{margin:0;color:var(--blue-800,#0b2545);font:800 30px/1.08 var(--font-display,Rockstar,\"Helvetica Neue\",Arial,sans-serif)}.ds-recipient{margin:0;padding:16px;background:#fff;border:1px solid var(--gray-200,#d5dfe2);font-size:14px;line-height:1.6;color:var(--gray-700,#526170);overflow-wrap:anywhere}.ds-request label{display:grid;gap:8px;font-size:14px;font-weight:600;line-height:1.5;color:var(--blue-800,#0b2545)}.ds-request input{min-height:48px;border:1px solid var(--gray-300,#a7b5be);border-radius:2px;padding:12px;background:#fff;color:var(--blue-800,#0b2545);font:inherit;font-size:16px}.ds-request input:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}@media(max-width:860px){.ds-request{padding:24px}}@media(max-width:640px){.ds-request{padding:24px 20px}}"
+      "css": ".ds-request{display:grid;gap:22px;background:var(--gray-050,#f4f6f6);padding:32px;font:16px/1.6 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-request h2{margin:0;color:var(--blue-800,#0b2545);font:800 30px/1.04 var(--font-display,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-recipient{margin:0;padding:16px;background:#fff;border:1px solid var(--gray-200,#d5dfe2);font-size:14px;line-height:1.6;color:var(--gray-700,#526170);overflow-wrap:anywhere}.ds-request label{display:grid;gap:8px;font-size:14px;font-weight:600;line-height:1.5;color:var(--blue-800,#0b2545)}.ds-request input{min-height:48px;border:1px solid var(--gray-300,#a7b5be);border-radius:2px;padding:12px;background:#fff;color:var(--blue-800,#0b2545);font:inherit;font-size:16px}.ds-request input:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}@media(max-width:860px){.ds-request{padding:24px}}@media(max-width:640px){.ds-request{padding:24px 20px}}"
     },
     {
       "name": "FAQ disclosure",
@@ -396,7 +438,7 @@
       "refersTo": "faq-summary",
       "description": "Native ruled disclosure shared by the service pages.",
       "html": "<details class=\"ds-faq\"><summary>Posso fornire io lo schema elettrico?</summary><p>Sì. La richiesta può partire dallo schema del tuo progettista o integratore.</p></details>",
-      "css": ".ds-faq{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--gray-200,#d5dfe2);font:16px/1.6 var(--font-sans,\"Helvetica Neue\",Arial,sans-serif)}.ds-faq summary{font-size:18px;line-height:1.5;font-weight:600;color:var(--blue-800,#0b2545);padding-right:16px;cursor:pointer}.ds-faq summary:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}.ds-faq p{margin:16px 0 0;color:var(--gray-700,#526170);font-size:15px;max-width:70ch}"
+      "css": ".ds-faq{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--gray-200,#d5dfe2);font:16px/1.6 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-faq summary{font-size:18px;line-height:1.5;font-weight:600;color:var(--blue-800,#0b2545);padding-right:16px;cursor:pointer}.ds-faq summary:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}.ds-faq p{margin:16px 0 0;color:var(--gray-700,#526170);font-size:15px;max-width:70ch}"
     },
     {
       "name": "House Core layer selector",
@@ -404,7 +446,7 @@
       "refersTo": "layer-selector",
       "description": "Native checkbox strip; production also connects its state to the SVG and live visibility text.",
       "html": "<fieldset class=\"ds-layers\"><legend>Mostra i livelli della casa d’esempio</legend><label><input type=\"checkbox\" checked>Arredi</label><label><input type=\"checkbox\" checked>Luci</label><label><input type=\"checkbox\" checked>Percorsi</label></fieldset>",
-      "css": ".ds-layers{border:0;border-top:1px solid var(--hc-line,#d5dfe2);padding:16px 22px;margin:0;display:flex;gap:12px 22px;flex-wrap:wrap;background:var(--hc-paper,#f4f6f6);color:var(--anthracite,#202b35);font:16px/1.6 var(--font-sans,\"Helvetica Neue\",Arial,sans-serif)}.ds-layers legend{float:left;width:100%;padding:0 0 10px;font-size:13px;font-weight:600}.ds-layers label{display:flex;align-items:center;gap:8px;font-size:14px;min-height:28px;cursor:pointer}.ds-layers input{accent-color:var(--hc-ink,#0b2545);width:17px;height:17px;margin:0}.ds-layers input:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}"
+      "css": ".ds-layers{border:0;border-top:1px solid var(--hc-line,#d5dfe2);padding:16px 22px;margin:0;display:flex;gap:12px 22px;flex-wrap:wrap;background:var(--hc-paper,#f4f6f6);color:var(--anthracite,#202b35);font:16px/1.6 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-layers legend{float:left;width:100%;padding:0 0 10px;font-size:13px;font-weight:600}.ds-layers label{display:flex;align-items:center;gap:8px;font-size:14px;min-height:28px;cursor:pointer}.ds-layers input{accent-color:var(--hc-ink,#0b2545);width:17px;height:17px;margin:0}.ds-layers input:focus-visible{outline:3px solid var(--focus,#276466);outline-offset:5px;}"
     },
     {
       "name": "House Core download row",
@@ -412,38 +454,39 @@
       "refersTo": "download-row",
       "description": "White operating-system row within a navy download ground.",
       "html": "<div class=\"ds-download-ground\"><a class=\"ds-download\" href=\"#download\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"13\" rx=\"1\"/><path d=\"M9 21h6m-3-5v5M3 12h18\"/></svg><div><strong>Scarica per Mac</strong><small>Anteprima gratuita · Archivio ZIP</small></div><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M12 3v12m-5-5 5 5 5-5M5 18v3h14v-3\"/></svg></a></div>",
-      "css": ".ds-download-ground{padding:16px;background:var(--hc-ink,#0b2545)}.ds-download{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:18px;background:#fff;color:var(--hc-ink,#0b2545);padding:24px;text-decoration:none;font:16px/1.6 var(--font-sans,\"Helvetica Neue\",Arial,sans-serif)}.ds-download:hover{background:#f0f3f5}.ds-download:focus-visible{outline:3px solid var(--hc-yellow,#f4b500);outline-offset:5px}.ds-download svg{width:26px;height:26px;stroke:currentColor;stroke-width:1.5;fill:none}.ds-download strong{display:block;font-size:18px}.ds-download small{display:block;margin-top:3px;font-size:13px;line-height:1.6;color:var(--hc-muted,#526170)}@media(max-width:760px){.ds-download{padding:22px;gap:12px}}"
+      "css": ".ds-download-ground{padding:16px;background:var(--hc-ink,#0b2545)}.ds-download{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:18px;background:#fff;color:var(--hc-ink,#0b2545);padding:24px;text-decoration:none;font:16px/1.6 var(--font-sans,Archivo,\"Helvetica Neue\",Arial,sans-serif)}.ds-download:hover{background:#f0f3f5}.ds-download:focus-visible{outline:3px solid var(--hc-yellow,#f4b500);outline-offset:5px}.ds-download svg{width:26px;height:26px;stroke:currentColor;stroke-width:1.5;fill:none}.ds-download strong{display:block;font-size:18px}.ds-download small{display:block;margin-top:3px;font-size:13px;line-height:1.6;color:var(--hc-muted,#526170)}@media(max-width:760px){.ds-download{padding:22px;gap:12px}}"
     }
   ],
   "narrative": {
-    "northStar": "Catalogo tecnico Lostar",
-    "overview": "The complete Lostar Electric website extends the existing logo, navy/yellow palette and Rockstar display face. Large direct titles, pale drawing grounds, crisp schematic illustrations and ruled service rows give the site the character of a technical catalogue. Helvetica Neue / Arial body copy, generous section spacing and visible controls support a concrete, readable presentation.\n\nThis extraction covers all six static pages: home, quadri, automazione, collaudo, contatti and House Core. Their navigation, footer, controls, focus treatment and palette are shared. Industrial pages use consistent service and request structures; House Core retains specialized plan, document and download layouts within the same identity. Surface strategy remains in `docs/lostar-site-direction.md` and `.impeccable/surfaces/site-index-html.md`; product commitments remain in `PRODUCT.md`.",
+    "northStar": "Energia sotto controllo",
+    "overview": "The approved theme keeps Lostar's logo and navy/yellow palette while giving the site a stronger industrial presence. A dark shared header, variable Archivo type, a full-bleed illustrative panel image on home and bold white service heroes create the visual entry. The ruled service rows and pale technical drawing grounds carry the detail below the first viewport.\n\nThis system covers home, industrial services, contacts, House Core, articles and utility pages. Shared navigation, typography, footer, controls, focus treatment and palette keep them coherent. The home hero image is explicitly illustrative, not a photographed Lostar installation. Industrial service pages retain schematic figures; House Core retains its specialized plan, document and download layouts. Surface strategy remains in `docs/lostar-site-direction.md` and `.impeccable/surfaces/site-index-html.md`; product commitments remain in `PRODUCT.md`.",
     "keyCharacteristics": [
-      "Existing Lostar logo, navy/yellow palette and Rockstar headings across all six pages.",
-      "Solid white navigation, square drawing grounds and flat ruled service structures.",
-      "Illustrative SVG diagrams for industrial services; interactive plan and exported PDF evidence for House Core.",
+      "Existing Lostar logo and navy/yellow palette, with Archivo variable type throughout the active theme.",
+      "Dark shared header, full-bleed illustrative home image and bold navy service heroes.",
+      "Illustrative SVG diagrams for industrial services; interactive plan and PDF evidence for House Core.",
       "Unified request controls, visible recipient status and contextual document lists.",
       "Responsive reading order, native disclosures and high-contrast keyboard focus."
     ],
     "rules": [
       {
         "name": "The Identity Continuity Rule",
-        "body": "Keep the existing logo assets, navy/yellow palette and Rockstar display face across industrial and House Core pages.",
+        "body": "Keep the existing logo assets and navy/yellow palette across industrial and House Core pages; use Archivo in the active theme.",
         "section": "colors"
       },
       {
         "name": "The Focus Contrast Rule",
-        "body": "Use teal focus outlines on light surfaces and yellow outlines inside navy sections and the footer.",
+        "body": "Use teal focus outlines on light surfaces and yellow outlines in the dark header, navy sections and the footer.",
         "section": "colors"
       },
       {
         "name": "The Flat Surface Rule",
         "body": "Separate sections with white, paper, navy and fine rules; reserve the observed paper shadow for the House Core document preview.",
-        "section": "elevation"
+        "section": "elevation-depth"
       }
     ],
     "dos": [
-      "Do preserve the shared logo, type stacks, header and footer on every page.",
+      "Do preserve the shared logo, Archivo type stacks, dark header and footer on every page.",
+      "Do keep the illustrative home image caption visible and legible against the image.",
       "Do use ruled rows and clear service headings to organize industrial content.",
       "Do keep diagram/demo captions visible and accurate about what the image represents.",
       "Do show recipient availability before editable request fields and keep action labels consistent with the available channel.",
@@ -452,7 +495,7 @@
     ],
     "donts": [
       "Don’t retain the superseded House-only scope or a separate earlier industrial style.",
-      "Don’t add stock metrics, invented project photography or unverified ratings to technical diagrams.",
+      "Don’t present the illustrative home image or service diagrams as photographed Lostar work, or add stock metrics or unverified ratings.",
       "Don’t use decorative standalone kickers above the main content headings.",
       "Don’t introduce a translucent or blurred header, raised service cards or ornamental motion.",
       "Don’t hide a request limitation below the effort it qualifies or imply an upload/send operation that the interface does not perform."

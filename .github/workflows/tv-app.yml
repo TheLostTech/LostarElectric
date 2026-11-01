@@ -1,0 +1,66 @@
+name: Lostar TV · Android TV APK
+
+on:
+  push:
+    paths:
+      - "tv-app/**"
+      - ".github/workflows/tv-app.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: tv-app
+    env:
+      # Optional: a stable release key so new APKs install over old ones without losing settings.
+      KEYSTORE_B64: ${{ secrets.TV_KEYSTORE_BASE64 }}
+      TV_KEYSTORE_PASSWORD: ${{ secrets.TV_KEYSTORE_PASSWORD }}
+      TV_KEY_ALIAS: ${{ secrets.TV_KEY_ALIAS }}
+      TV_KEY_PASSWORD: ${{ secrets.TV_KEY_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Restore release keystore
+        if: env.KEYSTORE_B64 != ''
+        run: |
+          echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          echo "TV_KEYSTORE_FILE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+
+      - name: Unit tests
+        run: ./gradlew --no-daemon testDebugUnitTest
+
+      - name: Build APKs
+        run: ./gradlew --no-daemon assembleRelease assembleDebug
+
+      - name: Collect APKs
+        run: |
+          mkdir -p dist
+          cp app/build/outputs/apk/release/app-release.apk "dist/LostarTV-1.0.${GITHUB_RUN_NUMBER}.apk"
+          cp app/build/outputs/apk/debug/app-debug.apk "dist/LostarTV-1.0.${GITHUB_RUN_NUMBER}-debug.apk"
+          ls -la dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LostarTV-apk-${{ github.run_number }}
+          path: tv-app/dist/*.apk
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-reports
+          path: tv-app/app/build/reports/
+          retention-days: 7

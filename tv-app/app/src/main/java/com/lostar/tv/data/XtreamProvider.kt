@@ -54,6 +54,12 @@ class XtreamProvider(private val http: OkHttpClient, private val source: Playlis
     override suspend fun seriesDetail(series: Series, catalog: Catalog): SeriesDetail =
         XtreamParsers.seriesDetail(http.getString(api("get_series_info", "series_id" to series.id)), base, source)
 
+    override fun xmltvUrl(catalog: Catalog): String =
+        "$base/xmltv.php".toHttpUrl().newBuilder()
+            .addQueryParameter("username", source.username)
+            .addQueryParameter("password", source.password)
+            .build().toString()
+
     override suspend fun shortEpg(channel: Channel): List<EpgProgram> =
         XtreamParsers.shortEpg(http.getString(api("get_short_epg", "stream_id" to channel.id, "limit" to "6")))
 }

@@ -40,7 +40,9 @@ import com.lostar.tv.data.EpgProgram
 import com.lostar.tv.data.Movie
 import com.lostar.tv.data.Series
 import com.lostar.tv.data.WatchEntry
+import com.lostar.tv.data.TmdbClient
 import com.lostar.tv.ui.Format
+import com.lostar.tv.ui.rememberTmdb
 import com.lostar.tv.ui.LocalApp
 import com.lostar.tv.ui.Navigator
 import com.lostar.tv.ui.components.LandscapeCard
@@ -151,9 +153,11 @@ fun HomeScreen(navigator: Navigator) {
                     item(shelf.id) {
                         if (shelf.movies.isNotEmpty()) {
                             Shelf(shelf.title, shelf.movies, key = { it.id }) { movie ->
+                                val t = rememberTmdb(TmdbClient.Kind.MOVIE, Format.cleanTitle(movie.name), movie.year)
                                 PosterCard(
                                     title = Format.cleanTitle(movie.name),
-                                    image = movie.poster,
+                                    image = t?.poster ?: movie.poster,
+                                    rating = t?.ratingLabel,
                                     modifier = if (movie == shelf.movies.first()) m else Modifier,
                                     onFocused = { featured = Featured.OfMovie(movie) },
                                     onClick = { navigator.openMovie(movie.id) },
@@ -161,9 +165,11 @@ fun HomeScreen(navigator: Navigator) {
                             }
                         } else if (shelf.series.isNotEmpty()) {
                             Shelf(shelf.title, shelf.series, key = { it.id }) { s ->
+                                val t = rememberTmdb(TmdbClient.Kind.TV, Format.cleanTitle(s.name), s.year)
                                 PosterCard(
                                     title = Format.cleanTitle(s.name),
-                                    image = s.cover,
+                                    image = t?.poster ?: s.cover,
+                                    rating = t?.ratingLabel,
                                     modifier = if (s == shelf.series.first()) m else Modifier,
                                     onFocused = { featured = Featured.OfSeries(s) },
                                     onClick = { navigator.openSeries(s.id) },
@@ -214,10 +220,27 @@ private fun Hero(featured: Featured?) {
         content = when (f) {
             is Featured.OfMovie -> {
                 val d = app.catalog.movieDetail(f.movie)
+                val t = app.tmdb.lookup(TmdbClient.Kind.MOVIE, Format.cleanTitle(f.movie.name), f.movie.year)
                 baseContent(f).copy(
-                    description = d.plot,
-                    image = d.backdrop ?: f.movie.poster,
-                    meta = listOf(d.year ?: f.movie.year, Format.rating(d.rating ?: f.movie.rating), d.genre, Format.duration(d.durationSecs)),
+                    description = d.plot ?: t?.overview,
+                    image = d.backdrop ?: t?.backdrop ?: f.movie.poster,
+                    meta = listOf(
+                        d.year ?: f.movie.year ?: t?.year,
+                        t?.ratingLabel?.let { "★ $it TMDB" } ?: Format.rating(d.rating ?: f.movie.rating),
+                        d.genre, Format.duration(d.durationSecs),
+                    ),
+                )
+            }
+            is Featured.OfSeries -> {
+                val t = app.tmdb.lookup(TmdbClient.Kind.TV, Format.cleanTitle(f.series.name), f.series.year)
+                baseContent(f).copy(
+                    description = f.series.plot ?: t?.overview,
+                    image = f.series.backdrop ?: t?.backdrop ?: f.series.cover,
+                    meta = listOf(
+                        f.series.year ?: t?.year,
+                        t?.ratingLabel?.let { "★ $it TMDB" } ?: Format.rating(f.series.rating),
+                        f.series.genre ?: "Serie TV",
+                    ),
                 )
             }
             is Featured.OfChannel -> {

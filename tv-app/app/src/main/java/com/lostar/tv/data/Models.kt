@@ -80,6 +80,7 @@ data class SeriesDetail(
     val seasons: Map<Int, List<Episode>> = emptyMap(),
 )
 
+@Serializable
 data class EpgProgram(
     val title: String,
     val description: String?,

@@ -41,6 +41,7 @@ class UserStore(context: Context) {
     private val favoritesKey = stringSetPreferencesKey("favorites")
     private val historyKey = stringPreferencesKey("history")
     private val recentChannelsKey = stringPreferencesKey("recent_channels")
+    private val tmdbKeyPref = stringPreferencesKey("tmdb_key")
 
     private val historySerializer = ListSerializer(WatchEntry.serializer())
     private val stringList = ListSerializer(String.serializer())
@@ -59,6 +60,12 @@ class UserStore(context: Context) {
 
     val recentChannels: Flow<List<String>> = store.data.map { p ->
         p[recentChannelsKey]?.let { runCatching { json.decodeFromString(stringList, it) }.getOrNull() } ?: emptyList()
+    }
+
+    val tmdbKey: Flow<String> = store.data.map { it[tmdbKeyPref].orEmpty() }
+
+    suspend fun setTmdbKey(key: String) {
+        store.edit { it[tmdbKeyPref] = key.trim() }
     }
 
     suspend fun setSource(source: PlaylistSource?) {

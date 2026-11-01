@@ -29,7 +29,9 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import com.lostar.tv.data.MovieDetail
 import com.lostar.tv.data.UserStore
+import com.lostar.tv.data.TmdbClient
 import com.lostar.tv.ui.Format
+import com.lostar.tv.ui.rememberTmdb
 import com.lostar.tv.ui.LocalApp
 import com.lostar.tv.ui.Navigator
 import com.lostar.tv.ui.components.AccentButton
@@ -63,9 +65,10 @@ fun MovieDetailScreen(id: String, navigator: Navigator) {
     val similar = catalog.moviesByCategory[movie.categoryId].orEmpty().filter { it.id != movie.id }.take(30)
     val playFocus = rememberInitialFocus()
     val d = detail
+    val t = rememberTmdb(TmdbClient.Kind.MOVIE, Format.cleanTitle(movie.name), movie.year, delayMs = 0)
 
     Box(Modifier.fillMaxSize()) {
-        DetailBackdrop(d?.backdrop ?: movie.poster)
+        DetailBackdrop(d?.backdrop ?: t?.backdrop ?: t?.poster ?: movie.poster)
         LazyColumn(
             Modifier.fillMaxSize(),
             contentPadding = PaddingValues(top = 72.dp, bottom = 48.dp),
@@ -81,10 +84,17 @@ fun MovieDetailScreen(id: String, navigator: Navigator) {
                         overflow = TextOverflow.Ellipsis,
                     )
                     Spacer(Modifier.height(14.dp))
-                    MetaLine(listOf(d?.year ?: movie.year, Format.rating(d?.rating ?: movie.rating), Format.duration(d?.durationSecs), d?.genre))
+                    MetaLine(
+                        listOf(
+                            d?.year ?: movie.year ?: t?.year,
+                            t?.let { tt -> tt.ratingLabel?.let { "★ $it TMDB (${tt.votes} voti)" } } ?: Format.rating(d?.rating ?: movie.rating),
+                            Format.duration(d?.durationSecs),
+                            d?.genre,
+                        )
+                    )
                     Spacer(Modifier.height(18.dp))
                     Text(
-                        d?.plot ?: if (d == null) "…" else "Trama non disponibile.",
+                        d?.plot ?: t?.overview ?: if (d == null) "…" else "Trama non disponibile.",
                         style = MaterialTheme.typography.bodyLarge,
                         color = Palette.TextMuted,
                         maxLines = 5,
@@ -136,7 +146,8 @@ fun MovieDetailScreen(id: String, navigator: Navigator) {
             if (similar.isNotEmpty()) {
                 item("similar") {
                     Shelf("Altri titoli della stessa categoria", similar, key = { it.id }, startPadding = 72.dp) { m ->
-                        PosterCard(Format.cleanTitle(m.name), m.poster, onClick = { navigator.openMovie(m.id) })
+                        val mt = rememberTmdb(TmdbClient.Kind.MOVIE, Format.cleanTitle(m.name), m.year)
+                        PosterCard(Format.cleanTitle(m.name), mt?.poster ?: m.poster, onClick = { navigator.openMovie(m.id) }, rating = mt?.ratingLabel)
                     }
                 }
             }

@@ -27,7 +27,9 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import com.lostar.tv.data.Category
 import com.lostar.tv.data.UserStore
+import com.lostar.tv.data.TmdbClient
 import com.lostar.tv.ui.Format
+import com.lostar.tv.ui.rememberTmdb
 import com.lostar.tv.ui.LocalApp
 import com.lostar.tv.ui.Navigator
 import com.lostar.tv.ui.components.CategoryEntry
@@ -42,14 +44,17 @@ private const val FAVORITES = "@fav"
 private const val TOP = "@top"
 
 /** One poster in the grid, independent of whether it is a movie or a series. */
-private data class GridItem(val id: String, val title: String, val image: String?, val added: Long, val rating: Double?, val categoryId: String)
+private data class GridItem(
+    val id: String, val title: String, val image: String?, val added: Long, val rating: Double?, val categoryId: String,
+    val year: String?, val kind: TmdbClient.Kind,
+)
 
 @Composable
 fun MoviesScreen(navigator: Navigator) {
     val app = LocalApp.current
     val catalog = app.catalog.currentCatalog ?: return
     val items = remember(catalog) {
-        catalog.movies.map { GridItem(it.id, Format.cleanTitle(it.name), it.poster, it.added, it.rating, it.categoryId) }
+        catalog.movies.map { GridItem(it.id, Format.cleanTitle(it.name), it.poster, it.added, it.rating, it.categoryId, it.year, TmdbClient.Kind.MOVIE) }
     }
     PosterBrowser(
         emptyTitle = "Nessun film nella tua lista",
@@ -65,7 +70,7 @@ fun SeriesScreen(navigator: Navigator) {
     val app = LocalApp.current
     val catalog = app.catalog.currentCatalog ?: return
     val items = remember(catalog) {
-        catalog.series.map { GridItem(it.id, Format.cleanTitle(it.name), it.cover, it.added, it.rating, it.categoryId) }
+        catalog.series.map { GridItem(it.id, Format.cleanTitle(it.name), it.cover, it.added, it.rating, it.categoryId, it.year, TmdbClient.Kind.TV) }
     }
     PosterBrowser(
         emptyTitle = "Nessuna serie nella tua lista",
@@ -143,9 +148,11 @@ private fun PosterBrowser(
                 verticalArrangement = Arrangement.spacedBy(26.dp),
             ) {
                 itemsIndexed(shown, key = { _, it -> it.id }) { index, item ->
+                    val tmdb = rememberTmdb(item.kind, item.title, item.year)
                     PosterCard(
                         title = item.title,
-                        image = item.image,
+                        image = tmdb?.poster ?: item.image,
+                        rating = tmdb?.ratingLabel ?: Format.rating(item.rating)?.removePrefix("★ "),
                         width = 158.dp,
                         modifier = if (index == 0) Modifier.focusRequester(firstFocus) else Modifier,
                         onClick = { onOpen(item.id) },

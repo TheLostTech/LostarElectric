@@ -23,6 +23,8 @@ jobs:
       TV_KEYSTORE_PASSWORD: ${{ secrets.TV_KEYSTORE_PASSWORD }}
       TV_KEY_ALIAS: ${{ secrets.TV_KEY_ALIAS }}
       TV_KEY_PASSWORD: ${{ secrets.TV_KEY_PASSWORD }}
+      # Optional: free key from themoviedb.org for posters and ratings.
+      TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 

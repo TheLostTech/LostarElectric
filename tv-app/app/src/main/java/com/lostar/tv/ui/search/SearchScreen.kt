@@ -23,6 +23,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -42,6 +43,7 @@ import androidx.tv.material3.Icon
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import com.lostar.tv.data.Catalog
+import com.lostar.tv.data.GuideHit
 import com.lostar.tv.data.LiveChannel
 import com.lostar.tv.data.Movie
 import com.lostar.tv.data.Series
@@ -59,8 +61,13 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import java.text.Normalizer
 
-private data class Results(val channels: List<LiveChannel>, val movies: List<Movie>, val series: List<Series>) {
-    val isEmpty get() = channels.isEmpty() && movies.isEmpty() && series.isEmpty()
+private data class Results(
+    val onTv: List<GuideHit>,
+    val channels: List<LiveChannel>,
+    val movies: List<Movie>,
+    val series: List<Series>,
+) {
+    val isEmpty get() = onTv.isEmpty() && channels.isEmpty() && movies.isEmpty() && series.isEmpty()
 }
 
 @Composable
@@ -73,13 +80,15 @@ fun SearchScreen(navigator: Navigator) {
     val focusManager = LocalFocusManager.current
     val fieldFocus = rememberInitialFocus()
 
-    LaunchedEffect(query) {
+    val guide by app.catalog.guide.collectAsState()
+    val guideLoading by app.catalog.guideLoading.collectAsState()
+    LaunchedEffect(query, guide) {
         if (query.trim().length < 2) {
             results = null
             return@LaunchedEffect
         }
         delay(300)
-        results = withContext(Dispatchers.Default) { search(catalog, query) }
+        results = withContext(Dispatchers.Default) { search(catalog, query).copy(onTv = app.catalog.searchGuide(query)) }
     }
 
     LazyColumn(
@@ -124,7 +133,8 @@ fun SearchScreen(navigator: Navigator) {
         when {
             r == null -> item("hint") {
                 Text(
-                    "Scrivi almeno due lettere. Premi \"Cerca\" sulla tastiera e poi scendi per scegliere un risultato.",
+                    "Cerca canali, film, serie e anche cosa va in onda: \"matrix\" o \"juve inter\" ti dicono su quale canale e a che ora." +
+                        if (guide == null && guideLoading) " (Guida TV in caricamento…)" else "",
                     style = MaterialTheme.typography.bodyLarge, color = Palette.TextDim, modifier = Modifier.padding(horizontal = 48.dp),
                 )
             }
@@ -132,6 +142,22 @@ fun SearchScreen(navigator: Navigator) {
                 Text("Nessun risultato per \"$query\"", style = MaterialTheme.typography.titleMedium, color = Palette.TextMuted, modifier = Modifier.padding(horizontal = 48.dp))
             }
             else -> {
+                if (r.onTv.isNotEmpty()) item("tv") {
+                    val now = System.currentTimeMillis()
+                    val list = r.onTv.map { it.channel }.distinctBy { it.id }
+                    Shelf("In TV: ora e più tardi", r.onTv, key = { it.channel.id + it.program.startMs }) { hit ->
+                        LandscapeCard(
+                            title = hit.program.title,
+                            subtitle = hit.channel.name + " · " + if (hit.onAir(now)) "in onda ora" else "alle ${Format.time(hit.program.startMs)}",
+                            image = hit.channel.logo,
+                            logo = true,
+                            live = hit.onAir(now),
+                            progress = if (hit.onAir(now)) hit.program.progressAt(now) else null,
+                            width = 260.dp,
+                            onClick = { navigator.play(PlayRequest.Live(list, list.indexOfFirst { it.id == hit.channel.id }, "Ricerca")) },
+                        )
+                    }
+                }
                 if (r.channels.isNotEmpty()) item("ch") {
                     Shelf("Canali", r.channels, key = { it.id }) { ch ->
                         LandscapeCard(
@@ -165,6 +191,7 @@ private fun search(c: Catalog, query: String): Results {
         return terms.all { it in n }
     }
     return Results(
+        onTv = emptyList(),
         channels = c.live.channels.asSequence().filter { matches(it.name) || it.variants.any { v -> matches(v.name) } }.take(40).toList(),
         movies = c.movies.asSequence().filter { matches(it.name) }.take(40).toList(),
         series = c.series.asSequence().filter { matches(it.name) }.take(40).toList(),

@@ -45,3 +45,13 @@ cd mac-app
 ./gradlew run          # avvia l'app
 ./gradlew packageDmg   # crea il .dmg (solo su macOS)
 ```
+
+## Locandine e voti (TMDB) e ricerca nella guida TV
+
+- **Locandine, sfondi, voti e trame in italiano** arrivano da TMDB (themoviedb.org). Serve una chiave API gratuita:
+  crea un account su themoviedb.org → *Impostazioni → API* → richiedi una chiave "Developer" e copia la
+  "Chiave API" (o il "Token di accesso in lettura"). Mettila in GitHub → *Settings → Secrets and variables → Actions*
+  come `TMDB_API_KEY` (vale per TV e Mac a ogni build) oppure incollala nelle *Impostazioni* dell'app.
+- **Cerca cosa va in onda**: la ricerca guarda anche nella guida TV completa (XMLTV del tuo abbonamento):
+  "matrix" → *Matrix · Sky Cinema Uno · in onda ora*, "juve inter" → la partita su qualunque canale, anche più tardi.
+  La guida si scarica in background dopo l'avvio e si aggiorna ogni 6 ore.

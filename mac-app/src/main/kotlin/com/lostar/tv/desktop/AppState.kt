@@ -12,6 +12,7 @@ import com.lostar.tv.data.Movie
 import com.lostar.tv.data.Section
 import com.lostar.tv.data.Series
 import com.lostar.tv.data.StreamHealth
+import com.lostar.tv.data.TmdbClient
 import com.lostar.tv.desktop.video.LiveSession
 import com.lostar.tv.desktop.video.VideoPlayer
 import com.lostar.tv.ui.Format
@@ -74,6 +75,9 @@ class AppState {
     val store = DesktopStore(dataDir, scope)
     val catalog = CatalogRepository(http, File(dataDir, "cache").apply { mkdirs() }, CoroutineScope(SupervisorJob() + Dispatchers.Default))
     val health = StreamHealth(File(dataDir, "stream_health.json"))
+    val tmdb = TmdbClient(http, File(dataDir, "tmdb.json")) {
+        store.data.value.tmdbKey.ifBlank { BuildKeys.TMDB }.takeIf { it.isNotBlank() }
+    }
 
     val livePlayer: VideoPlayer by lazy { VideoPlayer(scope, USER_AGENT).also { it.setVolume(store.data.value.volume) } }
     val live: LiveSession by lazy { LiveSession(scope, livePlayer, health) { store.pushRecentChannel(it.id) } }
@@ -108,6 +112,7 @@ class AppState {
     fun shutdown() {
         runCatching { if (live.phase != LiveSession.Phase.IDLE) live.stop() }
         health.saveIfNeeded()
+        tmdb.save()
     }
 
     companion object {

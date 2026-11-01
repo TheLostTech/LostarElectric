@@ -38,6 +38,7 @@ data class StoreData(
     val history: List<WatchEntry> = emptyList(),
     val recentChannels: List<String> = emptyList(),
     val volume: Int = 90,
+    val tmdbKey: String = "",
 )
 
 /** Settings, favorites and history saved as one JSON file in ~/Library/Application Support/LostTV. */
@@ -65,6 +66,7 @@ class DesktopStore(dir: File, private val scope: CoroutineScope) {
     }
 
     fun setSource(source: PlaylistSource?) = edit { it.copy(source = source) }
+    fun setTmdbKey(k: String) = edit { it.copy(tmdbKey = k.trim()) }
     fun setVolume(v: Int) = edit { it.copy(volume = v.coerceIn(0, 150)) }
 
     fun toggleFavorite(key: String) = edit {

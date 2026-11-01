@@ -18,6 +18,8 @@ android {
         targetSdk = 35
         versionCode = runNumber
         versionName = "1.0.$runNumber"
+        // Optional TMDB key (GitHub secret TMDB_API_KEY) for posters and ratings; can also be typed in Settings.
+        buildConfigField("String", "TMDB_API_KEY", "\"${System.getenv("TMDB_API_KEY").orEmpty()}\"")
     }
 
     signingConfigs {

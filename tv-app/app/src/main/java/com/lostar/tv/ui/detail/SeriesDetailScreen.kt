@@ -39,7 +39,9 @@ import androidx.tv.material3.Text
 import com.lostar.tv.data.Episode
 import com.lostar.tv.data.SeriesDetail
 import com.lostar.tv.data.UserStore
+import com.lostar.tv.data.TmdbClient
 import com.lostar.tv.ui.Format
+import com.lostar.tv.ui.rememberTmdb
 import com.lostar.tv.ui.LocalApp
 import com.lostar.tv.ui.Navigator
 import com.lostar.tv.ui.components.AccentButton
@@ -72,6 +74,7 @@ fun SeriesDetailScreen(id: String, navigator: Navigator) {
     val lastWatched = history.firstOrNull { it.seriesId == series.id }
 
     val d = detail
+    val t = rememberTmdb(TmdbClient.Kind.TV, Format.cleanTitle(series.name), series.year, delayMs = 0)
     val seasons = d?.seasons.orEmpty()
     var season by rememberSaveable { mutableStateOf<Int?>(null) }
     LaunchedEffect(seasons) {
@@ -91,7 +94,7 @@ fun SeriesDetailScreen(id: String, navigator: Navigator) {
     }
 
     Box(Modifier.fillMaxSize()) {
-        DetailBackdrop(d?.backdrop ?: series.backdrop ?: series.cover)
+        DetailBackdrop(d?.backdrop ?: series.backdrop ?: t?.backdrop ?: series.cover)
         LazyColumn(
             Modifier.fillMaxSize(),
             contentPadding = PaddingValues(top = 64.dp, bottom = 48.dp),
@@ -109,15 +112,15 @@ fun SeriesDetailScreen(id: String, navigator: Navigator) {
                     Spacer(Modifier.height(14.dp))
                     MetaLine(
                         listOf(
-                            series.year,
-                            Format.rating(series.rating),
+                            series.year ?: t?.year,
+                            t?.ratingLabel?.let { "★ $it TMDB" } ?: Format.rating(series.rating),
                             d?.genre ?: series.genre,
                             seasons.size.takeIf { it > 0 }?.let { if (it == 1) "1 stagione" else "$it stagioni" },
                         )
                     )
                     Spacer(Modifier.height(18.dp))
                     Text(
-                        d?.plot ?: series.plot ?: "",
+                        d?.plot ?: series.plot ?: t?.overview ?: "",
                         style = MaterialTheme.typography.bodyLarge,
                         color = Palette.TextMuted,
                         maxLines = 4,

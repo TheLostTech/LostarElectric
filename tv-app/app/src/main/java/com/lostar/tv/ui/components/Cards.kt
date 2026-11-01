@@ -55,6 +55,7 @@ fun PosterCard(
     showTitle: Boolean = true,
     onFocused: () -> Unit = {},
     onLongClick: (() -> Unit)? = null,
+    rating: String? = null,
 ) {
     var focused by remember { mutableStateOf(false) }
     Column(modifier.width(width)) {
@@ -75,6 +76,7 @@ fun PosterCard(
         ) {
             Box(Modifier.fillMaxSize()) {
                 Artwork(title, image, ContentScale.Crop, Modifier.fillMaxSize())
+                if (rating != null) RatingBadge(rating, Modifier.align(Alignment.TopEnd).padding(6.dp))
                 if (progress != null && progress > 0f) {
                     ProgressLine(progress, Modifier.align(Alignment.BottomCenter).padding(8.dp))
                 }
@@ -172,6 +174,19 @@ fun LandscapeCard(
             )
         }
     }
+}
+
+/** "★ 8,2" from TMDB, top-right on posters. */
+@Composable
+fun RatingBadge(rating: String, modifier: Modifier = Modifier) {
+    Text(
+        "★ $rating",
+        style = MaterialTheme.typography.labelSmall,
+        color = Palette.Accent,
+        modifier = modifier
+            .background(Color.Black.copy(alpha = 0.72f), RoundedCornerShape(6.dp))
+            .padding(horizontal = 6.dp, vertical = 2.dp),
+    )
 }
 
 /** Image with a title placeholder that stays visible only while the image is missing or failed. */

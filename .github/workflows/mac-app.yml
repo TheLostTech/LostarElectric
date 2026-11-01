@@ -23,6 +23,9 @@ jobs:
             arch: intel
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 30
+    env:
+      # Optional: free key from themoviedb.org for posters and ratings.
+      TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
     defaults:
       run:
         working-directory: mac-app

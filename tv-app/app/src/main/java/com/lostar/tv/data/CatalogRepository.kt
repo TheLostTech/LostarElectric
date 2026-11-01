@@ -34,6 +34,13 @@ class CatalogRepository(
     private val _account = MutableStateFlow<AccountInfo?>(null)
     val account: StateFlow<AccountInfo?> = _account.asStateFlow()
 
+    private val _guide = MutableStateFlow<Guide?>(null)
+    /** Full XMLTV guide, loaded in the background after the catalog. */
+    val guide: StateFlow<Guide?> = _guide.asStateFlow()
+    private val _guideLoading = MutableStateFlow(false)
+    val guideLoading: StateFlow<Boolean> = _guideLoading.asStateFlow()
+    private var guideJob: Job? = null
+
     private var source: PlaylistSource? = null
     private var provider: Provider? = null
     private var loadJob: Job? = null
@@ -66,6 +73,7 @@ class CatalogRepository(
                 if (System.currentTimeMillis() - cached.second < CACHE_FRESH_MS) {
                     _state.value = State.Ready(cached.first, refreshing = false)
                     refreshAccount()
+                    loadGuide(newSource, cached.first)
                     return@launch
                 }
             } else {
@@ -90,6 +98,8 @@ class CatalogRepository(
         source?.let { cacheFile(it).delete() }
         source = null
         provider = null
+        guideJob?.cancel()
+        _guide.value = null
         _account.value = null
         _state.value = State.Idle
     }
@@ -103,6 +113,7 @@ class CatalogRepository(
             _state.value = State.Ready(catalog)
             writeCache(s, catalog)
             refreshAccount()
+            loadGuide(s, catalog)
         } catch (e: kotlinx.coroutines.CancellationException) {
             throw e
         } catch (e: Exception) {
@@ -159,8 +170,15 @@ class CatalogRepository(
         return list.filter { it.endMs > now }
     }
 
-    /** Guide for a merged channel: uses the first link that has one (links with an EPG id first). */
+    /** Guide for a merged channel: full XMLTV guide first, then the first link with a short EPG. */
     suspend fun epg(channel: LiveChannel): List<EpgProgram> {
+        _guide.value?.let { g ->
+            val now = System.currentTimeMillis()
+            for (v in channel.variants) {
+                val list = g.programmes(v.epgId).filter { it.endMs > now }
+                if (list.isNotEmpty()) return list
+            }
+        }
         epgVariant[channel.id]?.let { id -> channel.variants.firstOrNull { it.id == id }?.let { v -> return epg(v) } }
         val candidates = channel.variants.sortedByDescending { !it.epgId.isNullOrBlank() }.take(3)
         for (v in candidates) {
@@ -176,6 +194,65 @@ class CatalogRepository(
     suspend fun nowPlaying(channel: LiveChannel): EpgProgram? {
         val now = System.currentTimeMillis()
         return epg(channel).firstOrNull { it.startMs <= now && it.endMs > now }
+    }
+
+    private fun guideFile(s: PlaylistSource) = File(cacheDir, "guide-${s.hashCode().toUInt()}.json")
+
+    private fun loadGuide(s: PlaylistSource, catalog: Catalog) {
+        val p = provider ?: return
+        val url = p.xmltvUrl(catalog) ?: return
+        guideJob?.cancel()
+        guideJob = scope.launch(Dispatchers.IO) {
+            val file = guideFile(s)
+            val now = System.currentTimeMillis()
+            if (file.exists()) {
+                runCatching { json.decodeFromString(Guide.serializer(), file.readText()) }.getOrNull()?.let { cached ->
+                    _guide.value = cached
+                    if (now - cached.loadedAt < GUIDE_FRESH_MS) return@launch
+                }
+            }
+            _guideLoading.value = true
+            try {
+                val wanted = catalog.channels.mapNotNullTo(HashSet()) { it.epgId?.lowercase() }
+                if (wanted.isEmpty()) return@launch
+                val map = http.newCall(okhttp3.Request.Builder().url(url).build()).execute().use { r ->
+                    if (!r.isSuccessful) return@launch
+                    val raw = java.io.BufferedInputStream(r.body?.byteStream() ?: return@launch)
+                    raw.mark(2)
+                    val gz = raw.read() == 0x1f && raw.read() == 0x8b
+                    raw.reset()
+                    val input = if (gz) java.util.zip.GZIPInputStream(raw) else raw
+                    Xmltv.parse(input.reader(Charsets.UTF_8), wanted, now - 3 * 3600_000L, now + GUIDE_WINDOW_MS)
+                }
+                if (map.isNotEmpty()) {
+                    val g = Guide(map, now)
+                    _guide.value = g
+                    epgCache.clear()
+                    runCatching {
+                        val tmp = File(cacheDir, "guide.tmp")
+                        tmp.writeText(json.encodeToString(Guide.serializer(), g))
+                        tmp.renameTo(file)
+                    }
+                }
+            } catch (e: kotlinx.coroutines.CancellationException) {
+                throw e
+            } catch (_: Exception) {
+                // Guide is optional: short EPG per channel keeps working.
+            } finally {
+                _guideLoading.value = false
+            }
+        }
+    }
+
+    /**
+     * Searches programme titles (and descriptions) across all live channels:
+     * "matrix" finds the film on Sky Cinema, "juve inter" finds the match on whatever channel shows it.
+     * Results on air now come first, then upcoming ones by start time.
+     */
+    fun searchGuide(query: String, limit: Int = 60): List<GuideHit> {
+        val g = _guide.value ?: return emptyList()
+        val index = currentCatalog?.live ?: return emptyList()
+        return GuideSearch.search(g, index, query, System.currentTimeMillis(), limit)
     }
 
     private fun cacheFile(s: PlaylistSource) = File(cacheDir, "catalog-${s.hashCode().toUInt()}.json")
@@ -211,5 +288,7 @@ class CatalogRepository(
     companion object {
         private const val CACHE_FRESH_MS = 6 * 60 * 60 * 1000L
         private const val EPG_TTL_MS = 10 * 60 * 1000L
+        private const val GUIDE_FRESH_MS = 6 * 60 * 60 * 1000L
+        private const val GUIDE_WINDOW_MS = 30 * 60 * 60 * 1000L
     }
 }

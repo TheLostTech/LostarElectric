@@ -50,6 +50,10 @@ fun SettingsScreen() {
     val refreshing = (state as? CatalogRepository.State.Ready)?.refreshing == true
     var confirmLogout by remember { mutableStateOf(false) }
     var historyCleared by remember { mutableStateOf(false) }
+    val guide by app.catalog.guide.collectAsState()
+    val guideLoading by app.catalog.guideLoading.collectAsState()
+    val savedKey by app.userStore.tmdbKey.collectAsState(initial = "")
+    var keyDraft by remember(savedKey) { mutableStateOf(savedKey) }
     val first = rememberInitialFocus()
 
     Column(Modifier.fillMaxSize().padding(horizontal = 56.dp, vertical = 48.dp)) {
@@ -70,7 +74,28 @@ fun SettingsScreen() {
                 Line("Film", catalog?.movies?.size?.toString() ?: "—")
                 Line("Serie TV", catalog?.series?.size?.toString() ?: "—")
                 Line("Stato", if (refreshing) "Aggiornamento in corso…" else "Aggiornato")
+                Line("Guida TV", guide?.let { "${it.byChannel.size} canali · ${it.size} programmi" } ?: if (guideLoading) "Caricamento…" else "Non disponibile")
+                Line("Locandine e voti", if (app.tmdb.enabled) "TMDB attivo" else "Chiave TMDB mancante")
             }
+        }
+
+        Spacer(Modifier.height(20.dp))
+        Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+            Text("Chiave TMDB", style = MaterialTheme.typography.bodyLarge, color = Palette.TextMuted, modifier = Modifier.width(150.dp))
+            androidx.compose.foundation.text.BasicTextField(
+                value = keyDraft,
+                onValueChange = { keyDraft = it },
+                singleLine = true,
+                textStyle = MaterialTheme.typography.bodyLarge.copy(color = Palette.Text),
+                cursorBrush = androidx.compose.ui.graphics.SolidColor(Palette.Accent),
+                modifier = Modifier
+                    .width(520.dp)
+                    .clip(RoundedCornerShape(10.dp))
+                    .background(Palette.SurfaceHigh)
+                    .padding(horizontal = 14.dp, vertical = 12.dp),
+            )
+            Spacer(Modifier.width(12.dp))
+            GhostButton("Salva chiave", onClick = { scope.launch { app.userStore.setTmdbKey(keyDraft) } })
         }
 
         Spacer(Modifier.height(32.dp))

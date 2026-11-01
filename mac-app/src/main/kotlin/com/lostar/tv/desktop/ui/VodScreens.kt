@@ -56,6 +56,7 @@ import com.lostar.tv.data.Category
 import com.lostar.tv.data.Episode
 import com.lostar.tv.data.MovieDetail
 import com.lostar.tv.data.SeriesDetail
+import com.lostar.tv.data.TmdbClient
 import com.lostar.tv.desktop.AppState
 import com.lostar.tv.desktop.Detail
 import com.lostar.tv.desktop.DesktopStore
@@ -63,19 +64,22 @@ import com.lostar.tv.desktop.VodRequest
 import com.lostar.tv.desktop.toVodItem
 import com.lostar.tv.ui.Format
 
-private data class GridItem(val id: String, val title: String, val image: String?, val added: Long, val rating: Double?, val categoryId: String)
+private data class GridItem(
+    val id: String, val title: String, val image: String?, val added: Long, val rating: Double?, val categoryId: String,
+    val year: String?, val kind: TmdbClient.Kind,
+)
 
 @Composable
 fun MoviesScreen(state: AppState) {
     val c = state.catalog.currentCatalog ?: return
-    val items = remember(c) { c.movies.map { GridItem(it.id, Format.cleanTitle(it.name), it.poster, it.added, it.rating, it.categoryId) } }
+    val items = remember(c) { c.movies.map { GridItem(it.id, Format.cleanTitle(it.name), it.poster, it.added, it.rating, it.categoryId, it.year, TmdbClient.Kind.MOVIE) } }
     Browser(state, items, c.nonEmptyMovies(), { DesktopStore.movieKey(it) }) { state.detail = Detail.OfMovie(it) }
 }
 
 @Composable
 fun SeriesScreen(state: AppState) {
     val c = state.catalog.currentCatalog ?: return
-    val items = remember(c) { c.series.map { GridItem(it.id, Format.cleanTitle(it.name), it.cover, it.added, it.rating, it.categoryId) } }
+    val items = remember(c) { c.series.map { GridItem(it.id, Format.cleanTitle(it.name), it.cover, it.added, it.rating, it.categoryId, it.year, TmdbClient.Kind.TV) } }
     Browser(state, items, c.nonEmptySeries(), { DesktopStore.seriesKey(it) }) { state.detail = Detail.OfSeries(it) }
 }
 
@@ -118,7 +122,11 @@ private fun Browser(state: AppState, items: List<GridItem>, categories: List<Cat
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             items(shown, key = { it.id }) { item ->
-                Poster(item.title, item.image, onClick = { onOpen(item.id) }, width = 170.dp)
+                val t = rememberTmdb(state, item.kind, item.title, item.year)
+                Poster(
+                    item.title, t?.poster ?: item.image, onClick = { onOpen(item.id) }, width = 170.dp,
+                    rating = t?.ratingLabel ?: Format.rating(item.rating)?.removePrefix("★ "),
+                )
             }
         }
     }
@@ -153,16 +161,21 @@ fun MovieDetail(state: AppState, id: String) {
     val entry = data.history.firstOrNull { it.key == key }?.takeIf { it.isInProgress }
     val fav = key in data.favorites
     val similar = remember(id) { c.moviesByCategory[movie.categoryId].orEmpty().filter { it.id != id }.take(30) }
-    DetailFrame(state, d?.backdrop ?: movie.poster) {
+    val t = rememberTmdb(state, TmdbClient.Kind.MOVIE, Format.cleanTitle(movie.name), movie.year, delayMs = 0)
+    DetailFrame(state, d?.backdrop ?: t?.backdrop ?: t?.poster ?: movie.poster) {
         Column(Modifier.fillMaxWidth(0.55f)) {
             Text(Format.cleanTitle(movie.name), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.Bold, color = Palette.Text, maxLines = 2, overflow = TextOverflow.Ellipsis)
             Spacer(Modifier.height(10.dp))
             Text(
-                listOfNotNull(d?.year ?: movie.year, Format.rating(d?.rating ?: movie.rating), Format.duration(d?.durationSecs), d?.genre).joinToString("  ·  "),
+                listOfNotNull(
+                    d?.year ?: movie.year ?: t?.year,
+                    t?.let { tt -> tt.ratingLabel?.let { "★ $it TMDB (${tt.votes} voti)" } } ?: Format.rating(d?.rating ?: movie.rating),
+                    Format.duration(d?.durationSecs), d?.genre,
+                ).joinToString("  ·  "),
                 color = Palette.TextMuted, style = MaterialTheme.typography.titleSmall,
             )
             Spacer(Modifier.height(16.dp))
-            Text(d?.plot ?: if (d == null) "…" else "Trama non disponibile.", color = Palette.TextMuted, style = MaterialTheme.typography.bodyLarge, maxLines = 6, overflow = TextOverflow.Ellipsis)
+            Text(d?.plot ?: t?.overview ?: if (d == null) "…" else "Trama non disponibile.", color = Palette.TextMuted, style = MaterialTheme.typography.bodyLarge, maxLines = 6, overflow = TextOverflow.Ellipsis)
             d?.director?.let { Text("Regia: $it", color = Palette.TextDim, modifier = Modifier.padding(top = 10.dp)) }
             d?.cast?.let { Text("Con: $it", color = Palette.TextDim, maxLines = 2, overflow = TextOverflow.Ellipsis) }
             if (entry != null) {
@@ -183,7 +196,7 @@ fun MovieDetail(state: AppState, id: String) {
         }
         Spacer(Modifier.weight(1f))
         Shelf("Della stessa categoria", similar, key = { it.id }) { m ->
-            Poster(Format.cleanTitle(m.name), m.poster, onClick = { state.detail = Detail.OfMovie(m.id) }, width = 140.dp)
+            MoviePoster(state, m, onClick = { state.detail = Detail.OfMovie(m.id) }, width = 140.dp)
         }
     }
 }
@@ -204,22 +217,23 @@ fun SeriesDetail(state: AppState, id: String) {
     }
     val favKey = DesktopStore.seriesKey(series.id)
     val fav = favKey in data.favorites
+    val t = rememberTmdb(state, TmdbClient.Kind.TV, Format.cleanTitle(series.name), series.year, delayMs = 0)
 
     fun play(list: List<Episode>, i: Int) {
         val pos = data.history.firstOrNull { it.key == DesktopStore.episodeKey(list[i].id) }?.takeIf { it.isInProgress }?.positionMs ?: 0
         state.playVod(VodRequest(list.map { it.toVodItem(series) }, i, pos))
     }
 
-    DetailFrame(state, d?.backdrop ?: series.backdrop ?: series.cover) {
+    DetailFrame(state, d?.backdrop ?: series.backdrop ?: t?.backdrop ?: series.cover) {
         Column(Modifier.fillMaxWidth(0.55f)) {
             Text(Format.cleanTitle(series.name), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.Bold, color = Palette.Text, maxLines = 2, overflow = TextOverflow.Ellipsis)
             Spacer(Modifier.height(10.dp))
             Text(
-                listOfNotNull(series.year, Format.rating(series.rating), d?.genre ?: series.genre, seasons.size.takeIf { it > 0 }?.let { if (it == 1) "1 stagione" else "$it stagioni" }).joinToString("  ·  "),
+                listOfNotNull(series.year ?: t?.year, t?.ratingLabel?.let { "★ $it TMDB" } ?: Format.rating(series.rating), d?.genre ?: series.genre, seasons.size.takeIf { it > 0 }?.let { if (it == 1) "1 stagione" else "$it stagioni" }).joinToString("  ·  "),
                 color = Palette.TextMuted, style = MaterialTheme.typography.titleSmall,
             )
             Spacer(Modifier.height(16.dp))
-            Text(d?.plot ?: series.plot.orEmpty(), color = Palette.TextMuted, style = MaterialTheme.typography.bodyLarge, maxLines = 5, overflow = TextOverflow.Ellipsis)
+            Text(d?.plot ?: series.plot ?: t?.overview.orEmpty(), color = Palette.TextMuted, style = MaterialTheme.typography.bodyLarge, maxLines = 5, overflow = TextOverflow.Ellipsis)
             Spacer(Modifier.height(22.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.CenterVertically) {
                 if (d == null) Spinner(size = 30.dp)

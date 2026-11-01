@@ -38,6 +38,11 @@ class LiveIndex(val channels: List<LiveChannel>, val groups: List<LiveGroup>) {
     /** Resolves both new logical ids and raw stream ids saved by older versions. */
     fun find(id: String): LiveChannel? = byId[id] ?: byVariant[id]
 
+    /** EPG id (lowercase) → channel, for matching the XMLTV guide. */
+    val byEpgId: Map<String, LiveChannel> by lazy {
+        buildMap { channels.forEach { c -> c.variants.forEach { v -> v.epgId?.lowercase()?.let { if (it !in this) put(it, c) } } } }
+    }
+
     fun channelsOf(group: LiveGroup): List<LiveChannel> = group.channelIds.mapNotNull { byId[it] }
 
     val genres: List<Genre> by lazy { Genre.entries.filter { g -> g != Genre.OTHER && channels.any { it.genre == g } } }

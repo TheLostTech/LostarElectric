@@ -183,7 +183,15 @@ fun ChannelLogo(logo: String?, name: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun Poster(title: String, image: String?, onClick: () -> Unit, modifier: Modifier = Modifier, width: Dp = 160.dp, progress: Float? = null) {
+fun Poster(
+    title: String,
+    image: String?,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    width: Dp = 160.dp,
+    progress: Float? = null,
+    rating: String? = null,
+) {
     Column(modifier.width(width).hoverClick(shape = RoundedCornerShape(12.dp), onClick = onClick).padding(6.dp)) {
         Box(
             Modifier.fillMaxWidth().aspectRatio(2f / 3f).clip(RoundedCornerShape(10.dp))
@@ -192,6 +200,13 @@ fun Poster(title: String, image: String?, onClick: () -> Unit, modifier: Modifie
         ) {
             Text(title, color = Palette.TextMuted, style = MaterialTheme.typography.labelMedium, textAlign = TextAlign.Center, maxLines = 3, modifier = Modifier.padding(10.dp))
             if (!image.isNullOrBlank()) AsyncImage(image, title, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize())
+            if (rating != null) {
+                Text(
+                    "★ $rating", color = Palette.Accent, fontSize = 12.sp, fontWeight = FontWeight.Bold,
+                    modifier = Modifier.align(Alignment.TopEnd).padding(6.dp).clip(RoundedCornerShape(6.dp))
+                        .background(Color.Black.copy(alpha = 0.72f)).padding(horizontal = 6.dp, vertical = 2.dp),
+                )
+            }
             if (progress != null && progress > 0f) ProgressLine(progress, Modifier.align(Alignment.BottomCenter).padding(8.dp))
         }
         Spacer(Modifier.height(8.dp))

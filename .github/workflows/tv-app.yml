@@ -1,4 +1,4 @@
-name: Lostar TV · Android TV APK
+name: LostTV · Android TV APK
 
 on:
   push:
@@ -48,13 +48,13 @@ jobs:
       - name: Collect APKs
         run: |
           mkdir -p dist
-          cp app/build/outputs/apk/release/app-release.apk "dist/LostarTV-1.0.${GITHUB_RUN_NUMBER}.apk"
-          cp app/build/outputs/apk/debug/app-debug.apk "dist/LostarTV-1.0.${GITHUB_RUN_NUMBER}-debug.apk"
+          cp app/build/outputs/apk/release/app-release.apk "dist/LostTV-1.0.${GITHUB_RUN_NUMBER}.apk"
+          cp app/build/outputs/apk/debug/app-debug.apk "dist/LostTV-1.0.${GITHUB_RUN_NUMBER}-debug.apk"
           ls -la dist
 
       - uses: actions/upload-artifact@v4
         with:
-          name: LostarTV-apk-${{ github.run_number }}
+          name: LostTV-apk-${{ github.run_number }}
           path: tv-app/dist/*.apk
           retention-days: 30
 

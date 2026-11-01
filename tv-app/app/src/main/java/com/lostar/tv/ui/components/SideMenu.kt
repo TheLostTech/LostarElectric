@@ -125,7 +125,7 @@ private fun BrandMark(expanded: Boolean) {
         }
         AnimatedVisibility(expanded, enter = fadeIn(), exit = fadeOut()) {
             Text(
-                "Lostar TV",
+                "LostTV",
                 style = MaterialTheme.typography.titleLarge,
                 color = Palette.Text,
                 modifier = Modifier.padding(start = 14.dp),

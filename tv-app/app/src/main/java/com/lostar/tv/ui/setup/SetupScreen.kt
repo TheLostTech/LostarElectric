@@ -115,7 +115,7 @@ fun SetupScreen() {
                 }
             }
             Spacer(Modifier.height(28.dp))
-            Text("Benvenuto in Lostar TV", style = MaterialTheme.typography.displaySmall, color = Palette.Text)
+            Text("Benvenuto in LostTV", style = MaterialTheme.typography.displaySmall, color = Palette.Text)
             Spacer(Modifier.height(16.dp))
             Text(
                 "Collega il tuo abbonamento: canali, film e serie verranno organizzati per categoria, " +

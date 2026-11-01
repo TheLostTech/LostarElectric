@@ -1,0 +1,55 @@
+name: LostTV · Mac DMG
+
+on:
+  push:
+    paths:
+      - "mac-app/**"
+      - "tv-app/app/src/main/java/com/lostar/tv/data/**"
+      - ".github/workflows/mac-app.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            arch: apple-silicon
+          - runner: macos-15-intel
+            arch: intel
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: mac-app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Tests (shared engine)
+        run: ./gradlew --no-daemon test
+
+      - name: Build DMG
+        run: ./gradlew --no-daemon packageDmg
+
+      - name: Collect DMG
+        run: |
+          mkdir -p dist
+          cp build/compose/binaries/main/dmg/*.dmg "dist/LostTV-1.0.${GITHUB_RUN_NUMBER}-${{ matrix.arch }}.dmg"
+          ls -la dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LostTV-mac-${{ matrix.arch }}-${{ github.run_number }}
+          path: mac-app/dist/*.dmg
+          retention-days: 30

@@ -108,7 +108,7 @@ fun SettingsScreen() {
         }
         Spacer(Modifier.weight(1f))
         Text(
-            "Lostar TV ${BuildConfig.VERSION_NAME} · Lettore per liste IPTV di tua proprietà. L'app non fornisce contenuti.",
+            "LostTV ${BuildConfig.VERSION_NAME} · Lettore per liste IPTV di tua proprietà. L'app non fornisce contenuti.",
             style = MaterialTheme.typography.bodySmall,
             color = Palette.TextDim,
         )

@@ -1,4 +1,4 @@
-# Lostar TV — app IPTV per Android TV / Google TV
+# LostTV — app IPTV per Android TV / Google TV
 
 App per TV Sony Bravia (Android TV / Google TV) che riproduce la **tua** lista IPTV a pagamento
 con un'interfaccia moderna in stile Sky Q / Apple TV. L'app non contiene né fornisce alcun contenuto.
@@ -27,11 +27,11 @@ con un'interfaccia moderna in stile Sky Q / Apple TV. L'app non contiene né for
 
 ## Scaricare l'APK
 
-Ogni push che modifica `tv-app/` avvia il workflow **"Lostar TV · Android TV APK"** su GitHub Actions.
-Apri l'esecuzione completata → sezione *Artifacts* → scarica `LostarTV-apk-N` (zip con due APK):
+Ogni push che modifica `tv-app/` avvia il workflow **"LostTV · Android TV APK"** su GitHub Actions.
+Apri l'esecuzione completata → sezione *Artifacts* → scarica `LostTV-apk-N` (zip con due APK):
 
-- `LostarTV-1.0.N.apk` → **quello da installare** (ottimizzato, più fluido sul TV);
-- `LostarTV-1.0.N-debug.apk` → solo per diagnosi.
+- `LostTV-1.0.N.apk` → **quello da installare** (ottimizzato, più fluido sul TV);
+- `LostTV-1.0.N-debug.apk` → solo per diagnosi.
 
 ## Installare sul TV Sony
 
@@ -44,7 +44,7 @@ In alternativa, con il TV e il computer sulla stessa rete (debug ADB attivo nell
 
 ```sh
 adb connect <IP-del-TV>
-adb install -r LostarTV-1.0.N.apk
+adb install -r LostTV-1.0.N.apk
 ```
 
 ## Aggiornamenti senza perdere le impostazioni

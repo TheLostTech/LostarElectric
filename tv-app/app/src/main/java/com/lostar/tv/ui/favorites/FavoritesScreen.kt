@@ -31,7 +31,7 @@ fun FavoritesScreen(navigator: Navigator) {
     val app = LocalApp.current
     val catalog = app.catalog.currentCatalog ?: return
     val favorites by app.userStore.favorites.collectAsState(initial = emptySet())
-    val channels = remember(favorites, catalog) { catalog.channels.filter { UserStore.liveKey(it.id) in favorites } }
+    val channels = remember(favorites, catalog) { catalog.live.channels.filter { UserStore.isLiveFavorite(it, favorites) } }
     val movies = remember(favorites, catalog) { catalog.movies.filter { UserStore.movieKey(it.id) in favorites } }
     val series = remember(favorites, catalog) { catalog.series.filter { UserStore.seriesKey(it.id) in favorites } }
 

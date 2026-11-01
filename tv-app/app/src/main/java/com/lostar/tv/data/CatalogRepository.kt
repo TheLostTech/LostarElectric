@@ -7,6 +7,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Semaphore
+import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 import okhttp3.OkHttpClient
@@ -37,6 +39,8 @@ class CatalogRepository(
     private var loadJob: Job? = null
 
     private val epgCache = ConcurrentHashMap<String, Pair<Long, List<EpgProgram>>>()
+    private val epgVariant = ConcurrentHashMap<String, String>()
+    private val epgLimiter = Semaphore(4)
     private val movieDetailCache = ConcurrentHashMap<String, MovieDetail>()
     private val seriesDetailCache = ConcurrentHashMap<String, SeriesDetail>()
 
@@ -52,10 +56,11 @@ class CatalogRepository(
         if (newSource == source && _state.value !is State.Error && _state.value !is State.Idle) return
         source = newSource
         provider = providerFor(newSource)
-        epgCache.clear(); movieDetailCache.clear(); seriesDetailCache.clear()
+        epgCache.clear(); epgVariant.clear(); movieDetailCache.clear(); seriesDetailCache.clear()
         loadJob?.cancel()
         loadJob = scope.launch {
             val cached = readCache(newSource)
+            cached?.first?.let { warm(it) }
             if (cached != null) {
                 _state.value = State.Ready(cached.first, refreshing = true)
                 if (System.currentTimeMillis() - cached.second < CACHE_FRESH_MS) {
@@ -94,6 +99,7 @@ class CatalogRepository(
         try {
             val catalog = p.loadCatalog()
             if (catalog.isEmpty) throw IllegalStateException("La lista non contiene canali o contenuti")
+            warm(catalog)
             _state.value = State.Ready(catalog)
             writeCache(s, catalog)
             refreshAccount()
@@ -103,6 +109,15 @@ class CatalogRepository(
             val current = currentCatalog
             _state.value = if (hadCache && current != null) State.Ready(current) else State.Error(friendly(e))
         }
+    }
+
+    /** Builds the lazy indexes (duplicate merging, category maps) off the main thread. */
+    private suspend fun warm(c: Catalog) = withContext(Dispatchers.Default) {
+        c.live
+        c.moviesByCategory
+        c.seriesByCategory
+        c.movieById
+        c.seriesById
     }
 
     private fun refreshAccount() {
@@ -139,9 +154,28 @@ class CatalogRepository(
         epgCache[channel.id]?.let { (at, list) ->
             if (now - at < EPG_TTL_MS && list.any { it.endMs > now }) return list.filter { it.endMs > now }
         }
-        val list = runCatching { provider?.shortEpg(channel) }.getOrNull().orEmpty()
+        val list = epgLimiter.withPermit { runCatching { provider?.shortEpg(channel) }.getOrNull().orEmpty() }
         epgCache[channel.id] = now to list
         return list.filter { it.endMs > now }
+    }
+
+    /** Guide for a merged channel: uses the first link that has one (links with an EPG id first). */
+    suspend fun epg(channel: LiveChannel): List<EpgProgram> {
+        epgVariant[channel.id]?.let { id -> channel.variants.firstOrNull { it.id == id }?.let { v -> return epg(v) } }
+        val candidates = channel.variants.sortedByDescending { !it.epgId.isNullOrBlank() }.take(3)
+        for (v in candidates) {
+            val list = epg(v)
+            if (list.isNotEmpty()) {
+                epgVariant[channel.id] = v.id
+                return list
+            }
+        }
+        return emptyList()
+    }
+
+    suspend fun nowPlaying(channel: LiveChannel): EpgProgram? {
+        val now = System.currentTimeMillis()
+        return epg(channel).firstOrNull { it.startMs <= now && it.endMs > now }
     }
 
     private fun cacheFile(s: PlaylistSource) = File(cacheDir, "catalog-${s.hashCode().toUInt()}.json")

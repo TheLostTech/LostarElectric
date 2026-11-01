@@ -73,7 +73,7 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Surface
 import androidx.tv.material3.Text
 import coil.compose.AsyncImage
-import com.lostar.tv.data.Channel
+import com.lostar.tv.data.LiveChannel
 import com.lostar.tv.data.EpgProgram
 import com.lostar.tv.data.WatchEntry
 import com.lostar.tv.ui.Format
@@ -98,48 +98,68 @@ private val resizeModes = listOf(
 
 @Composable
 fun PlayerScreen(request: PlayRequest, onExit: () -> Unit) {
-    val app = LocalApp.current
-    val context = LocalContext.current
-    val player = remember { PlayerEngine.create(context, app.http) }
-    var resizeMode by remember { mutableIntStateOf(AspectRatioFrameLayout.RESIZE_MODE_FIT) }
+    when (request) {
+        is PlayRequest.Live -> LiveFullscreen(request, onExit)
+        is PlayRequest.Vod -> VodScreen(request, onExit)
+    }
+}
 
-    DisposableEffect(Unit) { onDispose { player.release() } }
+/** Video output for [player]. Several surfaces can show the same player; the newest one wins. */
+@Composable
+fun VideoSurface(player: ExoPlayer, modifier: Modifier = Modifier, resizeMode: Int = AspectRatioFrameLayout.RESIZE_MODE_FIT) {
+    AndroidView(
+        factory = { ctx ->
+            PlayerView(ctx).apply {
+                layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+                useController = false
+                setShutterBackgroundColor(AndroidColor.BLACK)
+                setKeepContentOnPlayerReset(true)
+                keepScreenOn = true
+                isFocusable = false
+                descendantFocusability = ViewGroup.FOCUS_BLOCK_DESCENDANTS
+                this.player = player
+            }
+        },
+        update = {
+            if (it.player !== player) it.player = player
+            it.resizeMode = resizeMode
+        },
+        onRelease = { it.player = null },
+        modifier = modifier,
+    )
+}
 
-    // Pause when the user presses Home on the remote; resume when coming back.
+/** Pauses/resumes with the activity (Home button on the remote). */
+@Composable
+private fun OnAppBackground(onStop: () -> Unit, onStart: () -> Unit) {
     val lifecycle = LocalLifecycleOwner.current.lifecycle
+    val stop by androidx.compose.runtime.rememberUpdatedState(onStop)
+    val start by androidx.compose.runtime.rememberUpdatedState(onStart)
     DisposableEffect(lifecycle) {
         val observer = LifecycleEventObserver { _, event ->
             when (event) {
-                Lifecycle.Event.ON_STOP -> player.pause()
-                Lifecycle.Event.ON_START -> if (player.playbackState != Player.STATE_IDLE) player.play()
+                Lifecycle.Event.ON_STOP -> stop()
+                Lifecycle.Event.ON_START -> start()
                 else -> Unit
             }
         }
         lifecycle.addObserver(observer)
         onDispose { lifecycle.removeObserver(observer) }
     }
+}
+
+@Composable
+private fun VodScreen(request: PlayRequest.Vod, onExit: () -> Unit) {
+    val app = LocalApp.current
+    val context = LocalContext.current
+    val player = remember { PlayerEngine.create(context, app.http) }
+    var resizeMode by remember { mutableIntStateOf(AspectRatioFrameLayout.RESIZE_MODE_FIT) }
+    DisposableEffect(Unit) { onDispose { player.release() } }
+    OnAppBackground(onStop = { player.pause() }, onStart = { if (player.playbackState != Player.STATE_IDLE) player.play() })
 
     Box(Modifier.fillMaxSize().background(Color.Black)) {
-        AndroidView(
-            factory = { ctx ->
-                PlayerView(ctx).apply {
-                    layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-                    useController = false
-                    setShutterBackgroundColor(AndroidColor.BLACK)
-                    setKeepContentOnPlayerReset(true)
-                    keepScreenOn = true
-                    isFocusable = false
-                    descendantFocusability = ViewGroup.FOCUS_BLOCK_DESCENDANTS
-                    this.player = player
-                }
-            },
-            update = { it.resizeMode = resizeMode },
-            modifier = Modifier.fillMaxSize(),
-        )
-        when (request) {
-            is PlayRequest.Live -> LiveOverlay(player, request, resizeMode, { resizeMode = it }, onExit)
-            is PlayRequest.Vod -> VodOverlay(player, request, resizeMode, { resizeMode = it }, onExit)
-        }
+        VideoSurface(player, Modifier.fillMaxSize(), resizeMode)
+        VodOverlay(player, request, resizeMode, { resizeMode = it }, onExit)
     }
 }
 
@@ -153,7 +173,7 @@ private class PlaybackStatus {
 }
 
 @Composable
-private fun rememberPlaybackStatus(player: ExoPlayer, live: Boolean, onRetry: (forceHls: Boolean) -> Unit): PlaybackStatus {
+private fun rememberPlaybackStatus(player: ExoPlayer, live: Boolean = false, onRetry: (forceHls: Boolean) -> Unit): PlaybackStatus {
     val status = remember { PlaybackStatus() }
     val scope = androidx.compose.runtime.rememberCoroutineScope()
     DisposableEffect(player) {
@@ -214,29 +234,34 @@ private fun rememberPlaybackStatus(player: ExoPlayer, live: Boolean, onRetry: (f
 }
 
 // ---------------------------------------------------------------------------------------------
-// Live TV
+// Live TV (full screen) — playback, failover and zapping live in LiveSession
 // ---------------------------------------------------------------------------------------------
 
 @Composable
-private fun LiveOverlay(
-    player: ExoPlayer,
-    request: PlayRequest.Live,
-    resizeMode: Int,
-    onResize: (Int) -> Unit,
-    onExit: () -> Unit,
-) {
+private fun LiveFullscreen(request: PlayRequest.Live, onExit: () -> Unit) {
     val app = LocalApp.current
-    val channels = request.channels
-    var index by remember { mutableIntStateOf(request.index.coerceIn(0, channels.lastIndex)) }
+    val session = app.liveSession
+    val player = remember { session.player() }
+    var resizeMode by remember { mutableIntStateOf(AspectRatioFrameLayout.RESIZE_MODE_FIT) }
+    DisposableEffect(Unit) {
+        session.attach()
+        onDispose { session.detach() }
+    }
+    OnAppBackground(onStop = { session.pauseForBackground() }, onStart = { session.resumeFromBackground() })
+    LaunchedEffect(Unit) {
+        if (session.phase == LiveSession.Phase.IDLE) session.start(request.channels, request.index, request.categoryName)
+    }
+
+    val channels = session.channels.ifEmpty { request.channels }
+    val index = session.index.coerceIn(0, (channels.size - 1).coerceAtLeast(0))
     var pending by remember { mutableIntStateOf(index) }
     var infoVisible by remember { mutableStateOf(true) }
     var infoToken by remember { mutableIntStateOf(0) }
     var listVisible by remember { mutableStateOf(false) }
     var settingsVisible by remember { mutableStateOf(false) }
+    var noticeVisible by remember { mutableStateOf(false) }
     var epg by remember { mutableStateOf<List<EpgProgram>>(emptyList()) }
     val rootFocus = remember { FocusRequester() }
-
-    val status = rememberPlaybackStatus(player, live = true) { hls -> player.load(channels[index].url, forceHls = hls) }
 
     fun showInfo() {
         infoVisible = true
@@ -249,25 +274,30 @@ private fun LiveOverlay(
         showInfo()
     }
 
+    LaunchedEffect(session.index) { pending = session.index.coerceAtLeast(0) }
     // Debounced zapping: several quick presses only tune the last channel.
     LaunchedEffect(pending) {
-        if (pending != index) {
+        if (pending != session.index) {
             delay(550)
-            index = pending
+            session.zapTo(pending)
         }
     }
-    LaunchedEffect(index) {
-        val ch = channels[index]
-        status.error = null
-        player.load(ch.url, forceHls = false)
-        app.scope.launch { app.userStore.pushRecentChannel(ch.id) }
+    val shown = channels.getOrNull(pending)
+    LaunchedEffect(shown?.id) {
         epg = emptyList()
-        epg = app.catalog.epg(ch)
+        shown?.let { epg = app.catalog.epg(it) }
     }
     LaunchedEffect(infoToken, infoVisible, listVisible) {
         if (infoVisible && !listVisible) {
             delay(5000)
             infoVisible = false
+        }
+    }
+    LaunchedEffect(session.noticeToken) {
+        if (session.notice != null) {
+            noticeVisible = true
+            delay(4500)
+            noticeVisible = false
         }
     }
     LaunchedEffect(listVisible, settingsVisible) {
@@ -286,13 +316,17 @@ private fun LiveOverlay(
     Box(
         Modifier
             .fillMaxSize()
+            .background(Color.Black)
             .focusRequester(rootFocus)
             .onKeyEvent { e ->
                 if (e.type != KeyEventType.KeyDown || listVisible || settingsVisible) return@onKeyEvent false
                 when (e.key) {
                     Key.DirectionUp, Key.ChannelUp, Key.PageUp -> { zap(+1); true }
                     Key.DirectionDown, Key.ChannelDown, Key.PageDown -> { zap(-1); true }
-                    Key.DirectionCenter, Key.Enter, Key.NumPadEnter -> { listVisible = true; true }
+                    Key.DirectionCenter, Key.Enter, Key.NumPadEnter -> {
+                        if (session.phase == LiveSession.Phase.FAILED) session.retry() else listVisible = true
+                        true
+                    }
                     Key.DirectionLeft, Key.Info, Key.Menu -> {
                         if (infoVisible) infoVisible = false else showInfo()
                         true
@@ -303,18 +337,57 @@ private fun LiveOverlay(
             }
             .focusable()
     ) {
-        if (status.buffering && status.error == null) Spinner(Modifier.align(Alignment.Center), size = 56.dp)
-        status.error?.let { msg ->
-            ErrorBanner(msg, Modifier.align(Alignment.Center))
+        VideoSurface(player, Modifier.fillMaxSize(), resizeMode)
+
+        when (session.phase) {
+            LiveSession.Phase.CONNECTING, LiveSession.Phase.SWITCHING -> Column(
+                Modifier.align(Alignment.Center),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Spinner(size = 56.dp)
+                if (session.phase == LiveSession.Phase.SWITCHING) {
+                    Spacer(Modifier.height(14.dp))
+                    Text("Cambio sorgente…", style = MaterialTheme.typography.titleMedium, color = Palette.Text)
+                }
+            }
+            LiveSession.Phase.FAILED -> ErrorBanner(
+                "Nessuna delle ${session.ranked.size} sorgenti di questo canale funziona in questo momento. Premi OK per riprovare.",
+                Modifier.align(Alignment.Center),
+            )
+            else -> Unit
         }
 
         AnimatedVisibility(
-            visible = infoVisible && !listVisible,
+            visible = noticeVisible && session.notice != null,
+            enter = fadeIn(),
+            exit = fadeOut(),
+            modifier = Modifier.align(Alignment.TopEnd).padding(32.dp),
+        ) {
+            Text(
+                session.notice.orEmpty(),
+                style = MaterialTheme.typography.titleSmall,
+                color = Palette.Text,
+                modifier = Modifier
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(Color.Black.copy(alpha = 0.8f))
+                    .padding(horizontal = 20.dp, vertical = 12.dp),
+            )
+        }
+
+        AnimatedVisibility(
+            visible = infoVisible && !listVisible && shown != null,
             enter = fadeIn(),
             exit = fadeOut(),
             modifier = Modifier.align(Alignment.BottomCenter),
         ) {
-            LiveInfoBar(channels[pending], if (pending == index) epg else emptyList(), position = pending + 1, total = channels.size, category = request.categoryName)
+            if (shown != null) {
+                LiveInfoBar(
+                    shown, epg, position = pending + 1, total = channels.size, category = session.listName.ifEmpty { request.categoryName },
+                    source = if (pending == session.index && session.ranked.size > 1)
+                        session.variantLabel(session.variantPos) + " di ${session.ranked.size} · " + (if (session.manual) "manuale" else "automatica")
+                    else null,
+                )
+            }
         }
 
         AnimatedVisibility(
@@ -322,9 +395,9 @@ private fun LiveOverlay(
             enter = slideInHorizontally { -it } + fadeIn(),
             exit = slideOutHorizontally { -it } + fadeOut(),
         ) {
-            ChannelListPanel(channels, index, request.categoryName) { i ->
+            ChannelListPanel(channels, session.index, session.listName.ifEmpty { request.categoryName }) { i ->
                 pending = i
-                index = i
+                session.zapTo(i)
                 listVisible = false
                 showInfo()
             }
@@ -336,13 +409,18 @@ private fun LiveOverlay(
             exit = slideOutHorizontally { it } + fadeOut(),
             modifier = Modifier.align(Alignment.CenterEnd),
         ) {
-            SettingsPanel(player, status.tracksVersion, resizeMode, onResize) { settingsVisible = false }
+            SettingsPanel(
+                player, session.tracksVersion, resizeMode, { resizeMode = it },
+                sources = session.ranked.indices.map { session.variantLabel(it) },
+                selectedSource = session.variantPos,
+                onSource = { session.chooseVariant(it) },
+            ) { settingsVisible = false }
         }
     }
 }
 
 @Composable
-private fun LiveInfoBar(channel: Channel, epg: List<EpgProgram>, position: Int, total: Int, category: String) {
+private fun LiveInfoBar(channel: LiveChannel, epg: List<EpgProgram>, position: Int, total: Int, category: String, source: String?) {
     val now = System.currentTimeMillis()
     val current = epg.firstOrNull { it.startMs <= now && it.endMs > now }
     val next = epg.firstOrNull { it.startMs >= (current?.endMs ?: now) }
@@ -389,15 +467,19 @@ private fun LiveInfoBar(channel: Channel, epg: List<EpgProgram>, position: Int, 
             Spacer(Modifier.width(24.dp))
             Column(horizontalAlignment = Alignment.End) {
                 Text(Format.time(now), style = MaterialTheme.typography.headlineSmall, color = Palette.Text)
+                if (source != null) {
+                    Spacer(Modifier.height(6.dp))
+                    Text(source, style = MaterialTheme.typography.bodySmall, color = Palette.Accent, maxLines = 1)
+                }
                 Spacer(Modifier.height(8.dp))
-                Text("▲▼ canale · OK lista · ▶ audio", style = MaterialTheme.typography.bodySmall, color = Palette.TextDim)
+                Text("▲▼ canale · OK lista · ▶ sorgente e audio", style = MaterialTheme.typography.bodySmall, color = Palette.TextDim)
             }
         }
     }
 }
 
 @Composable
-private fun ChannelListPanel(channels: List<Channel>, current: Int, title: String, onPick: (Int) -> Unit) {
+private fun ChannelListPanel(channels: List<LiveChannel>, current: Int, title: String, onPick: (Int) -> Unit) {
     val listState = rememberLazyListState(initialFirstVisibleItemIndex = (current - 3).coerceAtLeast(0))
     val currentFocus = remember { FocusRequester() }
     LaunchedEffect(Unit) {
@@ -698,6 +780,9 @@ private fun SettingsPanel(
     tracksVersion: Int,
     resizeMode: Int,
     onResize: (Int) -> Unit,
+    sources: List<String> = emptyList(),
+    selectedSource: Int = -1,
+    onSource: (Int) -> Unit = {},
     onClose: () -> Unit,
 ) {
     var refresh by remember { mutableIntStateOf(0) }
@@ -718,16 +803,23 @@ private fun SettingsPanel(
         contentPadding = PaddingValues(24.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
+        if (sources.size > 1) {
+            item { PanelHeader("Sorgente") }
+            item { PanelNote("Se il canale si blocca l'app cambia sorgente da sola.") }
+            itemsIndexed(sources) { i, label ->
+                PanelOption(label, i == selectedSource, if (i == 0) Modifier.focusRequester(firstFocus) else Modifier) { onSource(i) }
+            }
+        }
         item { PanelHeader("Audio") }
         if (audioSel.isEmpty()) item { PanelNote("Nessuna traccia audio selezionabile") }
         itemsIndexed(audioSel) { i, opt ->
-            PanelOption(opt.label, opt.selected, if (i == 0) Modifier.focusRequester(firstFocus) else Modifier) {
+            PanelOption(opt.label, opt.selected, if (sources.size <= 1 && i == 0) Modifier.focusRequester(firstFocus) else Modifier) {
                 TrackOptions.apply(player, opt); refresh++
             }
         }
         item { PanelHeader("Sottotitoli") }
         itemsIndexed(text) { i, opt ->
-            PanelOption(opt.label, opt.selected, if (audioSel.isEmpty() && i == 0) Modifier.focusRequester(firstFocus) else Modifier) {
+            PanelOption(opt.label, opt.selected, if (sources.size <= 1 && audioSel.isEmpty() && i == 0) Modifier.focusRequester(firstFocus) else Modifier) {
                 TrackOptions.apply(player, opt); refresh++
             }
         }

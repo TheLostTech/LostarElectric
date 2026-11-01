@@ -42,7 +42,7 @@ import androidx.tv.material3.Icon
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import com.lostar.tv.data.Catalog
-import com.lostar.tv.data.Channel
+import com.lostar.tv.data.LiveChannel
 import com.lostar.tv.data.Movie
 import com.lostar.tv.data.Series
 import com.lostar.tv.ui.Format
@@ -59,7 +59,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import java.text.Normalizer
 
-private data class Results(val channels: List<Channel>, val movies: List<Movie>, val series: List<Series>) {
+private data class Results(val channels: List<LiveChannel>, val movies: List<Movie>, val series: List<Series>) {
     val isEmpty get() = channels.isEmpty() && movies.isEmpty() && series.isEmpty()
 }
 
@@ -165,7 +165,7 @@ private fun search(c: Catalog, query: String): Results {
         return terms.all { it in n }
     }
     return Results(
-        channels = c.channels.asSequence().filter { matches(it.name) }.take(40).toList(),
+        channels = c.live.channels.asSequence().filter { matches(it.name) || it.variants.any { v -> matches(v.name) } }.take(40).toList(),
         movies = c.movies.asSequence().filter { matches(it.name) }.take(40).toList(),
         series = c.series.asSequence().filter { matches(it.name) }.take(40).toList(),
     )

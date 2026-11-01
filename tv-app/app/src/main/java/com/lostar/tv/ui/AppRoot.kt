@@ -43,6 +43,7 @@ class Navigator(private val nav: NavHostController, private val app: AppContaine
     fun openMovie(id: String) = nav.navigate(Routes.movie(id))
     fun openSeries(id: String) = nav.navigate(Routes.series(id))
     fun play(request: PlayRequest) {
+        if (request is PlayRequest.Live) app.liveSession.start(request.channels, request.index, request.categoryName)
         app.pendingPlayback = request
         nav.navigate(Routes.PLAYER) { launchSingleTop = true }
     }

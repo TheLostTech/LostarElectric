@@ -9,8 +9,15 @@ con un'interfaccia moderna in stile Sky Q / Apple TV. L'app non contiene né for
   vengono convertiti in automatico in Xtream, così hai locandine, trame e guida TV.
 - **Home**: sfondo grande che cambia col titolo selezionato, righe *Continua a guardare*, *I tuoi canali*,
   *Visti di recente*, *Film aggiunti di recente*, *Serie TV aggiornate*, *I più votati* e una riga per categoria.
-- **TV in diretta**: categorie a sinistra, canali al centro, guida TV (in onda / a seguire) a destra.
-  Tieni premuto OK su un canale per aggiungerlo ai preferiti.
+- **TV in diretta** (layout simile a Etticio TV, semplificato): filtri Sport / Cinema / Intrattenimento… in alto,
+  categorie a sinistra, canali con il programma in onda al centro, anteprima video e guida programmi a destra.
+  OK una volta = anteprima, OK di nuovo = schermo intero. Tieni premuto OK per i preferiti.
+- **Niente doppioni**: "Sky Sport F1 HD / HEVC / SD / (Hermes) / SAT / 4K…" diventano un solo canale, le categorie
+  gemelle ("Sky Calcio (DVS)", "Sky Calcio SAT"…) si uniscono e le righe separatore ("--F1 SAT-QUALITY--") spariscono.
+- **Link migliore e cambio automatico**: per ogni canale l'app prova prima il link più promettente (qualità, supporto
+  HEVC del TV e affidabilità registrata nelle volte precedenti). Se lo stream va in errore, non parte entro 12 s,
+  resta a caricare per più di 8 s o l'immagine si congela per 10 s, passa da sola alla sorgente successiva;
+  finite le sorgenti riprova tutto il giro (fino a 3 volte). Con ▶ nel lettore puoi comunque scegliere la sorgente a mano.
 - **Film / Serie TV**: griglia di locandine per categoria; schede di dettaglio con trama, cast, stagioni ed episodi.
 - **Lettore** (ExoPlayer / Media3, HLS e MPEG-TS):
   - in diretta: ▲▼ o P+/P− cambiano canale, OK apre la lista canali, ◀ info, ▶ audio/sottotitoli/formato;

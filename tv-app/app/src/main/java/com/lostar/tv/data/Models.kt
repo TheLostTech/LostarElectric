@@ -122,6 +122,9 @@ data class Catalog(
 
     val seriesById: Map<String, Series> by lazy { series.associateBy { it.id } }
 
+    /** Live channels with duplicates merged and categories unified. */
+    val live: LiveIndex by lazy { ChannelDeduper.build(this) }
+
     /** Categories that actually contain something, in provider order. */
     fun nonEmptyLive() = liveCategories.filter { channelsByCategory[it.id].orEmpty().isNotEmpty() }
     fun nonEmptyMovies() = movieCategories.filter { moviesByCategory[it.id].orEmpty().isNotEmpty() }

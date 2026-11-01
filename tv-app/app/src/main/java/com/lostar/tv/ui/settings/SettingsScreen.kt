@@ -66,7 +66,7 @@ fun SettingsScreen() {
                 }
             }
             InfoCard("Contenuti", Modifier.weight(1f)) {
-                Line("Canali", catalog?.channels?.size?.toString() ?: "—")
+                Line("Canali", catalog?.live?.let { "${it.channels.size} (uniti da ${it.variantCount} link)" } ?: "—")
                 Line("Film", catalog?.movies?.size?.toString() ?: "—")
                 Line("Serie TV", catalog?.series?.size?.toString() ?: "—")
                 Line("Stato", if (refreshing) "Aggiornamento in corso…" else "Aggiornato")

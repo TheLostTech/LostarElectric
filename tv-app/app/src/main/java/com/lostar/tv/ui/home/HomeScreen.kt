@@ -34,7 +34,8 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import coil.compose.AsyncImage
 import com.lostar.tv.data.Catalog
-import com.lostar.tv.data.Channel
+import com.lostar.tv.data.LiveChannel
+import com.lostar.tv.data.UserStore
 import com.lostar.tv.data.EpgProgram
 import com.lostar.tv.data.Movie
 import com.lostar.tv.data.Series
@@ -60,7 +61,7 @@ private sealed interface Featured {
 
     data class OfMovie(val movie: Movie) : Featured { override val key get() = "m" + movie.id }
     data class OfSeries(val series: Series) : Featured { override val key get() = "s" + series.id }
-    data class OfChannel(val channel: Channel) : Featured { override val key get() = "c" + channel.id }
+    data class OfChannel(val channel: LiveChannel) : Featured { override val key get() = "c" + channel.id }
     data class OfEntry(val entry: WatchEntry) : Featured { override val key get() = "w" + entry.key }
 }
 
@@ -83,17 +84,15 @@ fun HomeScreen(navigator: Navigator) {
 
     val shelves = remember(catalog) { buildCatalogShelves(catalog) }
     val continueWatching = remember(history) { history.filter { it.isInProgress }.take(20) }
-    val favoriteChannels = remember(favorites, catalog) {
-        favorites.mapNotNull { k -> k.removePrefix("live:").takeIf { k.startsWith("live:") }?.let { catalog.channelById[it] } }
-    }
-    val recentChannels = remember(recentIds, catalog) { recentIds.mapNotNull { catalog.channelById[it] } }
+    val favoriteChannels = remember(favorites, catalog) { catalog.live.channels.filter { UserStore.isLiveFavorite(it, favorites) } }
+    val recentChannels = remember(recentIds, catalog) { recentIds.mapNotNull { catalog.live.find(it) }.distinctBy { it.id } }
 
     var featured by remember { mutableStateOf<Featured?>(null) }
     LaunchedEffect(shelves) {
         if (featured == null) {
             featured = shelves.firstOrNull()?.let { s ->
                 s.movies.firstOrNull()?.let { Featured.OfMovie(it) } ?: s.series.firstOrNull()?.let { Featured.OfSeries(it) }
-            } ?: catalog.channels.firstOrNull()?.let { Featured.OfChannel(it) }
+            } ?: catalog.live.channels.firstOrNull()?.let { Featured.OfChannel(it) }
         }
     }
 
@@ -183,10 +182,10 @@ fun HomeScreen(navigator: Navigator) {
 @Composable
 private fun ChannelShelf(
     title: String,
-    channels: List<Channel>,
+    channels: List<LiveChannel>,
     firstModifier: Modifier,
     navigator: Navigator,
-    onFocused: (Channel) -> Unit,
+    onFocused: (LiveChannel) -> Unit,
 ) {
     Shelf(title, channels, key = { it.id }) { ch ->
         LandscapeCard(
@@ -350,7 +349,7 @@ private data class HomeShelf(
     val title: String,
     val movies: List<Movie> = emptyList(),
     val series: List<Series> = emptyList(),
-    val channels: List<Channel> = emptyList(),
+    val channels: List<LiveChannel> = emptyList(),
 )
 
 private const val SHELF_SIZE = 30
@@ -364,9 +363,9 @@ private fun buildCatalogShelves(c: Catalog): List<HomeShelf> {
     val topMovies = c.movies.filter { (it.rating ?: 0.0) in 7.0..10.0 }.sortedByDescending { it.rating }.take(SHELF_SIZE)
     if (topMovies.size >= 6) out += HomeShelf("topMovies", "I più votati", movies = topMovies)
 
-    val liveCats = c.nonEmptyLive().take(3)
+    val liveCats = c.live.groups.take(3)
     liveCats.firstOrNull()?.let { cat ->
-        out.add(minOf(1, out.size), HomeShelf("live:${cat.id}", "In diretta · ${cat.name}", channels = c.channelsByCategory[cat.id].orEmpty().take(SHELF_SIZE)))
+        out.add(minOf(1, out.size), HomeShelf("live:${cat.id}", "In diretta · ${cat.name}", channels = c.live.channelsOf(cat).take(SHELF_SIZE)))
     }
     c.nonEmptyMovies().take(6).forEach { cat ->
         out += HomeShelf("mc:${cat.id}", cat.name, movies = c.moviesByCategory[cat.id].orEmpty().take(SHELF_SIZE))
@@ -375,7 +374,7 @@ private fun buildCatalogShelves(c: Catalog): List<HomeShelf> {
         out += HomeShelf("sc:${cat.id}", cat.name, series = c.seriesByCategory[cat.id].orEmpty().take(SHELF_SIZE))
     }
     liveCats.drop(1).forEach { cat ->
-        out += HomeShelf("live:${cat.id}", "In diretta · ${cat.name}", channels = c.channelsByCategory[cat.id].orEmpty().take(SHELF_SIZE))
+        out += HomeShelf("live:${cat.id}", "In diretta · ${cat.name}", channels = c.live.channelsOf(cat).take(SHELF_SIZE))
     }
     return out
 }

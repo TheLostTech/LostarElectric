@@ -74,6 +74,15 @@ class UserStore(context: Context) {
         }
     }
 
+    /** A merged channel is a favorite if its logical id or any of its links was starred. */
+    suspend fun toggleLiveFavorite(channel: LiveChannel) {
+        val keys = (listOf(channel.id) + channel.variants.map { it.id }).map { liveKey(it) }.toSet()
+        store.edit {
+            val current = it[favoritesKey] ?: emptySet()
+            it[favoritesKey] = if (current.any { k -> k in keys }) current - keys else current + liveKey(channel.id)
+        }
+    }
+
     suspend fun saveProgress(entry: WatchEntry) {
         store.edit { p ->
             val list = decodeHistory(p).filterNot { it.key == entry.key }
@@ -109,6 +118,8 @@ class UserStore(context: Context) {
         private const val MAX_RECENT = 20
 
         fun liveKey(id: String) = "live:$id"
+        fun isLiveFavorite(channel: LiveChannel, favorites: Set<String>): Boolean =
+            liveKey(channel.id) in favorites || channel.variants.any { liveKey(it.id) in favorites }
         fun movieKey(id: String) = "movie:$id"
         fun seriesKey(id: String) = "series:$id"
         fun episodeKey(id: String) = "episode:$id"
